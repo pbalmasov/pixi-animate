@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://yui-s.yahooapis.com/3.8.0/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.ico">
+    <script src="https://yui-s.yahooapis.com/3.10.1/build/yui/yui-min.js"></script>
+	<title>PixiAnimate v0.3.0 API Documentation : src/mixins/Text.js</title>  
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><a href="https://github.com/jiborobot/pixi-animate"><img src="../assets/css/logo.png" title="PixiAnimate"></a></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Documentation for: 0.3.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                		<ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                			<li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/PIXI.animate.FlashArt.html">PIXI.animate.FlashArt</a></li>
+                                <li><a href="../classes/PIXI.animate.FlashArtTask.html">PIXI.animate.FlashArtTask</a></li>
+                                <li><a href="../classes/PIXI.animate.load.html">PIXI.animate.load</a></li>
+                                <li><a href="../classes/PIXI.animate.MovieClip.html">PIXI.animate.MovieClip</a></li>
+                                <li><a href="../classes/PIXI.animate.MovieClipInstance.html">PIXI.animate.MovieClipInstance</a></li>
+                                <li><a href="../classes/PIXI.animate.ShapesCache.html">PIXI.animate.ShapesCache</a></li>
+                                <li><a href="../classes/PIXI.animate.SpriteSheetTask.html">PIXI.animate.SpriteSheetTask</a></li>
+                                <li><a href="../classes/PIXI.animate.SymbolLoader.html">PIXI.animate.SymbolLoader</a></li>
+                                <li><a href="../classes/PIXI.animate.Timeline.html">PIXI.animate.Timeline</a></li>
+                                <li><a href="../classes/PIXI.Container.html">PIXI.Container</a></li>
+                                <li><a href="../classes/PIXI.DisplayObject.html">PIXI.DisplayObject</a></li>
+                                <li><a href="../classes/PIXI.Graphics.html">PIXI.Graphics</a></li>
+                                <li><a href="../classes/PIXI.Sprite.html">PIXI.Sprite</a></li>
+                                <li><a href="../classes/PIXI.Text.html">PIXI.Text</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/PixiAnimate.html">PixiAnimate</a></li>
+                                <li><a href="../modules/SpringRoll Plugin.html">SpringRoll Plugin</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+            <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<script>
+	var name = src/mixins/Text.js      
+</script>
+<h1 class="file-heading">File:Text.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/**
+ * @module PixiAnimate
+ * @namespace PIXI
+ */
+(function(PIXI, undefined)
+{
+	/**
+	 * @class Text
+	 */
+	var p = PIXI.Text.prototype;
+
+	/**
+	 * Setter for the alignment, also sets the anchor point
+	 * to make sure the positioning is correct.
+	 * @method setAlign
+	 * @param {String} align Either, center, right, left
+	 * @return {Text} For chaining
+	 */
+	/**
+	 * Shortcut for &#x60;setAlign&#x60;.
+	 * @method g
+	 * @param {String|int} align Either, center (0), right (1), left (-1)
+	 * @return {Text} For chaining
+	 */
+	p.setAlign = p.g = function(align)
+	{
+		this.style.align = align || &quot;left&quot;;
+		var x;
+		if (typeof align == &quot;string&quot;)
+		{
+			switch (align)
+			{
+				case &quot;center&quot;:
+					x = 0.5;
+					break;
+				case &quot;right&quot;:
+					x = 1;
+					break;
+				case &quot;left&quot;:
+					x = 0;
+					break;
+			}
+		}
+		else
+		{
+			x = (align + 1) / 2;
+		}
+		this.anchor.x = x;
+		return this;
+	};
+
+	// Map of short names to long names
+	var STYLE_PROPS = {
+		o: &#x27;font&#x27;,
+		i: &#x27;fill&#x27;,
+		a: &#x27;align&#x27;,
+		s: &#x27;stroke&#x27;,
+		t: &#x27;strokeThickness&#x27;,
+		w: &#x27;wordWrap&#x27;,
+		d: &#x27;wordWrapWidth&#x27;,
+		l: &#x27;lineHeight&#x27;,
+		h: &#x27;dropShadow&#x27;,
+		c: &#x27;dropShadowColor&#x27;,
+		n: &#x27;dropShadowAngle&#x27;,
+		b: &#x27;dropShadowBlur&#x27;,
+		p: &#x27;padding&#x27;,
+		x: &#x27;textBaseline&#x27;,
+		j: &#x27;lineJoin&#x27;,
+		m: &#x27;miterLimit&#x27;,
+		e: &#x27;letterSpacing&#x27;
+	};
+
+	/**
+	 * Set the style, a chainable version of style setter
+	 * @method setStyle
+	 * @param {Object} style
+	 * @return {PIXI.Text} instance of text field
+	 */
+	/**
+	 * Shortcut for &#x60;setStyle&#x60;.
+	 * @method ss
+	 * @param {Object} style
+	 * @return {PIXI.Text} instance of text field
+	 */
+	p.setStyle = p.ss = function(style)
+	{
+		// Replace short STYLE_PROPS with long names
+		for (var k in STYLE_PROPS)
+		{
+			if (style[k] !== undefined)
+			{
+				style[STYLE_PROPS[k]] = style[k];
+				delete style[k];
+			}
+		}
+		this.style = style;
+		return this;
+	};
+
+	/**
+	 * Initial setting of the drop shadow.
+	 * @method setShadow
+	 * @param {String} [color=&quot;#000000&quot;] The color to set
+	 * @param {Number} [angle=Math.PI/4] The angle of offset, in radians
+	 * @param {Number} [distance=5] The offset distance
+	 * @return {Text} For chaining
+	 */
+	/**
+	 * Shortcut for setShadow.
+	 * @method sh
+	 * @param {String} [color=&quot;#000000&quot;] The color to set
+	 * @param {Number} [angle=Math.PI/4] The angle of offset, in radians
+	 * @param {Number} [distance=5] The offset distance
+	 * @return {Text} For chaining
+	 */
+	p.setShadow = p.sh = function(color, angle, distance)
+	{
+		var style = this.style;
+		style.dropShadow = true;
+
+		// Convert color to hex string
+		if (color !== undefined)
+		{
+			color = &quot;#&quot; + color.toString(16);
+		}
+		style.dropShadowColor = isUndefinedOr(color, style.dropShadowColor);
+		style.dropShadowAngle = isUndefinedOr(angle, style.dropShadowAngle);
+		style.dropShadowDistance = isUndefinedOr(distance, style.dropShadowDistance);
+		return this;
+	};
+
+	/**
+	 * Check if a value is undefined, fallback to default value
+	 * @method isUndefinedOr 
+	 * @private
+	 * @param {*} value The value to check
+	 * @param {*} defaultValue The default value if value is undefined
+	 * @return {*} The either the value or the default value
+	 */
+	var isUndefinedOr = function(value, defaultValue)
+	{
+		return value === undefined ? defaultValue : value;
+	};
+
+}(PIXI));
+    </pre>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

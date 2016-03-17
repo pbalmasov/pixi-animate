@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://yui-s.yahooapis.com/3.8.0/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.ico">
+    <script src="https://yui-s.yahooapis.com/3.10.1/build/yui/yui-min.js"></script>
+	<title>PixiAnimate v0.3.0 API Documentation : PIXI.DisplayObject</title>  
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><a href="https://github.com/jiborobot/pixi-animate"><img src="../assets/css/logo.png" title="PixiAnimate"></a></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Documentation for: 0.3.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                		<ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                			<li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/PIXI.animate.FlashArt.html">PIXI.animate.FlashArt</a></li>
+                                <li><a href="../classes/PIXI.animate.FlashArtTask.html">PIXI.animate.FlashArtTask</a></li>
+                                <li><a href="../classes/PIXI.animate.load.html">PIXI.animate.load</a></li>
+                                <li><a href="../classes/PIXI.animate.MovieClip.html">PIXI.animate.MovieClip</a></li>
+                                <li><a href="../classes/PIXI.animate.MovieClipInstance.html">PIXI.animate.MovieClipInstance</a></li>
+                                <li><a href="../classes/PIXI.animate.ShapesCache.html">PIXI.animate.ShapesCache</a></li>
+                                <li><a href="../classes/PIXI.animate.SpriteSheetTask.html">PIXI.animate.SpriteSheetTask</a></li>
+                                <li><a href="../classes/PIXI.animate.SymbolLoader.html">PIXI.animate.SymbolLoader</a></li>
+                                <li><a href="../classes/PIXI.animate.Timeline.html">PIXI.animate.Timeline</a></li>
+                                <li><a href="../classes/PIXI.Container.html">PIXI.Container</a></li>
+                                <li><a href="../classes/PIXI.DisplayObject.html">PIXI.DisplayObject</a></li>
+                                <li><a href="../classes/PIXI.Graphics.html">PIXI.Graphics</a></li>
+                                <li><a href="../classes/PIXI.Sprite.html">PIXI.Sprite</a></li>
+                                <li><a href="../classes/PIXI.Text.html">PIXI.Text</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/PixiAnimate.html">PixiAnimate</a></li>
+                                <li><a href="../modules/SpringRoll Plugin.html">SpringRoll Plugin</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+            <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1>PIXI.DisplayObject Class</h1>
+<div class="box meta">
+
+
+        <div class="foundat">
+            Defined in: <a href="../files/src_mixins_DisplayObject.js.html#l7"><code>PIXI.DisplayObject:7</code></a>
+        </div>
+
+            Module: <a href="../modules/PixiAnimate.html">PixiAnimate</a>
+
+</div>
+
+
+<div class="box intro">
+    
+</div>
+
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+            <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods">
+                            <li class="index-item method">
+                                <a href="#method_a">a</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_c">c</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_extend">extend</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_ma">ma</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_re">re</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_setAlpha">setAlpha</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_setColorTransform">setColorTransform</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_setMask">setMask</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_setRenderable">setRenderable</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_setTint">setTint</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_tn">tn</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_tr">tr</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+                <div class="index-section properties">
+                    <h3>Properties</h3>
+
+                    <ul class="index-list properties">
+                            <li class="index-item property">
+                                <a href="#property_colorTransformFilter">colorTransformFilter</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+
+        </div>
+
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
+                    <div id="method_a" class="method item">
+                        <h3 class="name"><code>a</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>alpha</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type">DisplayObject</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_mixins_DisplayObject.js.html#l76"><code>a:76</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Shortcut for setAlpha.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">alpha</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The alpha amount to use, from 0 to 1</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">DisplayObject</span>:
+                                        <p>Instance for chaining</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_c" class="method item">
+                        <h3 class="name"><code>c</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>r</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>rA</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>g</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>gA</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>b</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>bA</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type">DisplayObject</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_mixins_DisplayObject.js.html#l125"><code>c:125</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Shortcut to setColor.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">r</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The multiply red value</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">rA</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The additive red value</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">g</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The multiply green value</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">gA</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The additive green value</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">b</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The multiply blue value</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">bA</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The additive blue value</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">DisplayObject</span>:
+                                        <p>Object for chaining</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_extend" class="method item">
+                        <h3 class="name"><code>extend</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>child</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type">DisplayObject</span>
+                            </span>
+                    
+                    
+                    
+                    
+                            <span class="flag static">static</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_mixins_DisplayObject.js.html#l165"><code>extend:165</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Extend a container</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">child</code>
+                                            <span class="type">DisplayObject</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The child function</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">DisplayObject</span>:
+                                        <p>THe child</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_ma" class="method item">
+                        <h3 class="name"><code>ma</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>mask</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type">DisplayObject</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_mixins_DisplayObject.js.html#l58"><code>ma:58</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Shortcut for setMask.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">mask</code>
+                                            <span class="type"><a href="../classes/PIXI.Graphics.html" class="crosslink">PIXI.Graphics</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The mask shape to use</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">DisplayObject</span>:
+                                        <p>Instance for chaining</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_re" class="method item">
+                        <h3 class="name"><code>re</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code class="optional">[renderable=false]</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type">Graphics</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_mixins_DisplayObject.js.html#l25"><code>re:25</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Shortcut to setRenderable.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name optional">[renderable=false]</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                                            <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Make renderable</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">Graphics</span>:
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_setAlpha" class="method item">
+                        <h3 class="name"><code>setAlpha</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>alpha</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type">DisplayObject</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_mixins_DisplayObject.js.html#l70"><code>setAlpha:70</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Setter for the alpha</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">alpha</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The alpha amount to use, from 0 to 1</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">DisplayObject</span>:
+                                        <p>Instance for chaining</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_setColorTransform" class="method item">
+                        <h3 class="name"><code>setColorTransform</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>r</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>rA</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>g</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>gA</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>b</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>bA</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type">DisplayObject</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_mixins_DisplayObject.js.html#l114"><code>setColorTransform:114</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Set additive and multiply color, tinting</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">r</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The multiply red value</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">rA</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The additive red value</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">g</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The multiply green value</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">gA</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The additive green value</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">b</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The multiply blue value</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">bA</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The additive blue value</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">DisplayObject</span>:
+                                        <p>Object for chaining</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_setMask" class="method item">
+                        <h3 class="name"><code>setMask</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>mask</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type">DisplayObject</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_mixins_DisplayObject.js.html#l52"><code>setMask:52</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Setter for mask to be able to chain.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">mask</code>
+                                            <span class="type"><a href="../classes/PIXI.Graphics.html" class="crosslink">PIXI.Graphics</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The mask shape to use</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">DisplayObject</span>:
+                                        <p>Instance for chaining</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_setRenderable" class="method item">
+                        <h3 class="name"><code>setRenderable</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code class="optional">[renderable=false]</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type">Graphics</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_mixins_DisplayObject.js.html#l19"><code>setRenderable:19</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Function to see if this is renderable or not. Useful for setting masks.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name optional">[renderable=false]</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                                            <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Make renderable</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">Graphics</span>:
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_setTint" class="method item">
+                        <h3 class="name"><code>setTint</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>tint</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type">DisplayObject</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_mixins_DisplayObject.js.html#l88"><code>setTint:88</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Set the tint values by color.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">tint</code>
+                                            <span class="type">Int</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The color value to tint</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">DisplayObject</span>:
+                                        <p>Object for chaining</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_tn" class="method item">
+                        <h3 class="name"><code>tn</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>tint</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type">DisplayObject</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_mixins_DisplayObject.js.html#l94"><code>tn:94</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Shortcut to setTint.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">tint</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The red percentage value</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">DisplayObject</span>:
+                                        <p>Object for chaining</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_tr" class="method item">
+                        <h3 class="name"><code>tr</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>x</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>y</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>scaleX</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>scaleY</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>skewX</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>skewY</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>pivotX</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>pivotY</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type">DisplayObject</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_mixins_DisplayObject.js.html#l37"><code>tr:37</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Shortcut for setTransform.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">x</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The X position</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">y</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The Y position</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">scaleX</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The X Scale value</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">scaleY</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The Y Scale value</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">skewX</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The X skew value</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">skewY</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The Y skew value</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">pivotX</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The X pivot value</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">pivotY</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The Y pivot value</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">DisplayObject</span>:
+                                        <p>Instance for chaining</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+            </div>
+
+            <div id="properties" class="api-class-tabpanel">
+                <h2 class="off-left">Properties</h2>
+
+                    <div id="property_colorTransformFilter" class="property item">
+                        <h3 class="name"><code>colorTransformFilter</code></h3>
+                        <span class="type">PIXI.filters.ColorMatrixFilter</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_mixins_DisplayObject.js.html#l149"><code>colorTransformFilter:149</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The current default color transforming filters</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+            </div>
+
+
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

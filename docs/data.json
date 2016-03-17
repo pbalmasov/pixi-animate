@@ -1,0 +1,3081 @@
+{
+    "project": {
+        "name": "PixiAnimate",
+        "description": "Runtime library to play Pixi.js content from Adobe Animate CC",
+        "version": "0.3.0",
+        "url": "https://github.com/jiborobot/pixi-animate"
+    },
+    "files": {
+        "src/animate/MovieClip.js": {
+            "name": "src/animate/MovieClip.js",
+            "modules": {
+                "PixiAnimate": 1
+            },
+            "classes": {
+                "PIXI.animate.MovieClip": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "PIXI.animate": 1
+            }
+        },
+        "src/animate/ShapesCache.js": {
+            "name": "src/animate/ShapesCache.js",
+            "modules": {},
+            "classes": {
+                "PIXI.animate.ShapesCache": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "PIXI.animate": 1
+            }
+        },
+        "src/animate/SymbolLoader.js": {
+            "name": "src/animate/SymbolLoader.js",
+            "modules": {},
+            "classes": {
+                "PIXI.animate.SymbolLoader": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "PIXI.animate": 1
+            }
+        },
+        "src/animate/Timeline.js": {
+            "name": "src/animate/Timeline.js",
+            "modules": {},
+            "classes": {
+                "PIXI.animate.Timeline": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "PIXI.animate": 1
+            }
+        },
+        "src/animate/load.js": {
+            "name": "src/animate/load.js",
+            "modules": {},
+            "classes": {
+                "PIXI.animate.load": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "PIXI.animate": 1
+            }
+        },
+        "src/animate/main.js": {
+            "name": "src/animate/main.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {
+                "PIXI.animate": 1
+            }
+        },
+        "src/mixins/Container.js": {
+            "name": "src/mixins/Container.js",
+            "modules": {},
+            "classes": {
+                "PIXI.Container": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "PIXI": 1
+            }
+        },
+        "src/mixins/DisplayObject.js": {
+            "name": "src/mixins/DisplayObject.js",
+            "modules": {},
+            "classes": {
+                "PIXI.DisplayObject": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "PIXI": 1
+            }
+        },
+        "src/mixins/Graphics.js": {
+            "name": "src/mixins/Graphics.js",
+            "modules": {},
+            "classes": {
+                "PIXI.Graphics": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "PIXI": 1
+            }
+        },
+        "src/mixins/Sprite.js": {
+            "name": "src/mixins/Sprite.js",
+            "modules": {},
+            "classes": {
+                "PIXI.Sprite": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "PIXI": 1
+            }
+        },
+        "src/mixins/Text.js": {
+            "name": "src/mixins/Text.js",
+            "modules": {},
+            "classes": {
+                "PIXI.Text": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "PIXI": 1
+            }
+        },
+        "src/plugins/springroll/FlashArt.js": {
+            "name": "src/plugins/springroll/FlashArt.js",
+            "modules": {
+                "SpringRoll Plugin": 1
+            },
+            "classes": {
+                "PIXI.animate.FlashArt": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "PIXI.animate": 1
+            }
+        },
+        "src/plugins/springroll/FlashArtTask.js": {
+            "name": "src/plugins/springroll/FlashArtTask.js",
+            "modules": {},
+            "classes": {
+                "PIXI.animate.FlashArtTask": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "PIXI.animate": 1
+            }
+        },
+        "src/plugins/springroll/MovieClipInstance.js": {
+            "name": "src/plugins/springroll/MovieClipInstance.js",
+            "modules": {},
+            "classes": {
+                "PIXI.animate.MovieClipInstance": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "PIXI.animate": 1
+            }
+        },
+        "src/plugins/springroll/PixiAnimatePlugin.js": {
+            "name": "src/plugins/springroll/PixiAnimatePlugin.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {
+                "PIXI.animate": 1
+            }
+        },
+        "src/plugins/springroll/SpriteSheetTask.js": {
+            "name": "src/plugins/springroll/SpriteSheetTask.js",
+            "modules": {},
+            "classes": {
+                "PIXI.animate.SpriteSheetTask": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {
+        "PixiAnimate": {
+            "name": "PixiAnimate",
+            "submodules": {},
+            "classes": {
+                "PIXI.animate.MovieClip": 1,
+                "PIXI.animate.ShapesCache": 1,
+                "PIXI.animate.SymbolLoader": 1,
+                "PIXI.animate.Timeline": 1,
+                "PIXI.animate.load": 1,
+                "PIXI.Container": 1,
+                "PIXI.DisplayObject": 1,
+                "PIXI.Graphics": 1,
+                "PIXI.Sprite": 1,
+                "PIXI.Text": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "PIXI.animate": 1,
+                "PIXI": 1
+            },
+            "tag": "module",
+            "file": "src/mixins/Text.js",
+            "line": 7
+        },
+        "SpringRoll Plugin": {
+            "name": "SpringRoll Plugin",
+            "submodules": {},
+            "classes": {
+                "PIXI.animate.FlashArt": 1,
+                "PIXI.animate.FlashArtTask": 1,
+                "PIXI.animate.MovieClipInstance": 1,
+                "PIXI.animate.SpriteSheetTask": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "PIXI.animate": 1
+            },
+            "tag": "module",
+            "file": "src/plugins/springroll/SpriteSheetTask.js",
+            "line": 8,
+            "requires": [
+                "PixiAnimate"
+            ]
+        }
+    },
+    "classes": {
+        "PIXI.animate.MovieClip": {
+            "name": "PIXI.animate.MovieClip",
+            "shortname": "MovieClip",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate",
+            "file": "src/animate/MovieClip.js",
+            "line": 13,
+            "description": "Provide timeline playback of movieclip",
+            "extends": "PIXI.Container",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "options",
+                    "description": "The options object or the mode to play",
+                    "type": "Object|int",
+                    "optional": true,
+                    "props": [
+                        {
+                            "name": "mode",
+                            "description": "The playback mode default is independent (0),",
+                            "type": "Int",
+                            "optional": true,
+                            "optdefault": "0"
+                        },
+                        {
+                            "name": "startPosition",
+                            "description": "The starting frame",
+                            "type": "Int",
+                            "optional": true,
+                            "optdefault": "0"
+                        },
+                        {
+                            "name": "loop",
+                            "description": "If playback is looped",
+                            "type": "Boolean",
+                            "optional": true,
+                            "optdefault": "true"
+                        },
+                        {
+                            "name": "labels",
+                            "description": "The frame labels map of label to frames",
+                            "type": "Object",
+                            "optional": true
+                        },
+                        {
+                            "name": "duration",
+                            "description": "The duration, if no duration is provided, auto determines length",
+                            "type": "Int",
+                            "optional": true
+                        },
+                        {
+                            "name": "framerate",
+                            "description": "The framerate to use for independent mode",
+                            "type": "Int",
+                            "optional": true,
+                            "optdefault": "24"
+                        }
+                    ]
+                }
+            ]
+        },
+        "PIXI.animate.ShapesCache": {
+            "name": "PIXI.animate.ShapesCache",
+            "shortname": "ShapesCache",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate",
+            "file": "src/animate/ShapesCache.js",
+            "line": 7,
+            "description": "Contains the collection of graphics data"
+        },
+        "PIXI.animate.SymbolLoader": {
+            "name": "PIXI.animate.SymbolLoader",
+            "shortname": "SymbolLoader",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate",
+            "file": "src/animate/SymbolLoader.js",
+            "line": 11,
+            "description": "The middleware for PIXI's ResourceLoader to be able to \nload Flash symbols such as graphics and images."
+        },
+        "PIXI.animate.Timeline": {
+            "name": "PIXI.animate.Timeline",
+            "shortname": "Timeline",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate",
+            "file": "src/animate/Timeline.js",
+            "line": 11,
+            "description": "The Timeline class represents a",
+            "params": [
+                {
+                    "name": "Target",
+                    "description": "The target for this string of tweens.",
+                    "type": "DisplayObject"
+                }
+            ],
+            "extends": "Array",
+            "is_constructor": 1
+        },
+        "PIXI.animate.load": {
+            "name": "PIXI.animate.load",
+            "shortname": "load",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate",
+            "file": "src/animate/load.js",
+            "line": 7,
+            "description": "Entry point for loading Adobe Animate exports:\n\n**Load and auto-add to parent**\n```\nvar renderer = new PIXI.autoDetectRenderer(1280, 720);\nvar stage = new PIXI.Container();\nPIXI.animate.load(lib.MyStage, stage);\nfunction update() {\n     renderer.render(stage);\n     update();\n}\nupdate();\n```\n**Load and handle with callback**\n```\nvar renderer = new PIXI.autoDetectRenderer(1280, 720);\nvar stage = new PIXI.Container();\nPIXI.animate.load(lib.MyStage, function(instance){\n    stage.addChild(instance);\n});\nfunction update() {\n     renderer.render(stage);\n     update();\n}\nupdate();\n```"
+        },
+        "PIXI.Container": {
+            "name": "PIXI.Container",
+            "shortname": "Container",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PixiAnimate",
+            "namespace": "PIXI",
+            "file": "src/mixins/Container.js",
+            "line": 7
+        },
+        "PIXI.DisplayObject": {
+            "name": "PIXI.DisplayObject",
+            "shortname": "DisplayObject",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PixiAnimate",
+            "namespace": "PIXI",
+            "file": "src/mixins/DisplayObject.js",
+            "line": 7
+        },
+        "PIXI.Graphics": {
+            "name": "PIXI.Graphics",
+            "shortname": "Graphics",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PixiAnimate",
+            "namespace": "PIXI",
+            "file": "src/mixins/Graphics.js",
+            "line": 7
+        },
+        "PIXI.Sprite": {
+            "name": "PIXI.Sprite",
+            "shortname": "Sprite",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PixiAnimate",
+            "namespace": "PIXI",
+            "file": "src/mixins/Sprite.js",
+            "line": 7
+        },
+        "PIXI.Text": {
+            "name": "PIXI.Text",
+            "shortname": "Text",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PixiAnimate",
+            "namespace": "PIXI",
+            "file": "src/mixins/Text.js",
+            "line": 7
+        },
+        "PIXI.animate.FlashArt": {
+            "name": "PIXI.animate.FlashArt",
+            "shortname": "FlashArt",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "SpringRoll Plugin",
+            "namespace": "PIXI.animate",
+            "file": "src/plugins/springroll/FlashArt.js",
+            "line": 10,
+            "description": "Handles the Asset loading for Flash Art takes care of unloading",
+            "is_constructor": 1,
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "The asset id",
+                    "type": "String"
+                },
+                {
+                    "name": "dom",
+                    "description": "The `<script>` element added to the document",
+                    "type": "NodeElement"
+                },
+                {
+                    "name": "libName",
+                    "description": "The window parameter name",
+                    "type": "String",
+                    "optional": true,
+                    "optdefault": "'lib'"
+                }
+            ]
+        },
+        "PIXI.animate.FlashArtTask": {
+            "name": "PIXI.animate.FlashArtTask",
+            "shortname": "FlashArtTask",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "SpringRoll Plugin",
+            "namespace": "PIXI.animate",
+            "file": "src/plugins/springroll/FlashArtTask.js",
+            "line": 13,
+            "description": "Loads a FlashArt, making it easier to load and unload PixiAnimate art.",
+            "extends": "springroll.Task",
+            "is_constructor": 1,
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "asset",
+                    "description": "The data properties",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "type",
+                            "description": "Asset type must be \"pixi\"",
+                            "type": "String"
+                        },
+                        {
+                            "name": "format",
+                            "description": "Asset format must be \"PIXI.animate.FlashArt\"",
+                            "type": "String"
+                        },
+                        {
+                            "name": "src",
+                            "description": "The source",
+                            "type": "String"
+                        },
+                        {
+                            "name": "images",
+                            "description": "An array of Image, TextureAtlas, or SpriteSheet assets to load",
+                            "type": "Array"
+                        },
+                        {
+                            "name": "cache",
+                            "description": "If we should cache the result",
+                            "type": "Boolean",
+                            "optional": true,
+                            "optdefault": "false"
+                        },
+                        {
+                            "name": "id",
+                            "description": "Id of asset",
+                            "type": "String",
+                            "optional": true
+                        },
+                        {
+                            "name": "complete",
+                            "description": "The event to call when done",
+                            "type": "Function",
+                            "optional": true
+                        },
+                        {
+                            "name": "sizes",
+                            "description": "Define if certain sizes are not supported",
+                            "type": "Object",
+                            "optional": true,
+                            "optdefault": "null"
+                        }
+                    ]
+                }
+            ]
+        },
+        "PIXI.animate.MovieClipInstance": {
+            "name": "PIXI.animate.MovieClipInstance",
+            "shortname": "MovieClipInstance",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "SpringRoll Plugin",
+            "namespace": "PIXI.animate",
+            "file": "src/plugins/springroll/MovieClipInstance.js",
+            "line": 12,
+            "description": "The SpringRoll plugin for working with MovieClips and SpringRoll's Animator",
+            "extends": "springroll.GenericMovieClipInstance",
+            "access": "private",
+            "tagname": ""
+        },
+        "PIXI.animate.SpriteSheetTask": {
+            "name": "PIXI.animate.SpriteSheetTask",
+            "shortname": "SpriteSheetTask",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "SpringRoll Plugin",
+            "namespace": "PIXI.animate",
+            "file": "src/plugins/springroll/SpriteSheetTask.js",
+            "line": 8,
+            "description": "Load a spritesheet generated from Flash and adds it to the global ss namespace.\nThis namespace is shared with regular CreateJS art, as it can't be changed in Flash's\npublishing settings. As such, don't name spritesheets for CreateJS and PixiAnimate the same\nthing if both spritesheets are being used by art published from Flash.",
+            "extends": "springroll.LoadTask",
+            "is_constructor": 1,
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "asset",
+                    "description": "The data properties",
+                    "type": "Object",
+                    "props": [
+                        {
+                            "name": "type",
+                            "description": "Asset type must be \"pixi\"",
+                            "type": "String"
+                        },
+                        {
+                            "name": "format",
+                            "description": "Asset format must be \"PIXI.animate.SpriteSheet\"",
+                            "type": "String"
+                        },
+                        {
+                            "name": "src",
+                            "description": "The source",
+                            "type": "String"
+                        },
+                        {
+                            "name": "cache",
+                            "description": "If we should cache the result",
+                            "type": "Boolean",
+                            "optional": true,
+                            "optdefault": "false"
+                        },
+                        {
+                            "name": "id",
+                            "description": "Id of asset",
+                            "type": "String",
+                            "optional": true
+                        },
+                        {
+                            "name": "complete",
+                            "description": "The event to call when done",
+                            "type": "Function",
+                            "optional": true
+                        },
+                        {
+                            "name": "sizes",
+                            "description": "Define if certain sizes are not supported",
+                            "type": "Object",
+                            "optional": true,
+                            "optdefault": "null"
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "classitems": [
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 59,
+            "description": "Controls how this MovieClip advances its time. Must be one of 0 (INDEPENDENT), 1 (SINGLE_FRAME), or 2 (SYNCHED).\nSee each constant for a description of the behaviour.",
+            "itemtype": "property",
+            "name": "mode",
+            "type": "int",
+            "default": "null",
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 68,
+            "description": "Specifies what the first frame to play in this movieclip, or the only frame to display if mode is SINGLE_FRAME.",
+            "itemtype": "property",
+            "name": "startPosition",
+            "type": "Number",
+            "default": "0",
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 76,
+            "description": "Indicates whether this MovieClip should loop when it reaches the end of its timeline.",
+            "itemtype": "property",
+            "name": "loop",
+            "type": "Boolean",
+            "default": "true",
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 84,
+            "description": "The current frame of the movieclip.",
+            "itemtype": "property",
+            "name": "currentFrame",
+            "type": "Number",
+            "default": "0",
+            "readonly": "",
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 111,
+            "description": "If true, this movieclip will animate automatically whenever it is on the stage.",
+            "itemtype": "property",
+            "name": "selfAdvance",
+            "type": "Boolean",
+            "default": "true",
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 119,
+            "description": "If true, the MovieClip's position will not advance when ticked.",
+            "itemtype": "property",
+            "name": "paused",
+            "type": "Boolean",
+            "default": "false",
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 127,
+            "description": "If true, actions in this MovieClip's tweens will be run when the playhead advances.",
+            "itemtype": "property",
+            "name": "actionsEnabled",
+            "type": "Boolean",
+            "default": "true",
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 135,
+            "description": "If true, the MovieClip will automatically be reset to its first frame whenever the timeline adds\nit back onto the display list. This only applies to MovieClip instances with mode=INDEPENDENT.\n<br><br>\nFor example, if you had a character animation with a \"body\" child MovieClip instance\nwith different costumes on each frame, you could set body.autoReset = false, so that\nyou can manually change the frame it is on, without worrying that it will be reset\nautomatically.",
+            "itemtype": "property",
+            "name": "autoReset",
+            "type": "Boolean",
+            "default": "true",
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 149,
+            "itemtype": "property",
+            "name": "_synchOffset",
+            "type": "Number",
+            "default": "0",
+            "access": "private",
+            "tagname": "",
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 157,
+            "itemtype": "property",
+            "name": "_prevPos",
+            "type": "Number",
+            "default": "-1",
+            "access": "private",
+            "tagname": "",
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 165,
+            "description": "Note - changed from default: When the MovieClip is framerate independent, this is the time\nelapsed from frame 0 in seconds.",
+            "itemtype": "property",
+            "name": "_t",
+            "type": "Number",
+            "default": "0",
+            "access": "private",
+            "tagname": "",
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 175,
+            "description": "By default MovieClip instances advance one frame per tick. Specifying a framerate for the MovieClip\nwill cause it to advance based on elapsed time between ticks as appropriate to maintain the target\nframerate.",
+            "itemtype": "property",
+            "name": "_framerate",
+            "type": "{Number}",
+            "default": "0",
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 186,
+            "description": "The total time in seconds for the animation. This is changed when setting the framerate.",
+            "itemtype": "property",
+            "name": "_duration",
+            "type": "Number",
+            "default": "0",
+            "access": "private",
+            "tagname": "",
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 195,
+            "description": "The total duration in frames for the animation.",
+            "itemtype": "property",
+            "name": "_frameDuration",
+            "type": "Number",
+            "default": "0",
+            "access": "private",
+            "tagname": "",
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 204,
+            "description": "Standard tween timelines for all objects. Each element in the _timelines array\nis a Timeline object - an array of tweens for one target, in order of occurrence.",
+            "itemtype": "property",
+            "name": "_timelines",
+            "type": "Array",
+            "access": "protected",
+            "tagname": "",
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 213,
+            "description": "Array of child timelines denoting if a child is actively a child of this movieclip\non any given frame. Each element in the _timedChildTimelines is an array with a 'target'\nproperty, and is an array of boolean values indexed by frame.",
+            "itemtype": "property",
+            "name": "_timedChildTimelines",
+            "type": "{Array}",
+            "access": "protected",
+            "tagname": "",
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 223,
+            "description": "Array of frame scripts, indexed by frame.",
+            "itemtype": "property",
+            "name": "_actions",
+            "type": "{Array}",
+            "access": "protected",
+            "tagname": "",
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 246,
+            "description": "The MovieClip will advance independently of its parent, even if its parent is paused.\nThis is the default mode.",
+            "itemtype": "property",
+            "name": "INDEPENDENT",
+            "static": 1,
+            "type": "String",
+            "default": "0",
+            "readonly": "",
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 257,
+            "description": "The MovieClip will only display a single frame (as determined by the startPosition property).",
+            "itemtype": "property",
+            "name": "SINGLE_FRAME",
+            "static": 1,
+            "type": "String",
+            "default": "1",
+            "readonly": "",
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 267,
+            "description": "The MovieClip will be advanced only when its parent advances and will be synched to the position of\nthe parent MovieClip.",
+            "itemtype": "property",
+            "name": "SYNCHED",
+            "static": 1,
+            "type": "String",
+            "default": "2",
+            "readonly": "",
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 303,
+            "description": "Returns a sorted list of the labels defined on this AdvancedMovieClip.",
+            "itemtype": "method",
+            "name": "getLabels",
+            "return": {
+                "description": "A sorted array of objects with label and position (aka frame)\n                       properties.",
+                "type": "Array[Object]"
+            },
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 314,
+            "description": "Returns the name of the label on or immediately before the current frame.",
+            "itemtype": "method",
+            "name": "getCurrentLabel",
+            "return": {
+                "description": "The name of the current label or null if there is no label.",
+                "type": "String"
+            },
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 333,
+            "description": "Returns an array of objects with label and position (aka frame) properties, sorted by position.",
+            "itemtype": "property",
+            "name": "labels",
+            "type": "{Array}",
+            "readonly": "",
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 340,
+            "description": "Returns the name of the label on or immediately before the current frame.",
+            "itemtype": "property",
+            "name": "currentLabel",
+            "type": "{String}",
+            "readonly": "",
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 363,
+            "description": "When the MovieClip is framerate independent, this is the time elapsed from frame 0 in seconds.",
+            "itemtype": "property",
+            "name": "elapsedTime",
+            "type": "Number",
+            "default": "0",
+            "access": "public",
+            "tagname": "",
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 382,
+            "description": "By default MovieClip instances advance one frame per tick. Specifying a framerate for the MovieClip\nwill cause it to advance based on elapsed time between ticks as appropriate to maintain the target\nframerate.\n\nFor example, if a MovieClip with a framerate of 10 is placed on a Stage being updated at 40fps, then the MovieClip will\nadvance roughly one frame every 4 ticks. This will not be exact, because the time between each tick will\nvary slightly between frames.\n\nThis feature is dependent on the tick event object (or an object with an appropriate \"delta\" property) being\npassed into {{#crossLink \"Stage/update\"}}{{/crossLink}}.",
+            "itemtype": "property",
+            "name": "framerate",
+            "type": "{Number}",
+            "default": "0",
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 415,
+            "description": "Convenience method for setting multiple frames at once and adding the child",
+            "itemtype": "method",
+            "name": "addKeyframes",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "instance",
+                    "description": "The clip to animate",
+                    "type": "PIXI.DisplayObject"
+                },
+                {
+                    "name": "keyframes",
+                    "description": "The collection of keyframe objects or data string, the key is frame number",
+                    "type": "Object"
+                }
+            ],
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 530,
+            "description": "Add a tween to the clip",
+            "itemtype": "method",
+            "name": "addTween",
+            "params": [
+                {
+                    "name": "instance",
+                    "description": "The clip to tween",
+                    "type": "PIXI.DisplayObject"
+                },
+                {
+                    "name": "properties",
+                    "description": "The property or property to tween",
+                    "type": "Object"
+                },
+                {
+                    "name": "startFrame",
+                    "description": "The frame to start tweening",
+                    "type": "Int"
+                },
+                {
+                    "name": "duration",
+                    "description": "Number of frames to tween. If 0, then the properties are set\n                          with no tweening.",
+                    "type": "Int",
+                    "optional": true,
+                    "optdefault": "0"
+                },
+                {
+                    "name": "ease",
+                    "description": "An optional easing function that takes the tween time from 0-1.",
+                    "type": "Function",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "MovieClip"
+            },
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 541,
+            "description": "Alias for method `addTween`",
+            "itemtype": "method",
+            "name": "tw",
+            "return": {
+                "description": "",
+                "type": "MovieClip"
+            },
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 585,
+            "description": "Add a child to show for a certain number of frames before automatic removal.",
+            "itemtype": "method",
+            "name": "addTimedChild",
+            "params": [
+                {
+                    "name": "instance",
+                    "description": "The clip to show",
+                    "type": "PIXI.DisplayObject"
+                },
+                {
+                    "name": "startFrame",
+                    "description": "The starting frame",
+                    "type": "Int"
+                },
+                {
+                    "name": "duration",
+                    "description": "The number of frames to display the child before removing it.",
+                    "type": "Int",
+                    "optional": true,
+                    "optdefault": "1"
+                },
+                {
+                    "name": "keyframes",
+                    "description": "The collection of static keyframes to add",
+                    "type": "String|Array",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "MovieClip"
+            },
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 594,
+            "description": "Alias for method `addTimedChild`",
+            "itemtype": "method",
+            "name": "at",
+            "return": {
+                "description": "",
+                "type": "MovieClip"
+            },
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 673,
+            "description": "Handle frame actions, callback is bound to the instance of the MovieClip",
+            "itemtype": "method",
+            "name": "addAction",
+            "params": [
+                {
+                    "name": "callback",
+                    "description": "The clip call on a certain frame",
+                    "type": "Function"
+                },
+                {
+                    "name": "startFrame",
+                    "description": "The starting frame",
+                    "type": "Int"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "MovieClip"
+            },
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 700,
+            "description": "Sets paused to false.",
+            "itemtype": "method",
+            "name": "play",
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 709,
+            "description": "Sets paused to true.",
+            "itemtype": "method",
+            "name": "stop",
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 718,
+            "description": "Advances this movie clip to the specified position or label and sets paused to false.",
+            "itemtype": "method",
+            "name": "gotoAndPlay",
+            "params": [
+                {
+                    "name": "positionOrLabel",
+                    "description": "The animation name or frame number to go to.",
+                    "type": "String|Number"
+                }
+            ],
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 729,
+            "description": "Advances this movie clip to the specified position or label and sets paused to true.",
+            "itemtype": "method",
+            "name": "gotoAndStop",
+            "params": [
+                {
+                    "name": "positionOrLabel",
+                    "description": "The animation or frame name to go to.",
+                    "type": "String|Number"
+                }
+            ],
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 740,
+            "description": "Advances the playhead. This occurs automatically each tick by default.",
+            "params": [
+                {
+                    "name": "time",
+                    "description": "The amount of time in seconds to advance by. Only applicable if framerate is set.",
+                    "type": "Number",
+                    "optional": true
+                }
+            ],
+            "itemtype": "method",
+            "name": "advance",
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 774,
+            "itemtype": "method",
+            "name": "_goto",
+            "params": [
+                {
+                    "name": "positionOrLabel",
+                    "description": "The animation name or frame number to go to.",
+                    "type": "String|Number"
+                }
+            ],
+            "access": "protected",
+            "tagname": "",
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 800,
+            "itemtype": "method",
+            "name": "_reset",
+            "access": "private",
+            "tagname": "",
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 811,
+            "itemtype": "method",
+            "name": "_updateTimeline",
+            "access": "protected",
+            "tagname": "",
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 838,
+            "description": "Set the timeline position",
+            "itemtype": "method",
+            "name": "_setTimelinePostion",
+            "access": "protected",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "startFrame",
+                    "description": "",
+                    "type": "Int"
+                },
+                {
+                    "name": "currentFrame",
+                    "description": "",
+                    "type": "Int"
+                },
+                {
+                    "name": "doActions",
+                    "description": "",
+                    "type": "Boolean"
+                }
+            ],
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 944,
+            "description": "Extend a container",
+            "itemtype": "method",
+            "name": "extend",
+            "static": 1,
+            "params": [
+                {
+                    "name": "child",
+                    "description": "The child function",
+                    "type": "MovieClip"
+                }
+            ],
+            "return": {
+                "description": "THe child",
+                "type": "MovieClip"
+            },
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/ShapesCache.js",
+            "line": 13,
+            "description": "Add an item or itesm to the cache",
+            "itemtype": "method",
+            "name": "add",
+            "static": 1,
+            "params": [
+                {
+                    "name": "prop",
+                    "description": "The id of graphic",
+                    "type": "String"
+                },
+                {
+                    "name": "value",
+                    "description": "If adding a single property, the draw commands",
+                    "type": "Array",
+                    "optional": true
+                }
+            ],
+            "class": "PIXI.animate.ShapesCache",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/ShapesCache.js",
+            "line": 38,
+            "description": "Decode a shapes string into draw commands",
+            "itemtype": "method",
+            "name": "decode",
+            "static": 1,
+            "params": [
+                {
+                    "name": "str",
+                    "description": "The string to decode",
+                    "type": "String"
+                }
+            ],
+            "class": "PIXI.animate.ShapesCache",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/ShapesCache.js",
+            "line": 70,
+            "description": "Get the graphic from cache",
+            "itemtype": "method",
+            "name": "fromCache",
+            "static": 1,
+            "params": [
+                {
+                    "name": "id",
+                    "description": "The cache id",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Series of graphic draw commands",
+                "type": "Array"
+            },
+            "class": "PIXI.animate.ShapesCache",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/ShapesCache.js",
+            "line": 86,
+            "description": "Remove the graphic from cache",
+            "itemtype": "method",
+            "name": "remove",
+            "static": 1,
+            "params": [
+                {
+                    "name": "id",
+                    "description": "The cache id",
+                    "type": "String"
+                }
+            ],
+            "class": "PIXI.animate.ShapesCache",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/ShapesCache.js",
+            "line": 105,
+            "description": "Remove all graphics from cache",
+            "itemtype": "method",
+            "name": "removeAll",
+            "static": 1,
+            "class": "PIXI.animate.ShapesCache",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/Timeline.js",
+            "line": 23,
+            "description": "The target DisplayObject.",
+            "itemtype": "property",
+            "name": "target",
+            "type": "DisplayObject",
+            "class": "PIXI.animate.Timeline",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/Timeline.js",
+            "line": 30,
+            "description": "Current properties in the tween, to make building the timeline more\nefficient.",
+            "itemtype": "property",
+            "name": "_currentProps",
+            "type": "Object",
+            "access": "private",
+            "tagname": "",
+            "class": "PIXI.animate.Timeline",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/Timeline.js",
+            "line": 43,
+            "description": "Adds one or more tweens (or timelines) to this timeline. The tweens will be paused (to remove them from the normal ticking system)\nand managed by this timeline. Adding a tween to multiple timelines will result in unexpected behaviour.",
+            "itemtype": "method",
+            "name": "addTween",
+            "params": [
+                {
+                    "name": "tween",
+                    "description": "The tween(s) to add. Accepts multiple arguments."
+                }
+            ],
+            "return": {
+                "description": "Tween The first tween that was passed in."
+            },
+            "class": "PIXI.animate.Timeline",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/load.js",
+            "line": 36,
+            "description": "Load the stage class and preload any assets",
+            "itemtype": "method",
+            "name": "load",
+            "params": [
+                {
+                    "name": "StageRef",
+                    "description": "Reference to the stage class",
+                    "type": "Function",
+                    "props": [
+                        {
+                            "name": "assets",
+                            "description": "Assets used to preload",
+                            "type": "Array",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "parent",
+                    "description": "The Container to auto-add the stage to.",
+                    "type": "PIXI.Container"
+                },
+                {
+                    "name": "complete",
+                    "description": "Function to call when complete",
+                    "type": "Function",
+                    "optional": true
+                },
+                {
+                    "name": "assetBaseDir",
+                    "description": "Base root directory",
+                    "type": "String",
+                    "optional": true
+                }
+            ],
+            "class": "PIXI.animate.load",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/load.js",
+            "line": 45,
+            "description": "Load the stage class and preload any assets",
+            "itemtype": "method",
+            "name": "load",
+            "params": [
+                {
+                    "name": "StageRef",
+                    "description": "Reference to the stage class",
+                    "type": "Function",
+                    "props": [
+                        {
+                            "name": "assets",
+                            "description": "Assets used to preload",
+                            "type": "Array",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "parent",
+                    "description": "The Container to auto-add the stage to.",
+                    "type": "PIXI.Container"
+                },
+                {
+                    "name": "assetBaseDir",
+                    "description": "Base root directory",
+                    "type": "String",
+                    "optional": true
+                }
+            ],
+            "class": "PIXI.animate.load",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/load.js",
+            "line": 53,
+            "description": "Load the stage class and preload any assets",
+            "itemtype": "method",
+            "name": "load",
+            "params": [
+                {
+                    "name": "StageRef",
+                    "description": "Reference to the stage class",
+                    "type": "Function",
+                    "props": [
+                        {
+                            "name": "assets",
+                            "description": "Assets used to preload",
+                            "type": "Array",
+                            "optional": true
+                        }
+                    ]
+                },
+                {
+                    "name": "complete",
+                    "description": "The callback function when complete.",
+                    "type": "Function"
+                },
+                {
+                    "name": "assetBaseDir",
+                    "description": "Base root directory",
+                    "type": "String",
+                    "optional": true
+                }
+            ],
+            "class": "PIXI.animate.load",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/mixins/Container.js",
+            "line": 12,
+            "description": "Shortcut for addChild.",
+            "itemtype": "method",
+            "name": "ac",
+            "params": [
+                {
+                    "name": "child*",
+                    "description": "N-number of children",
+                    "type": "*",
+                    "optional": true
+                }
+            ],
+            "return": {
+                "description": "Instance of this container",
+                "type": "Container"
+            },
+            "class": "PIXI.Container",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Container.js",
+            "line": 20,
+            "description": "Extend a container",
+            "itemtype": "method",
+            "name": "extend",
+            "static": 1,
+            "params": [
+                {
+                    "name": "child",
+                    "description": "The child function",
+                    "type": "Container"
+                }
+            ],
+            "return": {
+                "description": "THe child",
+                "type": "Container"
+            },
+            "class": "PIXI.Container",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/DisplayObject.js",
+            "line": 19,
+            "description": "Function to see if this is renderable or not. Useful for setting masks.",
+            "itemtype": "method",
+            "name": "setRenderable",
+            "params": [
+                {
+                    "name": "renderable",
+                    "description": "Make renderable",
+                    "type": "Boolean",
+                    "optional": true,
+                    "optdefault": "false"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Graphics"
+            },
+            "class": "PIXI.DisplayObject",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/DisplayObject.js",
+            "line": 25,
+            "description": "Shortcut to setRenderable.",
+            "itemtype": "method",
+            "name": "re",
+            "params": [
+                {
+                    "name": "renderable",
+                    "description": "Make renderable",
+                    "type": "Boolean",
+                    "optional": true,
+                    "optdefault": "false"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Graphics"
+            },
+            "class": "PIXI.DisplayObject",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/DisplayObject.js",
+            "line": 37,
+            "description": "Shortcut for setTransform.",
+            "itemtype": "method",
+            "name": "tr",
+            "params": [
+                {
+                    "name": "x",
+                    "description": "The X position",
+                    "type": "Number"
+                },
+                {
+                    "name": "y",
+                    "description": "The Y position",
+                    "type": "Number"
+                },
+                {
+                    "name": "scaleX",
+                    "description": "The X Scale value",
+                    "type": "Number"
+                },
+                {
+                    "name": "scaleY",
+                    "description": "The Y Scale value",
+                    "type": "Number"
+                },
+                {
+                    "name": "skewX",
+                    "description": "The X skew value",
+                    "type": "Number"
+                },
+                {
+                    "name": "skewY",
+                    "description": "The Y skew value",
+                    "type": "Number"
+                },
+                {
+                    "name": "pivotX",
+                    "description": "The X pivot value",
+                    "type": "Number"
+                },
+                {
+                    "name": "pivotY",
+                    "description": "The Y pivot value",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "Instance for chaining",
+                "type": "DisplayObject"
+            },
+            "class": "PIXI.DisplayObject",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/DisplayObject.js",
+            "line": 52,
+            "description": "Setter for mask to be able to chain.",
+            "itemtype": "method",
+            "name": "setMask",
+            "params": [
+                {
+                    "name": "mask",
+                    "description": "The mask shape to use",
+                    "type": "PIXI.Graphics"
+                }
+            ],
+            "return": {
+                "description": "Instance for chaining",
+                "type": "DisplayObject"
+            },
+            "class": "PIXI.DisplayObject",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/DisplayObject.js",
+            "line": 58,
+            "description": "Shortcut for setMask.",
+            "itemtype": "method",
+            "name": "ma",
+            "params": [
+                {
+                    "name": "mask",
+                    "description": "The mask shape to use",
+                    "type": "PIXI.Graphics"
+                }
+            ],
+            "return": {
+                "description": "Instance for chaining",
+                "type": "DisplayObject"
+            },
+            "class": "PIXI.DisplayObject",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/DisplayObject.js",
+            "line": 70,
+            "description": "Setter for the alpha",
+            "itemtype": "method",
+            "name": "setAlpha",
+            "params": [
+                {
+                    "name": "alpha",
+                    "description": "The alpha amount to use, from 0 to 1",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "Instance for chaining",
+                "type": "DisplayObject"
+            },
+            "class": "PIXI.DisplayObject",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/DisplayObject.js",
+            "line": 76,
+            "description": "Shortcut for setAlpha.",
+            "itemtype": "method",
+            "name": "a",
+            "params": [
+                {
+                    "name": "alpha",
+                    "description": "The alpha amount to use, from 0 to 1",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "Instance for chaining",
+                "type": "DisplayObject"
+            },
+            "class": "PIXI.DisplayObject",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/DisplayObject.js",
+            "line": 88,
+            "description": "Set the tint values by color.",
+            "itemtype": "method",
+            "name": "setTint",
+            "params": [
+                {
+                    "name": "tint",
+                    "description": "The color value to tint",
+                    "type": "Int"
+                }
+            ],
+            "return": {
+                "description": "Object for chaining",
+                "type": "DisplayObject"
+            },
+            "class": "PIXI.DisplayObject",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/DisplayObject.js",
+            "line": 94,
+            "description": "Shortcut to setTint.",
+            "itemtype": "method",
+            "name": "tn",
+            "params": [
+                {
+                    "name": "tint",
+                    "description": "The red percentage value",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "Object for chaining",
+                "type": "DisplayObject"
+            },
+            "class": "PIXI.DisplayObject",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/DisplayObject.js",
+            "line": 114,
+            "description": "Set additive and multiply color, tinting",
+            "itemtype": "method",
+            "name": "setColorTransform",
+            "params": [
+                {
+                    "name": "r",
+                    "description": "The multiply red value",
+                    "type": "Number"
+                },
+                {
+                    "name": "rA",
+                    "description": "The additive red value",
+                    "type": "Number"
+                },
+                {
+                    "name": "g",
+                    "description": "The multiply green value",
+                    "type": "Number"
+                },
+                {
+                    "name": "gA",
+                    "description": "The additive green value",
+                    "type": "Number"
+                },
+                {
+                    "name": "b",
+                    "description": "The multiply blue value",
+                    "type": "Number"
+                },
+                {
+                    "name": "bA",
+                    "description": "The additive blue value",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "Object for chaining",
+                "type": "DisplayObject"
+            },
+            "class": "PIXI.DisplayObject",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/DisplayObject.js",
+            "line": 125,
+            "description": "Shortcut to setColor.",
+            "itemtype": "method",
+            "name": "c",
+            "params": [
+                {
+                    "name": "r",
+                    "description": "The multiply red value",
+                    "type": "Number"
+                },
+                {
+                    "name": "rA",
+                    "description": "The additive red value",
+                    "type": "Number"
+                },
+                {
+                    "name": "g",
+                    "description": "The multiply green value",
+                    "type": "Number"
+                },
+                {
+                    "name": "gA",
+                    "description": "The additive green value",
+                    "type": "Number"
+                },
+                {
+                    "name": "b",
+                    "description": "The multiply blue value",
+                    "type": "Number"
+                },
+                {
+                    "name": "bA",
+                    "description": "The additive blue value",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "Object for chaining",
+                "type": "DisplayObject"
+            },
+            "class": "PIXI.DisplayObject",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/DisplayObject.js",
+            "line": 149,
+            "description": "The current default color transforming filters",
+            "itemtype": "property",
+            "name": "colorTransformFilter",
+            "type": "PIXI.filters.ColorMatrixFilter",
+            "class": "PIXI.DisplayObject",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/DisplayObject.js",
+            "line": 165,
+            "description": "Extend a container",
+            "itemtype": "method",
+            "name": "extend",
+            "static": 1,
+            "params": [
+                {
+                    "name": "child",
+                    "description": "The child function",
+                    "type": "DisplayObject"
+                }
+            ],
+            "return": {
+                "description": "THe child",
+                "type": "DisplayObject"
+            },
+            "class": "PIXI.DisplayObject",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Graphics.js",
+            "line": 12,
+            "description": "Shortcut for drawCommands.",
+            "itemtype": "method",
+            "name": "d",
+            "params": [
+                {
+                    "name": "commands",
+                    "description": "The commands and parameters to draw",
+                    "type": "Array"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Graphics"
+            },
+            "class": "PIXI.Graphics",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Graphics.js",
+            "line": 18,
+            "description": "Execute a series of commands, this is the name of the short function\nfollowed by the parameters, e.g., `[\"f\", \"#ff0000\", \"r\", 0, 0, 100, 200]`",
+            "itemtype": "method",
+            "name": "drawCommands",
+            "params": [
+                {
+                    "name": "commands",
+                    "description": "The commands and parameters to draw",
+                    "type": "Array"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Graphics"
+            },
+            "class": "PIXI.Graphics",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Graphics.js",
+            "line": 50,
+            "description": "Closes the current path, effectively drawing a line from the current drawing point to the first drawing point specified\nsince the fill or stroke was last set.",
+            "itemtype": "method",
+            "name": "c",
+            "return": {
+                "description": "The Graphics instance the method is called on (useful for chaining calls.)",
+                "type": "Graphics"
+            },
+            "class": "PIXI.Graphics",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Graphics.js",
+            "line": 58,
+            "description": "Alias for addHole",
+            "itemtype": "method",
+            "name": "h",
+            "return": {
+                "description": "The Graphics instance the method is called on (useful for chaining calls.)",
+                "type": "Graphics"
+            },
+            "class": "PIXI.Graphics",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Graphics.js",
+            "line": 65,
+            "description": "Shortcut to moveTo.",
+            "itemtype": "method",
+            "name": "m",
+            "params": [
+                {
+                    "name": "x",
+                    "description": "The x coordinate the drawing point should move to.",
+                    "type": "Number"
+                },
+                {
+                    "name": "y",
+                    "description": "The y coordinate the drawing point should move to.",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "The Graphics instance the method is called on (useful for chaining calls).",
+                "type": "Graphics"
+            },
+            "class": "PIXI.Graphics",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Graphics.js",
+            "line": 74,
+            "description": "Shortcut to lineTo.",
+            "itemtype": "method",
+            "name": "l",
+            "params": [
+                {
+                    "name": "x",
+                    "description": "The x coordinate the drawing point should draw to.",
+                    "type": "Number"
+                },
+                {
+                    "name": "y",
+                    "description": "The y coordinate the drawing point should draw to.",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "The Graphics instance the method is called on (useful for chaining calls.)",
+                "type": "Graphics"
+            },
+            "class": "PIXI.Graphics",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Graphics.js",
+            "line": 83,
+            "description": "Draws a quadratic curve from the current drawing point to (x, y) using the control point (cpx, cpy). For detailed\ninformation, read the <a href=\"http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-quadraticcurveto\">\nwhatwg spec</a>. A tiny API method \"qt\" also exists.",
+            "itemtype": "method",
+            "name": "q",
+            "params": [
+                {
+                    "name": "cpx",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "cpy",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "x",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "y",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "The Graphics instance the method is called on (useful for chaining calls.)",
+                "type": "Graphics"
+            },
+            "class": "PIXI.Graphics",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Graphics.js",
+            "line": 96,
+            "description": "Shortcut to bezierCurveTo.",
+            "itemtype": "method",
+            "name": "b",
+            "params": [
+                {
+                    "name": "cp1x",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "cp1y",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "cp2x",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "cp2y",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "x",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "y",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "The Graphics instance the method is called on (useful for chaining calls.)",
+                "type": "Graphics"
+            },
+            "class": "PIXI.Graphics",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Graphics.js",
+            "line": 109,
+            "description": "Shortcut to beginFill.",
+            "itemtype": "method",
+            "name": "f",
+            "params": [
+                {
+                    "name": "color",
+                    "description": "The hex color value (e.g. 0xFFFFFF)\nnull will result in no fill.",
+                    "type": "Uint"
+                },
+                {
+                    "name": "alpha",
+                    "description": "The alpha value of fill",
+                    "type": "Number",
+                    "optional": true,
+                    "optdefault": "1"
+                }
+            ],
+            "return": {
+                "description": "The Graphics instance the method is called on (useful for chaining calls.)",
+                "type": "Graphics"
+            },
+            "class": "PIXI.Graphics",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Graphics.js",
+            "line": 119,
+            "description": "Shortcut to lineStyle.",
+            "itemtype": "method",
+            "name": "s",
+            "params": [
+                {
+                    "name": "color",
+                    "description": "A CSS compatible color value (ex. \"#FF0000\", \"red\", or \"rgba(255,0,0,0.5)\"). Setting to\nnull will result in no stroke.",
+                    "type": "String"
+                },
+                {
+                    "name": "thickness",
+                    "description": "The thickness of the stroke",
+                    "type": "Number",
+                    "optional": true,
+                    "optdefault": "1"
+                },
+                {
+                    "name": "alpha",
+                    "description": "The alpha value from 0 (invisibile) to 1 (visible)",
+                    "type": "Number",
+                    "optional": true,
+                    "optdefault": "1"
+                }
+            ],
+            "return": {
+                "description": "The Graphics instance the method is called on (useful for chaining calls.)",
+                "type": "Graphics"
+            },
+            "class": "PIXI.Graphics",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Graphics.js",
+            "line": 130,
+            "description": "Shortcut to drawRect.",
+            "itemtype": "method",
+            "name": "dr",
+            "params": [
+                {
+                    "name": "x",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "y",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "w",
+                    "description": "Width of the rectangle",
+                    "type": "Number"
+                },
+                {
+                    "name": "h",
+                    "description": "Height of the rectangle",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "The Graphics instance the method is called on (useful for chaining calls.)",
+                "type": "Graphics"
+            },
+            "class": "PIXI.Graphics",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Graphics.js",
+            "line": 139,
+            "description": "Shortcut to drawRect.",
+            "itemtype": "method",
+            "name": "r",
+            "params": [
+                {
+                    "name": "x",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "y",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "w",
+                    "description": "Width of the rectangle",
+                    "type": "Number"
+                },
+                {
+                    "name": "h",
+                    "description": "Height of the rectangle",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "The Graphics instance the method is called on (useful for chaining calls.)",
+                "type": "Graphics"
+            },
+            "class": "PIXI.Graphics",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Graphics.js",
+            "line": 150,
+            "description": "Shortcut to drawRoundedRect.",
+            "itemtype": "method",
+            "name": "rr",
+            "params": [
+                {
+                    "name": "x",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "y",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "w",
+                    "description": "Width of the rectangle",
+                    "type": "Number"
+                },
+                {
+                    "name": "h",
+                    "description": "Height of the rectangle",
+                    "type": "Number"
+                },
+                {
+                    "name": "radius",
+                    "description": "The corner radius",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "The Graphics instance the method is called on (useful for chaining calls.)",
+                "type": "Graphics"
+            },
+            "class": "PIXI.Graphics",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Graphics.js",
+            "line": 162,
+            "description": "Shortcut to drawRoundedRect.",
+            "itemtype": "method",
+            "name": "rc",
+            "params": [
+                {
+                    "name": "x",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "y",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "w",
+                    "description": "Width of the rectangle",
+                    "type": "Number"
+                },
+                {
+                    "name": "h",
+                    "description": "Height of the rectangle",
+                    "type": "Number"
+                },
+                {
+                    "name": "radiusTL",
+                    "description": "The top left corner radius",
+                    "type": "Number"
+                },
+                {
+                    "name": "radiusTR",
+                    "description": "The top right corner radius",
+                    "type": "Number"
+                },
+                {
+                    "name": "radiusBR",
+                    "description": "The bottom right corner radius",
+                    "type": "Number"
+                },
+                {
+                    "name": "radiusBL",
+                    "description": "The bottom left corner radius",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "The Graphics instance the method is called on (useful for chaining calls.)",
+                "type": "Graphics"
+            },
+            "class": "PIXI.Graphics",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Graphics.js",
+            "line": 177,
+            "description": "Shortcut to drawCircle.",
+            "itemtype": "method",
+            "name": "dc",
+            "params": [
+                {
+                    "name": "x",
+                    "description": "x coordinate center point of circle.",
+                    "type": "Number"
+                },
+                {
+                    "name": "y",
+                    "description": "y coordinate center point of circle.",
+                    "type": "Number"
+                },
+                {
+                    "name": "radius",
+                    "description": "Radius of circle.",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "The Graphics instance the method is called on (useful for chaining calls.)",
+                "type": "Graphics"
+            },
+            "class": "PIXI.Graphics",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Graphics.js",
+            "line": 187,
+            "description": "Shortcut to arc.",
+            "itemtype": "method",
+            "name": "ac",
+            "params": [
+                {
+                    "name": "x",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "y",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "radius",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "startAngle",
+                    "description": "Measured in radians.",
+                    "type": "Number"
+                },
+                {
+                    "name": "endAngle",
+                    "description": "Measured in radians.",
+                    "type": "Number"
+                },
+                {
+                    "name": "anticlockwise",
+                    "description": "",
+                    "type": "Boolean"
+                }
+            ],
+            "return": {
+                "description": "The Graphics instance the method is called on (useful for chaining calls.)",
+                "type": "Graphics"
+            },
+            "class": "PIXI.Graphics",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Graphics.js",
+            "line": 200,
+            "description": "Shortcut to arcTo.",
+            "itemtype": "method",
+            "name": "at",
+            "params": [
+                {
+                    "name": "x1",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "y1",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "x2",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "y2",
+                    "description": "",
+                    "type": "Number"
+                },
+                {
+                    "name": "radius",
+                    "description": "",
+                    "type": "Number"
+                }
+            ],
+            "return": {
+                "description": "The Graphics instance the method is called on (useful for chaining calls.)",
+                "type": "Graphics"
+            },
+            "class": "PIXI.Graphics",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Graphics.js",
+            "line": 212,
+            "description": "Shortcut to drawEllipse.",
+            "itemtype": "method",
+            "name": "de",
+            "params": [
+                {
+                    "name": "x",
+                    "description": "[description]",
+                    "type": "Number"
+                },
+                {
+                    "name": "y",
+                    "description": "[description]",
+                    "type": "Number"
+                },
+                {
+                    "name": "width",
+                    "description": "[description]",
+                    "type": "Number"
+                },
+                {
+                    "name": "height",
+                    "description": "[description]",
+                    "type": "Number"
+                }
+            ],
+            "class": "PIXI.Graphics",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Graphics.js",
+            "line": 222,
+            "description": "Placeholder method for a linear fill. Pixi does not support linear fills,\nso we just pick the first color in colorArray",
+            "itemtype": "method",
+            "name": "lf",
+            "params": [
+                {
+                    "name": "colorArray",
+                    "description": "An array of CSS compatible color values @see `f`",
+                    "type": "Array"
+                }
+            ],
+            "return": {
+                "description": "The Graphics instance the method is called on (useful for chaining calls.)",
+                "type": "Graphics"
+            },
+            "class": "PIXI.Graphics",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Graphics.js",
+            "line": 238,
+            "description": "Placeholder method for a radial fill. Pixi does not support radial fills,\nso we just pick the first color in colorArray",
+            "itemtype": "method",
+            "name": "rf",
+            "params": [
+                {
+                    "name": "colorArray",
+                    "description": "An array of CSS compatible color values @see `f`",
+                    "type": "Array"
+                }
+            ],
+            "return": {
+                "description": "The Graphics instance the method is called on (useful for chaining calls.)",
+                "type": "Graphics"
+            },
+            "class": "PIXI.Graphics",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Graphics.js",
+            "line": 254,
+            "description": "Placeholder method for a beginBitmapFill. Pixi does not support bitmap fills.",
+            "itemtype": "method",
+            "name": "bf",
+            "return": {
+                "description": "The Graphics instance the method is called on (useful for chaining calls.)",
+                "type": "Graphics"
+            },
+            "class": "PIXI.Graphics",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Graphics.js",
+            "line": 268,
+            "description": "Placeholder method for a setStrokeDash. Pixi does not support dashed strokes.",
+            "itemtype": "method",
+            "name": "sd",
+            "return": {
+                "description": "The Graphics instance the method is called on (useful for chaining calls.)",
+                "type": "Graphics"
+            },
+            "class": "PIXI.Graphics",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Graphics.js",
+            "line": 282,
+            "description": "Placeholder method for a beginBitmapStroke. Pixi does not support bitmap strokes.",
+            "itemtype": "method",
+            "name": "bs",
+            "return": {
+                "description": "The Graphics instance the method is called on (useful for chaining calls.)",
+                "type": "Graphics"
+            },
+            "class": "PIXI.Graphics",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Graphics.js",
+            "line": 296,
+            "description": "Placeholder method for a beginLinearGradientStroke. Pixi does not support gradient strokes.",
+            "itemtype": "method",
+            "name": "ls",
+            "return": {
+                "description": "The Graphics instance the method is called on (useful for chaining calls.)",
+                "type": "Graphics"
+            },
+            "class": "PIXI.Graphics",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Graphics.js",
+            "line": 310,
+            "description": "Placeholder method for a beginRadialGradientStroke. Pixi does not support gradient strokes.",
+            "itemtype": "method",
+            "name": "rs",
+            "return": {
+                "description": "The Graphics instance the method is called on (useful for chaining calls.)",
+                "type": "Graphics"
+            },
+            "class": "PIXI.Graphics",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Sprite.js",
+            "line": 12,
+            "description": "Extend a container",
+            "itemtype": "method",
+            "name": "extend",
+            "static": 1,
+            "params": [
+                {
+                    "name": "child",
+                    "description": "The child function",
+                    "type": "Sprite"
+                }
+            ],
+            "return": {
+                "description": "THe child",
+                "type": "Sprite"
+            },
+            "class": "PIXI.Sprite",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Text.js",
+            "line": 12,
+            "description": "Setter for the alignment, also sets the anchor point\nto make sure the positioning is correct.",
+            "itemtype": "method",
+            "name": "setAlign",
+            "params": [
+                {
+                    "name": "align",
+                    "description": "Either, center, right, left",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "For chaining",
+                "type": "Text"
+            },
+            "class": "PIXI.Text",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Text.js",
+            "line": 19,
+            "description": "Shortcut for `setAlign`.",
+            "itemtype": "method",
+            "name": "g",
+            "params": [
+                {
+                    "name": "align",
+                    "description": "Either, center (0), right (1), left (-1)",
+                    "type": "String|int"
+                }
+            ],
+            "return": {
+                "description": "For chaining",
+                "type": "Text"
+            },
+            "class": "PIXI.Text",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Text.js",
+            "line": 73,
+            "description": "Set the style, a chainable version of style setter",
+            "itemtype": "method",
+            "name": "setStyle",
+            "params": [
+                {
+                    "name": "style",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "instance of text field",
+                "type": "PIXI.Text"
+            },
+            "class": "PIXI.Text",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Text.js",
+            "line": 79,
+            "description": "Shortcut for `setStyle`.",
+            "itemtype": "method",
+            "name": "ss",
+            "params": [
+                {
+                    "name": "style",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "instance of text field",
+                "type": "PIXI.Text"
+            },
+            "class": "PIXI.Text",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Text.js",
+            "line": 100,
+            "description": "Initial setting of the drop shadow.",
+            "itemtype": "method",
+            "name": "setShadow",
+            "params": [
+                {
+                    "name": "color",
+                    "description": "The color to set",
+                    "type": "String",
+                    "optional": true,
+                    "optdefault": "\"#000000\""
+                },
+                {
+                    "name": "angle",
+                    "description": "The angle of offset, in radians",
+                    "type": "Number",
+                    "optional": true,
+                    "optdefault": "Math.PI/4"
+                },
+                {
+                    "name": "distance",
+                    "description": "The offset distance",
+                    "type": "Number",
+                    "optional": true,
+                    "optdefault": "5"
+                }
+            ],
+            "return": {
+                "description": "For chaining",
+                "type": "Text"
+            },
+            "class": "PIXI.Text",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Text.js",
+            "line": 108,
+            "description": "Shortcut for setShadow.",
+            "itemtype": "method",
+            "name": "sh",
+            "params": [
+                {
+                    "name": "color",
+                    "description": "The color to set",
+                    "type": "String",
+                    "optional": true,
+                    "optdefault": "\"#000000\""
+                },
+                {
+                    "name": "angle",
+                    "description": "The angle of offset, in radians",
+                    "type": "Number",
+                    "optional": true,
+                    "optdefault": "Math.PI/4"
+                },
+                {
+                    "name": "distance",
+                    "description": "The offset distance",
+                    "type": "Number",
+                    "optional": true,
+                    "optdefault": "5"
+                }
+            ],
+            "return": {
+                "description": "For chaining",
+                "type": "Text"
+            },
+            "class": "PIXI.Text",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/mixins/Text.js",
+            "line": 132,
+            "description": "Check if a value is undefined, fallback to default value",
+            "itemtype": "method",
+            "name": "isUndefinedOr",
+            "access": "private",
+            "tagname": "",
+            "params": [
+                {
+                    "name": "value",
+                    "description": "The value to check",
+                    "type": "*"
+                },
+                {
+                    "name": "defaultValue",
+                    "description": "The default value if value is undefined",
+                    "type": "*"
+                }
+            ],
+            "return": {
+                "description": "The either the value or the default value",
+                "type": "*"
+            },
+            "class": "PIXI.Text",
+            "module": "PixiAnimate",
+            "namespace": "PIXI"
+        },
+        {
+            "file": "src/plugins/springroll/FlashArt.js",
+            "line": 26,
+            "description": "Reference to the node element",
+            "itemtype": "property",
+            "name": "dom",
+            "type": "NodeElement",
+            "class": "PIXI.animate.FlashArt",
+            "module": "SpringRoll Plugin",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/plugins/springroll/FlashArt.js",
+            "line": 32,
+            "description": "The collection of loaded symbols by name",
+            "itemtype": "property",
+            "name": "symbols",
+            "type": "Array",
+            "class": "PIXI.animate.FlashArt",
+            "module": "SpringRoll Plugin",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/plugins/springroll/FlashArt.js",
+            "line": 38,
+            "description": "The name of the output lib name",
+            "itemtype": "property",
+            "name": "libName",
+            "type": "String",
+            "default": "'lib'",
+            "class": "PIXI.animate.FlashArt",
+            "module": "SpringRoll Plugin",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/plugins/springroll/FlashArt.js",
+            "line": 45,
+            "description": "The name of the output lib name",
+            "itemtype": "property",
+            "name": "id",
+            "type": "String",
+            "class": "PIXI.animate.FlashArt",
+            "module": "SpringRoll Plugin",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/plugins/springroll/FlashArt.js",
+            "line": 58,
+            "description": "The collection of all symbols and assets",
+            "itemtype": "property",
+            "name": "globalSymbols",
+            "type": "Object",
+            "static": 1,
+            "access": "private",
+            "tagname": "",
+            "class": "PIXI.animate.FlashArt",
+            "module": "SpringRoll Plugin",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/plugins/springroll/FlashArt.js",
+            "line": 66,
+            "description": "Get the name of all the library elements of the dom text",
+            "itemtype": "method",
+            "name": "parseSymbols",
+            "params": [
+                {
+                    "name": "text",
+                    "description": "The DOM text contents",
+                    "type": "String"
+                }
+            ],
+            "class": "PIXI.animate.FlashArt",
+            "module": "SpringRoll Plugin",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/plugins/springroll/FlashArt.js",
+            "line": 115,
+            "description": "Cleanup the Flash library that's been loaded",
+            "itemtype": "method",
+            "name": "destroy",
+            "class": "PIXI.animate.FlashArt",
+            "module": "SpringRoll Plugin",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/plugins/springroll/FlashArtTask.js",
+            "line": 33,
+            "description": "The path to the flash asset",
+            "itemtype": "property",
+            "name": "src",
+            "type": "String",
+            "class": "PIXI.animate.FlashArtTask",
+            "module": "SpringRoll Plugin",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/plugins/springroll/FlashArtTask.js",
+            "line": 39,
+            "description": "Any image, atlas, or SpriteSheet assets that should be loaded along with this piece\nof flash art.",
+            "itemtype": "property",
+            "name": "images",
+            "type": "Array",
+            "class": "PIXI.animate.FlashArtTask",
+            "module": "SpringRoll Plugin",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/plugins/springroll/FlashArtTask.js",
+            "line": 46,
+            "description": "The name of the window object library items hang on",
+            "itemtype": "property",
+            "name": "libName",
+            "type": "String",
+            "class": "PIXI.animate.FlashArtTask",
+            "module": "SpringRoll Plugin",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/plugins/springroll/FlashArtTask.js",
+            "line": 52,
+            "description": "The name of the window object images hang on",
+            "itemtype": "property",
+            "name": "imagesName",
+            "type": "String",
+            "class": "PIXI.animate.FlashArtTask",
+            "module": "SpringRoll Plugin",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/plugins/springroll/FlashArtTask.js",
+            "line": 62,
+            "description": "Test if we should run this task",
+            "itemtype": "method",
+            "name": "test",
+            "static": 1,
+            "params": [
+                {
+                    "name": "asset",
+                    "description": "The asset to check",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "If the asset is compatible with this asset",
+                "type": "Boolean"
+            },
+            "class": "PIXI.animate.FlashArtTask",
+            "module": "SpringRoll Plugin",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/plugins/springroll/FlashArtTask.js",
+            "line": 78,
+            "description": "Start the task",
+            "itemtype": "method",
+            "name": "start",
+            "params": [
+                {
+                    "name": "callback",
+                    "description": "Callback when finished",
+                    "type": "Function"
+                }
+            ],
+            "class": "PIXI.animate.FlashArtTask",
+            "module": "SpringRoll Plugin",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/plugins/springroll/MovieClipInstance.js",
+            "line": 23,
+            "description": "Required to test clip",
+            "itemtype": "method",
+            "name": "test",
+            "static": 1,
+            "params": [
+                {
+                    "name": "clip",
+                    "description": "The object to test",
+                    "type": "*"
+                }
+            ],
+            "return": {
+                "description": "If the clip is compatible with this plugin",
+                "type": "Boolean"
+            },
+            "class": "PIXI.animate.MovieClipInstance",
+            "module": "SpringRoll Plugin",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/plugins/springroll/SpriteSheetTask.js",
+            "line": 35,
+            "description": "Test if we should run this task",
+            "itemtype": "method",
+            "name": "test",
+            "static": 1,
+            "params": [
+                {
+                    "name": "asset",
+                    "description": "The asset to check",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "If the asset is compatible with this asset",
+                "type": "Boolean"
+            },
+            "class": "PIXI.animate.SpriteSheetTask",
+            "module": "SpringRoll Plugin",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/plugins/springroll/SpriteSheetTask.js",
+            "line": 50,
+            "description": "Start the task",
+            "itemtype": "method",
+            "name": "start",
+            "params": [
+                {
+                    "name": "callback",
+                    "description": "Callback when finished",
+                    "type": "Function"
+                }
+            ],
+            "class": "PIXI.animate.SpriteSheetTask",
+            "module": "SpringRoll Plugin",
+            "namespace": "PIXI.animate"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "replacing incorrect tag: function with method",
+            "line": " src/animate/load.js:36"
+        },
+        {
+            "message": "replacing incorrect tag: function with method",
+            "line": " src/animate/load.js:45"
+        },
+        {
+            "message": "replacing incorrect tag: function with method",
+            "line": " src/animate/load.js:53"
+        }
+    ]
+}

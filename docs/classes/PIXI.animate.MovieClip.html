@@ -1,0 +1,2199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://yui-s.yahooapis.com/3.8.0/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.ico">
+    <script src="https://yui-s.yahooapis.com/3.10.1/build/yui/yui-min.js"></script>
+	<title>PixiAnimate v0.3.0 API Documentation : PIXI.animate.MovieClip</title>  
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+                <h1><a href="https://github.com/jiborobot/pixi-animate"><img src="../assets/css/logo.png" title="PixiAnimate"></a></h1>
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Documentation for: 0.3.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+                    <h2 class="off-left">APIs</h2>
+                    <div id="api-tabview" class="tabview">
+                        <div id="api-tabview-filter">
+                            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+                        </div>
+                		<ul class="tabs">
+                            <li><a href="#api-classes">Classes</a></li>
+                			<li><a href="#api-modules">Modules</a></li>
+                        </ul>
+                        <div id="api-tabview-panel">
+                            <ul id="api-classes" class="apis classes">
+                                <li><a href="../classes/PIXI.animate.FlashArt.html">PIXI.animate.FlashArt</a></li>
+                                <li><a href="../classes/PIXI.animate.FlashArtTask.html">PIXI.animate.FlashArtTask</a></li>
+                                <li><a href="../classes/PIXI.animate.load.html">PIXI.animate.load</a></li>
+                                <li><a href="../classes/PIXI.animate.MovieClip.html">PIXI.animate.MovieClip</a></li>
+                                <li><a href="../classes/PIXI.animate.MovieClipInstance.html">PIXI.animate.MovieClipInstance</a></li>
+                                <li><a href="../classes/PIXI.animate.ShapesCache.html">PIXI.animate.ShapesCache</a></li>
+                                <li><a href="../classes/PIXI.animate.SpriteSheetTask.html">PIXI.animate.SpriteSheetTask</a></li>
+                                <li><a href="../classes/PIXI.animate.SymbolLoader.html">PIXI.animate.SymbolLoader</a></li>
+                                <li><a href="../classes/PIXI.animate.Timeline.html">PIXI.animate.Timeline</a></li>
+                                <li><a href="../classes/PIXI.Container.html">PIXI.Container</a></li>
+                                <li><a href="../classes/PIXI.DisplayObject.html">PIXI.DisplayObject</a></li>
+                                <li><a href="../classes/PIXI.Graphics.html">PIXI.Graphics</a></li>
+                                <li><a href="../classes/PIXI.Sprite.html">PIXI.Sprite</a></li>
+                                <li><a href="../classes/PIXI.Text.html">PIXI.Text</a></li>
+                            </ul>
+                
+                            <ul id="api-modules" class="apis modules">
+                                <li><a href="../modules/PixiAnimate.html">PixiAnimate</a></li>
+                                <li><a href="../modules/SpringRoll Plugin.html">SpringRoll Plugin</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+            <div id="api-options">
+                    Show:
+                    <label for="api-show-inherited">
+                        <input type="checkbox" id="api-show-inherited" checked>
+                        Inherited
+                    </label>
+            
+                    <label for="api-show-protected">
+                        <input type="checkbox" id="api-show-protected">
+                        Protected
+                    </label>
+            
+                    <label for="api-show-private">
+                        <input type="checkbox" id="api-show-private">
+                        Private
+                    </label>
+                    <label for="api-show-deprecated">
+                        <input type="checkbox" id="api-show-deprecated">
+                        Deprecated
+                    </label>
+            
+                </div>            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<h1>PIXI.animate.MovieClip Class</h1>
+<div class="box meta">
+
+        <div class="extends">
+            Extends <a href="../classes/PIXI.Container.html" class="crosslink">PIXI.Container</a>
+        </div>
+
+        <div class="foundat">
+            Defined in: <a href="../files/src_animate_MovieClip.js.html#l13"><code>PIXI.animate.MovieClip:13</code></a>
+        </div>
+
+            Module: <a href="../modules/PixiAnimate.html">PixiAnimate</a>
+
+</div>
+
+
+<div class="box intro">
+    <p>Provide timeline playback of movieclip</p>
+
+</div>
+
+    <div class="constructor">
+        <h2>Constructor</h2>
+        <div id="method_PIXI.animate.MovieClip" class="method item">
+            <h3 class="name"><code>PIXI.animate.MovieClip</code></h3>
+        
+                <div class="args">
+                    <span class="paren">(</span><ul class="args-list inline commas">
+                        <li class="arg">
+                                <code class="optional">[options]</code>
+                        </li>
+                    </ul><span class="paren">)</span>
+                </div>
+        
+        
+        
+        
+        
+        
+        
+        
+            <div class="meta">
+                        <p>
+                        Defined in
+                <a href="../files/src_animate_MovieClip.js.html#l13"><code>PIXI.animate.MovieClip:13</code></a>
+                </p>
+        
+        
+        
+            </div>
+        
+            <div class="description">
+                
+            </div>
+        
+                <div class="params">
+                    <h4>Parameters:</h4>
+        
+                    <ul class="params-list">
+                        <li class="param">
+                                <code class="param-name optional">[options]</code>
+                                <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a> | Int</span>
+                                <span class="flag optional" title="This parameter is optional.">optional</span>
+        
+        
+                            <div class="param-description">
+                                <p>The options object or the mode to play</p>
+        
+                            </div>
+        
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name optional">[mode=0]</code>
+                                            <span class="type">Int</span>
+                                            <span class="flag optional" title="This parameter is optional.">optional</span>
+        
+                                        <div class="param-description">
+                                            <p>The playback mode default is independent (0),</p>
+        
+                                        </div>
+        
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name optional">[startPosition=0]</code>
+                                            <span class="type">Int</span>
+                                            <span class="flag optional" title="This parameter is optional.">optional</span>
+        
+                                        <div class="param-description">
+                                            <p>The starting frame</p>
+        
+                                        </div>
+        
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name optional">[loop=true]</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                                            <span class="flag optional" title="This parameter is optional.">optional</span>
+        
+                                        <div class="param-description">
+                                            <p>If playback is looped</p>
+        
+                                        </div>
+        
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name optional">[labels]</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                                            <span class="flag optional" title="This parameter is optional.">optional</span>
+        
+                                        <div class="param-description">
+                                            <p>The frame labels map of label to frames</p>
+        
+                                        </div>
+        
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name optional">[duration]</code>
+                                            <span class="type">Int</span>
+                                            <span class="flag optional" title="This parameter is optional.">optional</span>
+        
+                                        <div class="param-description">
+                                            <p>The duration, if no duration is provided, auto determines length</p>
+        
+                                        </div>
+        
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name optional">[framerate=24]</code>
+                                            <span class="type">Int</span>
+                                            <span class="flag optional" title="This parameter is optional.">optional</span>
+        
+                                        <div class="param-description">
+                                            <p>The framerate to use for independent mode</p>
+        
+                                        </div>
+        
+                                    </li>
+                                </ul>
+                        </li>
+                    </ul>
+                </div>
+        
+        
+        </div>
+    </div>
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+            <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods extends">
+                            <li class="index-item method protected">
+                                <a href="#method__goto">_goto</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method__reset">_reset</a>
+
+                            </li>
+                            <li class="index-item method protected">
+                                <a href="#method__setTimelinePostion">_setTimelinePostion</a>
+
+                            </li>
+                            <li class="index-item method protected">
+                                <a href="#method__updateTimeline">_updateTimeline</a>
+
+                            </li>
+                            <li class="index-item method inherited">
+                                <a href="#method_ac">ac</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_addAction">addAction</a>
+
+                            </li>
+                            <li class="index-item method private">
+                                <a href="#method_addKeyframes">addKeyframes</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_addTimedChild">addTimedChild</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_addTween">addTween</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_advance">advance</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_at">at</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_extend">extend</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getCurrentLabel">getCurrentLabel</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_getLabels">getLabels</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_gotoAndPlay">gotoAndPlay</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_gotoAndStop">gotoAndStop</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_play">play</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_stop">stop</a>
+
+                            </li>
+                            <li class="index-item method">
+                                <a href="#method_tw">tw</a>
+
+                            </li>
+                    </ul>
+                </div>
+
+                <div class="index-section properties">
+                    <h3>Properties</h3>
+
+                    <ul class="index-list properties extends">
+                            <li class="index-item property protected">
+                                <a href="#property__actions">_actions</a>
+
+                            </li>
+                            <li class="index-item property private">
+                                <a href="#property__duration">_duration</a>
+
+                            </li>
+                            <li class="index-item property private">
+                                <a href="#property__frameDuration">_frameDuration</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property__framerate">_framerate</a>
+
+                            </li>
+                            <li class="index-item property private">
+                                <a href="#property__prevPos">_prevPos</a>
+
+                            </li>
+                            <li class="index-item property private">
+                                <a href="#property__synchOffset">_synchOffset</a>
+
+                            </li>
+                            <li class="index-item property private">
+                                <a href="#property__t">_t</a>
+
+                            </li>
+                            <li class="index-item property protected">
+                                <a href="#property__timedChildTimelines">_timedChildTimelines</a>
+
+                            </li>
+                            <li class="index-item property protected">
+                                <a href="#property__timelines">_timelines</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_actionsEnabled">actionsEnabled</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_autoReset">autoReset</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_currentFrame">currentFrame</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_currentLabel">currentLabel</a>
+
+                            </li>
+                            <li class="index-item property public">
+                                <a href="#property_elapsedTime">elapsedTime</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_framerate">framerate</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_INDEPENDENT">INDEPENDENT</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_labels">labels</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_loop">loop</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_mode">mode</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_paused">paused</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_selfAdvance">selfAdvance</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_SINGLE_FRAME">SINGLE_FRAME</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_startPosition">startPosition</a>
+
+                            </li>
+                            <li class="index-item property">
+                                <a href="#property_SYNCHED">SYNCHED</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                    </ul>
+                </div>
+
+
+        </div>
+
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
+                    <div id="method__goto" class="method item protected">
+                        <h3 class="name"><code>_goto</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>positionOrLabel</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                            <span class="flag protected">protected</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l774"><code>_goto:774</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">positionOrLabel</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a> | <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The animation name or frame number to go to.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method__reset" class="method item private">
+                        <h3 class="name"><code>_reset</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l800"><code>_reset:800</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="method__setTimelinePostion" class="method item protected">
+                        <h3 class="name"><code>_setTimelinePostion</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>startFrame</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>currentFrame</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>doActions</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                            <span class="flag protected">protected</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l838"><code>_setTimelinePostion:838</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Set the timeline position</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">startFrame</code>
+                                            <span class="type">Int</span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">currentFrame</code>
+                                            <span class="type">Int</span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">doActions</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                             
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method__updateTimeline" class="method item protected">
+                        <h3 class="name"><code>_updateTimeline</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                            <span class="flag protected">protected</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l811"><code>_updateTimeline:811</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="method_ac" class="method item inherited">
+                        <h3 class="name"><code>ac</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code class="optional">[child*]</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type">Container</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>Inherited from
+                                    <a href="../classes/PIXI.Container.html#method_ac">PIXI.Container</a>:
+                            <a href="../files/src_mixins_Container.js.html#l12"><code>ac:12</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            Shortcut for addChild.
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name optional">[child*]</code>
+                                            <span class="type"></span>
+                                            <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                    
+                                        <div class="param-description">
+                                            N-number of children
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">Container</span>:
+                                        Instance of this container
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_addAction" class="method item">
+                        <h3 class="name"><code>addAction</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>callback</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>startFrame</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type">MovieClip</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l673"><code>addAction:673</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Handle frame actions, callback is bound to the instance of the MovieClip</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">callback</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The clip call on a certain frame</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">startFrame</code>
+                                            <span class="type">Int</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The starting frame</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">MovieClip</span>:
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_addKeyframes" class="method item private">
+                        <h3 class="name"><code>addKeyframes</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>instance</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>keyframes</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l415"><code>addKeyframes:415</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Convenience method for setting multiple frames at once and adding the child</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">instance</code>
+                                            <span class="type"><a href="../classes/PIXI.DisplayObject.html" class="crosslink">PIXI.DisplayObject</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The clip to animate</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">keyframes</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The collection of keyframe objects or data string, the key is frame number</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_addTimedChild" class="method item">
+                        <h3 class="name"><code>addTimedChild</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>instance</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>startFrame</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code class="optional">[duration=1]</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code class="optional">[keyframes]</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type">MovieClip</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l585"><code>addTimedChild:585</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Add a child to show for a certain number of frames before automatic removal.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">instance</code>
+                                            <span class="type"><a href="../classes/PIXI.DisplayObject.html" class="crosslink">PIXI.DisplayObject</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The clip to show</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">startFrame</code>
+                                            <span class="type">Int</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The starting frame</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name optional">[duration=1]</code>
+                                            <span class="type">Int</span>
+                                            <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The number of frames to display the child before removing it.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name optional">[keyframes]</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a> | <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+                                            <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The collection of static keyframes to add</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">MovieClip</span>:
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_addTween" class="method item">
+                        <h3 class="name"><code>addTween</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>instance</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>properties</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code>startFrame</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code class="optional">[duration=0]</code>
+                                    </li>
+                                    <li class="arg">
+                                            <code class="optional">[ease]</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type">MovieClip</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l530"><code>addTween:530</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Add a tween to the clip</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">instance</code>
+                                            <span class="type"><a href="../classes/PIXI.DisplayObject.html" class="crosslink">PIXI.DisplayObject</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The clip to tween</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">properties</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object" class="crosslink external" target="_blank">Object</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The property or property to tween</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name">startFrame</code>
+                                            <span class="type">Int</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The frame to start tweening</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name optional">[duration=0]</code>
+                                            <span class="type">Int</span>
+                                            <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>Number of frames to tween. If 0, then the properties are set
+                    with no tweening.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                    <li class="param">
+                                            <code class="param-name optional">[ease]</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function" class="crosslink external" target="_blank">Function</a></span>
+                                            <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>An optional easing function that takes the tween time from 0-1.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">MovieClip</span>:
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_advance" class="method item">
+                        <h3 class="name"><code>advance</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code class="optional">[time]</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l740"><code>advance:740</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Advances the playhead. This occurs automatically each tick by default.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name optional">[time]</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                                            <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The amount of time in seconds to advance by. Only applicable if framerate is set.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_at" class="method item">
+                        <h3 class="name"><code>at</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                            <span class="returns-inline">
+                                <span class="type">MovieClip</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l594"><code>at:594</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Alias for method <code>addTimedChild</code></p>
+                    
+                        </div>
+                    
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">MovieClip</span>:
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_extend" class="method item">
+                        <h3 class="name"><code>extend</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>child</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                            <span class="returns-inline">
+                                <span class="type">MovieClip</span>
+                            </span>
+                    
+                    
+                    
+                    
+                            <span class="flag static">static</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l944"><code>extend:944</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Extend a container</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">child</code>
+                                            <span class="type">MovieClip</span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The child function</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">MovieClip</span>:
+                                        <p>THe child</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_getCurrentLabel" class="method item">
+                        <h3 class="name"><code>getCurrentLabel</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                            <span class="returns-inline">
+                                <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l314"><code>getCurrentLabel:314</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Returns the name of the label on or immediately before the current frame.</p>
+                    
+                        </div>
+                    
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>:
+                                        <p>The name of the current label or null if there is no label.</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_getLabels" class="method item">
+                        <h3 class="name"><code>getLabels</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                            <span class="returns-inline">
+                                <span class="type">ArrayObject</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l303"><code>getLabels:303</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Returns a sorted list of the labels defined on this AdvancedMovieClip.</p>
+                    
+                        </div>
+                    
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">ArrayObject</span>:
+                                        <p>A sorted array of objects with label and position (aka frame)
+                    properties.</p>
+                    
+                                </div>
+                            </div>
+                    
+                    </div>
+                    <div id="method_gotoAndPlay" class="method item">
+                        <h3 class="name"><code>gotoAndPlay</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>positionOrLabel</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l718"><code>gotoAndPlay:718</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Advances this movie clip to the specified position or label and sets paused to false.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">positionOrLabel</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a> | <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The animation name or frame number to go to.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_gotoAndStop" class="method item">
+                        <h3 class="name"><code>gotoAndStop</code></h3>
+                    
+                            <div class="args">
+                                <span class="paren">(</span><ul class="args-list inline commas">
+                                    <li class="arg">
+                                            <code>positionOrLabel</code>
+                                    </li>
+                                </ul><span class="paren">)</span>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l729"><code>gotoAndStop:729</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Advances this movie clip to the specified position or label and sets paused to true.</p>
+                    
+                        </div>
+                    
+                            <div class="params">
+                                <h4>Parameters:</h4>
+                    
+                                <ul class="params-list">
+                                    <li class="param">
+                                            <code class="param-name">positionOrLabel</code>
+                                            <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a> | <a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                                        <div class="param-description">
+                                            <p>The animation or frame name to go to.</p>
+                    
+                                        </div>
+                    
+                                    </li>
+                                </ul>
+                            </div>
+                    
+                    
+                    </div>
+                    <div id="method_play" class="method item">
+                        <h3 class="name"><code>play</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l700"><code>play:700</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Sets paused to false.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="method_stop" class="method item">
+                        <h3 class="name"><code>stop</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l709"><code>stop:709</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Sets paused to true.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="method_tw" class="method item">
+                        <h3 class="name"><code>tw</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                            <span class="returns-inline">
+                                <span class="type">MovieClip</span>
+                            </span>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l541"><code>tw:541</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Alias for method <code>addTween</code></p>
+                    
+                        </div>
+                    
+                    
+                            <div class="returns">
+                                <h4>Returns:</h4>
+                    
+                                <div class="returns-description">
+                                            <span class="type">MovieClip</span>:
+                                </div>
+                            </div>
+                    
+                    </div>
+            </div>
+
+            <div id="properties" class="api-class-tabpanel">
+                <h2 class="off-left">Properties</h2>
+
+                    <div id="property__actions" class="property item protected">
+                        <h3 class="name"><code>_actions</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+                    
+                    
+                            <span class="flag protected">protected</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l223"><code>_actions:223</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Array of frame scripts, indexed by frame.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property__duration" class="property item private">
+                        <h3 class="name"><code>_duration</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l186"><code>_duration:186</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The total time in seconds for the animation. This is changed when setting the framerate.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> 0</p>
+                    
+                    
+                    </div>
+                    <div id="property__frameDuration" class="property item private">
+                        <h3 class="name"><code>_frameDuration</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l195"><code>_frameDuration:195</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The total duration in frames for the animation.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> 0</p>
+                    
+                    
+                    </div>
+                    <div id="property__framerate" class="property item">
+                        <h3 class="name"><code>_framerate</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l175"><code>_framerate:175</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>By default MovieClip instances advance one frame per tick. Specifying a framerate for the MovieClip
+                    will cause it to advance based on elapsed time between ticks as appropriate to maintain the target
+                    framerate.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> 0</p>
+                    
+                    
+                    </div>
+                    <div id="property__prevPos" class="property item private">
+                        <h3 class="name"><code>_prevPos</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l157"><code>_prevPos:157</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                            <p><strong>Default:</strong> -1</p>
+                    
+                    
+                    </div>
+                    <div id="property__synchOffset" class="property item private">
+                        <h3 class="name"><code>_synchOffset</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l149"><code>_synchOffset:149</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            
+                        </div>
+                    
+                            <p><strong>Default:</strong> 0</p>
+                    
+                    
+                    </div>
+                    <div id="property__t" class="property item private">
+                        <h3 class="name"><code>_t</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l165"><code>_t:165</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Note - changed from default: When the MovieClip is framerate independent, this is the time
+                    elapsed from frame 0 in seconds.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> 0</p>
+                    
+                    
+                    </div>
+                    <div id="property__timedChildTimelines" class="property item protected">
+                        <h3 class="name"><code>_timedChildTimelines</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+                    
+                    
+                            <span class="flag protected">protected</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l213"><code>_timedChildTimelines:213</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Array of child timelines denoting if a child is actively a child of this movieclip
+                    on any given frame. Each element in the _timedChildTimelines is an array with a 'target'
+                    property, and is an array of boolean values indexed by frame.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property__timelines" class="property item protected">
+                        <h3 class="name"><code>_timelines</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+                    
+                    
+                            <span class="flag protected">protected</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l204"><code>_timelines:204</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Standard tween timelines for all objects. Each element in the _timelines array
+                    is a Timeline object - an array of tweens for one target, in order of occurrence.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_actionsEnabled" class="property item">
+                        <h3 class="name"><code>actionsEnabled</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l127"><code>actionsEnabled:127</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>If true, actions in this MovieClip's tweens will be run when the playhead advances.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> true</p>
+                    
+                    
+                    </div>
+                    <div id="property_autoReset" class="property item">
+                        <h3 class="name"><code>autoReset</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l135"><code>autoReset:135</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>If true, the MovieClip will automatically be reset to its first frame whenever the timeline adds
+                    it back onto the display list. This only applies to MovieClip instances with mode=INDEPENDENT.
+                    <br><br>
+                    For example, if you had a character animation with a "body" child MovieClip instance
+                    with different costumes on each frame, you could set body.autoReset = false, so that
+                    you can manually change the frame it is on, without worrying that it will be reset
+                    automatically.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> true</p>
+                    
+                    
+                    </div>
+                    <div id="property_currentFrame" class="property item">
+                        <h3 class="name"><code>currentFrame</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l84"><code>currentFrame:84</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The current frame of the movieclip.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> 0</p>
+                    
+                    
+                    </div>
+                    <div id="property_currentLabel" class="property item">
+                        <h3 class="name"><code>currentLabel</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l340"><code>currentLabel:340</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Returns the name of the label on or immediately before the current frame.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_elapsedTime" class="property item public">
+                        <h3 class="name"><code>elapsedTime</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                            <span class="flag public">public</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l363"><code>elapsedTime:363</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>When the MovieClip is framerate independent, this is the time elapsed from frame 0 in seconds.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> 0</p>
+                    
+                    
+                    </div>
+                    <div id="property_framerate" class="property item">
+                        <h3 class="name"><code>framerate</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l382"><code>framerate:382</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>By default MovieClip instances advance one frame per tick. Specifying a framerate for the MovieClip
+                    will cause it to advance based on elapsed time between ticks as appropriate to maintain the target
+                    framerate.</p>
+                    <p>For example, if a MovieClip with a framerate of 10 is placed on a Stage being updated at 40fps, then the MovieClip will
+                    advance roughly one frame every 4 ticks. This will not be exact, because the time between each tick will
+                    vary slightly between frames.</p>
+                    <p>This feature is dependent on the tick event object (or an object with an appropriate "delta" property) being
+                    passed into Stage/update.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> 0</p>
+                    
+                    
+                    </div>
+                    <div id="property_INDEPENDENT" class="property item">
+                        <h3 class="name"><code>INDEPENDENT</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                    
+                    
+                            <span class="flag static">static</span>
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l246"><code>INDEPENDENT:246</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The MovieClip will advance independently of its parent, even if its parent is paused.
+                    This is the default mode.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> 0</p>
+                    
+                    
+                    </div>
+                    <div id="property_labels" class="property item">
+                        <h3 class="name"><code>labels</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array" class="crosslink external" target="_blank">Array</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l333"><code>labels:333</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Returns an array of objects with label and position (aka frame) properties, sorted by position.</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+                    <div id="property_loop" class="property item">
+                        <h3 class="name"><code>loop</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l76"><code>loop:76</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Indicates whether this MovieClip should loop when it reaches the end of its timeline.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> true</p>
+                    
+                    
+                    </div>
+                    <div id="property_mode" class="property item">
+                        <h3 class="name"><code>mode</code></h3>
+                        <span class="type">Int</span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l59"><code>mode:59</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Controls how this MovieClip advances its time. Must be one of 0 (INDEPENDENT), 1 (SINGLE_FRAME), or 2 (SYNCHED).
+                    See each constant for a description of the behaviour.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> null</p>
+                    
+                    
+                    </div>
+                    <div id="property_paused" class="property item">
+                        <h3 class="name"><code>paused</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l119"><code>paused:119</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>If true, the MovieClip's position will not advance when ticked.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> false</p>
+                    
+                    
+                    </div>
+                    <div id="property_selfAdvance" class="property item">
+                        <h3 class="name"><code>selfAdvance</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean" class="crosslink external" target="_blank">Boolean</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l111"><code>selfAdvance:111</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>If true, this movieclip will animate automatically whenever it is on the stage.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> true</p>
+                    
+                    
+                    </div>
+                    <div id="property_SINGLE_FRAME" class="property item">
+                        <h3 class="name"><code>SINGLE_FRAME</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                    
+                    
+                            <span class="flag static">static</span>
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l257"><code>SINGLE_FRAME:257</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The MovieClip will only display a single frame (as determined by the startPosition property).</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> 1</p>
+                    
+                    
+                    </div>
+                    <div id="property_startPosition" class="property item">
+                        <h3 class="name"><code>startPosition</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+                    
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l68"><code>startPosition:68</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Specifies what the first frame to play in this movieclip, or the only frame to display if mode is SINGLE_FRAME.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> 0</p>
+                    
+                    
+                    </div>
+                    <div id="property_SYNCHED" class="property item">
+                        <h3 class="name"><code>SYNCHED</code></h3>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+                    
+                    
+                    
+                    
+                            <span class="flag static">static</span>
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_MovieClip.js.html#l267"><code>SYNCHED:267</code></a>
+                            </p>
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>The MovieClip will be advanced only when its parent advances and will be synched to the position of
+                    the parent MovieClip.</p>
+                    
+                        </div>
+                    
+                            <p><strong>Default:</strong> 2</p>
+                    
+                    
+                    </div>
+            </div>
+
+
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>
