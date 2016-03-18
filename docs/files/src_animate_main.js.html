@@ -102,7 +102,20 @@
 	// Check for window, fallback to global
 	var global = typeof window !== &#x27;undefined&#x27; ? window : GLOBAL;
 
-	if (typeof PIXI === &#x27;undefined&#x27;)
+	// Define PIXI Flash namespace
+	var animate = {};
+
+	// Export for Node-compatible environments like Electron
+	if (typeof module !== &#x27;undefined&#x27; &amp;&amp; module.exports)
+	{
+		// Include the Pixi.js module
+		require(&#x27;pixi.js&#x27;);
+
+		// Export the module
+		module.exports = animate;
+	}
+	// If we&#x27;re in the browser make sure PIXI is available 
+	else if (typeof PIXI === &#x27;undefined&#x27;)
 	{
 		if (DEBUG)
 		{
@@ -114,14 +127,8 @@
 		}
 	}
 
-	// Define PIXI Flash namespace
-	global.PIXI.animate = {};
-
-	// Export for Node-compatible
-	if (typeof module !== &#x27;undefined&#x27; &amp;&amp; module.exports)
-	{
-		module.exports = global.PIXI.animate;
-	}
+	// Assign to global namespace
+	global.PIXI.animate = animate;
 
 }());
     </pre>

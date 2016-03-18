@@ -788,7 +788,7 @@
             "line": 195,
             "description": "The total duration in frames for the animation.",
             "itemtype": "property",
-            "name": "_frameDuration",
+            "name": "_totalFrames",
             "type": "Number",
             "default": "0",
             "access": "private",
@@ -932,7 +932,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 363,
+            "line": 365,
             "description": "When the MovieClip is framerate independent, this is the time elapsed from frame 0 in seconds.",
             "itemtype": "property",
             "name": "elapsedTime",
@@ -946,7 +946,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 382,
+            "line": 384,
             "description": "By default MovieClip instances advance one frame per tick. Specifying a framerate for the MovieClip\nwill cause it to advance based on elapsed time between ticks as appropriate to maintain the target\nframerate.\n\nFor example, if a MovieClip with a framerate of 10 is placed on a Stage being updated at 40fps, then the MovieClip will\nadvance roughly one frame every 4 ticks. This will not be exact, because the time between each tick will\nvary slightly between frames.\n\nThis feature is dependent on the tick event object (or an object with an appropriate \"delta\" property) being\npassed into {{#crossLink \"Stage/update\"}}{{/crossLink}}.",
             "itemtype": "property",
             "name": "framerate",
@@ -958,7 +958,20 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 415,
+            "line": 417,
+            "description": "Get the total number of frames (duration) of this MovieClip",
+            "itemtype": "property",
+            "name": "totalFrames",
+            "type": "{Number}",
+            "default": "0",
+            "readonly": "",
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 433,
             "description": "Convenience method for setting multiple frames at once and adding the child",
             "itemtype": "method",
             "name": "addKeyframes",
@@ -982,7 +995,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 530,
+            "line": 548,
             "description": "Add a tween to the clip",
             "itemtype": "method",
             "name": "addTween",
@@ -1026,7 +1039,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 541,
+            "line": 559,
             "description": "Alias for method `addTween`",
             "itemtype": "method",
             "name": "tw",
@@ -1040,7 +1053,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 585,
+            "line": 603,
             "description": "Add a child to show for a certain number of frames before automatic removal.",
             "itemtype": "method",
             "name": "addTimedChild",
@@ -1079,7 +1092,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 594,
+            "line": 612,
             "description": "Alias for method `addTimedChild`",
             "itemtype": "method",
             "name": "at",
@@ -1093,7 +1106,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 673,
+            "line": 691,
             "description": "Handle frame actions, callback is bound to the instance of the MovieClip",
             "itemtype": "method",
             "name": "addAction",
@@ -1119,7 +1132,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 700,
+            "line": 718,
             "description": "Sets paused to false.",
             "itemtype": "method",
             "name": "play",
@@ -1129,7 +1142,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 709,
+            "line": 727,
             "description": "Sets paused to true.",
             "itemtype": "method",
             "name": "stop",
@@ -1139,7 +1152,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 718,
+            "line": 736,
             "description": "Advances this movie clip to the specified position or label and sets paused to false.",
             "itemtype": "method",
             "name": "gotoAndPlay",
@@ -1156,7 +1169,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 729,
+            "line": 747,
             "description": "Advances this movie clip to the specified position or label and sets paused to true.",
             "itemtype": "method",
             "name": "gotoAndStop",
@@ -1173,7 +1186,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 740,
+            "line": 758,
             "description": "Advances the playhead. This occurs automatically each tick by default.",
             "params": [
                 {
@@ -1191,7 +1204,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 774,
+            "line": 792,
             "itemtype": "method",
             "name": "_goto",
             "params": [
@@ -1209,7 +1222,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 800,
+            "line": 818,
             "itemtype": "method",
             "name": "_reset",
             "access": "private",
@@ -1220,7 +1233,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 811,
+            "line": 829,
             "itemtype": "method",
             "name": "_updateTimeline",
             "access": "protected",
@@ -1231,7 +1244,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 838,
+            "line": 856,
             "description": "Set the timeline position",
             "itemtype": "method",
             "name": "_setTimelinePostion",
@@ -1260,7 +1273,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 944,
+            "line": 962,
             "description": "Extend a container",
             "itemtype": "method",
             "name": "extend",
