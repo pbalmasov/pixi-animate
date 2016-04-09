@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>src/animate/ShapesCache.js - PixiAnimate</title>
+    <title>src/animate/ColorUtils.js - PixiAnimate</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -99,7 +99,7 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>src/animate/ShapesCache.js <small>File</small></h1>
+    <h1>src/animate/ColorUtils.js <small>File</small></h1>
 </div>
 
 <div class="file">
@@ -110,126 +110,34 @@
  */
 (function(PIXI)
 {
-	// Import classes
-	var ColorUtils = PIXI.animate.ColorUtils;
-
 	/**
-	 * Contains the collection of graphics data
-	 * @class ShapesCache
+	 * @class ColorUtils
+	 * @private
+	 * @description For converting colors
 	 */
-	var ShapesCache = {};
+	var ColorUtils = {};
 
 	/**
-	 * Add an item or itesm to the cache
-	 * @method add
+	 * Convert the Hexidecimal string (e.g., &quot;#fff&quot;) to uint
 	 * @static
-	 * @param {String} prop  The id of graphic
-	 * @param {Array} [value] If adding a single property, the draw commands
+	 * @private
+	 * @method hexToUint
 	 */
-	Object.defineProperty(ShapesCache, &quot;add&quot;,
+	ColorUtils.hexToUint = function(hex)
 	{
-		enumerable: false,
-		value: function(prop, draw)
-		{
-			// Convert all hex string colors (animate) to int (pixi.js)
-			for (var d in draw)
-			{
-				var arg = draw[d];
-				if (typeof arg == &quot;string&quot; &amp;&amp; arg[0] == &quot;#&quot;)
-				{
-					draw[d] = ColorUtils.hexToUint(arg);
-				}
-			}
-			ShapesCache[prop] = draw;
-		}
-	});
+		// Remove the hash
+		hex = hex.substr(1);
 
-	/**
-	 * Decode a shapes string into draw commands
-	 * @method decode
-	 * @static
-	 * @param  {String} str The string to decode
-	 */
-	Object.defineProperty(ShapesCache, &quot;decode&quot;,
-	{
-		enumerable: false,
-		value: function(str)
+		// Convert shortcolors fc9 to ffcc99
+		if (hex.length == 3)
 		{
-			// each shape is a new line
-			var shapes = str.split(&quot;\n&quot;);
-			var isCommand = /^[a-z]{1,2}$/;
-			for (var i = 0; i &lt; shapes.length; i++)
-			{
-				var shape = shapes[i].split(&quot; &quot;); // arguments are space separated
-				var name = shape.shift(); // first argument is the ID
-				for (var j = 0; j &lt; shape.length; j++)
-				{
-					// Convert all numbers to floats, ignore colors
-					var arg = shape[j];
-					if (arg[0] != &quot;#&quot; &amp;&amp; !isCommand.test(arg))
-					{
-						shape[j] = parseFloat(arg);
-					}
-				}
-				this.add(name, shape);
-			}
+			hex = hex.replace(/([a-f0-9])/g, &#x27;$1$1&#x27;);
 		}
-	});
-
-	/**
-	 * Get the graphic from cache
-	 * @method  fromCache
-	 * @static
-	 * @param  {String} id The cache id
-	 * @return {Array} Series of graphic draw commands
-	 */
-	Object.defineProperty(ShapesCache, &quot;fromCache&quot;,
-	{
-		enumerable: false,
-		value: function(id)
-		{
-			return ShapesCache[id] || null;
-		}
-	});
-
-	/**
-	 * Remove the graphic from cache
-	 * @method  remove
-	 * @static
-	 * @param  {String} id The cache id
-	 */
-	Object.defineProperty(ShapesCache, &quot;remove&quot;,
-	{
-		enumerable: false,
-		value: function(id)
-		{
-			if (ShapesCache[id])
-			{
-				ShapesCache[id].length = 0;
-				delete ShapesCache[id];
-			}
-		}
-	});
-
-	/**
-	 * Remove all graphics from cache
-	 * @method  removeAll
-	 * @static
-	 */
-	Object.defineProperty(ShapesCache, &quot;removeAll&quot;,
-	{
-		enumerable: false,
-		value: function()
-		{
-			for (var id in ShapesCache)
-			{
-				ShapesCache.remove(id);
-			}
-		}
-	});
+		return parseInt(hex, 16);
+	};
 
 	// Assign to namespace
-	PIXI.animate.ShapesCache = ShapesCache;
+	PIXI.animate.ColorUtils = ColorUtils;
 
 }(PIXI));
     </pre>

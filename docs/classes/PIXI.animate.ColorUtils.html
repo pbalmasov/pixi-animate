@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>src/animate/ShapesCache.js - PixiAnimate</title>
+    <title>PIXI.animate.ColorUtils - PixiAnimate</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -99,140 +99,94 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>src/animate/ShapesCache.js <small>File</small></h1>
+    <h1>PIXI.animate.ColorUtils <small>Class</small></h1>
 </div>
 
-<div class="file">
-    <pre class="prettyprint linenums">
-/**
- * @module PixiAnimate
- * @namespace PIXI.animate
- */
-(function(PIXI)
-{
-	// Import classes
-	var ColorUtils = PIXI.animate.ColorUtils;
+<div class="well well-small">
 
-	/**
-	 * Contains the collection of graphics data
-	 * @class ShapesCache
-	 */
-	var ShapesCache = {};
 
-	/**
-	 * Add an item or itesm to the cache
-	 * @method add
-	 * @static
-	 * @param {String} prop  The id of graphic
-	 * @param {Array} [value] If adding a single property, the draw commands
-	 */
-	Object.defineProperty(ShapesCache, &quot;add&quot;,
-	{
-		enumerable: false,
-		value: function(prop, draw)
-		{
-			// Convert all hex string colors (animate) to int (pixi.js)
-			for (var d in draw)
-			{
-				var arg = draw[d];
-				if (typeof arg == &quot;string&quot; &amp;&amp; arg[0] == &quot;#&quot;)
-				{
-					draw[d] = ColorUtils.hexToUint(arg);
-				}
-			}
-			ShapesCache[prop] = draw;
-		}
-	});
+        <div class="foundat">
+            Defined in: <a href="../files/src_animate_ColorUtils.js.html#l7"><code>src&#x2F;animate&#x2F;ColorUtils.js:7</code></a>
+        </div>
 
-	/**
-	 * Decode a shapes string into draw commands
-	 * @method decode
-	 * @static
-	 * @param  {String} str The string to decode
-	 */
-	Object.defineProperty(ShapesCache, &quot;decode&quot;,
-	{
-		enumerable: false,
-		value: function(str)
-		{
-			// each shape is a new line
-			var shapes = str.split(&quot;\n&quot;);
-			var isCommand = /^[a-z]{1,2}$/;
-			for (var i = 0; i &lt; shapes.length; i++)
-			{
-				var shape = shapes[i].split(&quot; &quot;); // arguments are space separated
-				var name = shape.shift(); // first argument is the ID
-				for (var j = 0; j &lt; shape.length; j++)
-				{
-					// Convert all numbers to floats, ignore colors
-					var arg = shape[j];
-					if (arg[0] != &quot;#&quot; &amp;&amp; !isCommand.test(arg))
-					{
-						shape[j] = parseFloat(arg);
-					}
-				}
-				this.add(name, shape);
-			}
-		}
-	});
+            Module: <a href="../modules/PixiAnimate.html">PixiAnimate</a>
 
-	/**
-	 * Get the graphic from cache
-	 * @method  fromCache
-	 * @static
-	 * @param  {String} id The cache id
-	 * @return {Array} Series of graphic draw commands
-	 */
-	Object.defineProperty(ShapesCache, &quot;fromCache&quot;,
-	{
-		enumerable: false,
-		value: function(id)
-		{
-			return ShapesCache[id] || null;
-		}
-	});
+</div>
 
-	/**
-	 * Remove the graphic from cache
-	 * @method  remove
-	 * @static
-	 * @param  {String} id The cache id
-	 */
-	Object.defineProperty(ShapesCache, &quot;remove&quot;,
-	{
-		enumerable: false,
-		value: function(id)
-		{
-			if (ShapesCache[id])
-			{
-				ShapesCache[id].length = 0;
-				delete ShapesCache[id];
-			}
-		}
-	});
 
-	/**
-	 * Remove all graphics from cache
-	 * @method  removeAll
-	 * @static
-	 */
-	Object.defineProperty(ShapesCache, &quot;removeAll&quot;,
-	{
-		enumerable: false,
-		value: function()
-		{
-			for (var id in ShapesCache)
-			{
-				ShapesCache.remove(id);
-			}
-		}
-	});
+<div class="well well-small">
+    <p>For converting colors</p>
 
-	// Assign to namespace
-	PIXI.animate.ShapesCache = ShapesCache;
+</div>
 
-}(PIXI));
-    </pre>
+
+<div>
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#index">Index</a></li>
+
+            <li><a data-toggle="tab" href="#methods">Methods</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="index" class="tab-pane active">
+            <h2 class="off-left">Item Index</h2>
+
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods">
+                            <li class="index-item method private">
+                                <a href="#" data-tabid="#methods" data-anchor="#method_hexToUint" data-tablink="hexToUint">hexToUint</a>
+
+                                    <span class="flag static">static</span>
+                            </li>
+                    </ul>
+                </div>
+
+
+
+        </div>
+
+            <div id="methods" class="tab-pane">
+                <h2 class="off-left">Methods</h2>
+
+                    <div id="method_hexToUint" class="method item private">
+                        <h3 class="name"><code>hexToUint</code></h3>
+                    
+                            <span class="paren">()</span>
+                    
+                    
+                    
+                            <span class="flag private">private</span>
+                    
+                    
+                            <span class="flag static">static</span>
+                    
+                    
+                    
+                        <div class="meta">
+                                    <p>
+                                    Defined in
+                            <a href="../files/src_animate_ColorUtils.js.html#l14"><code>src&#x2F;animate&#x2F;ColorUtils.js:14</code></a>
+                            </p>
+                    
+                    
+                    
+                        </div>
+                    
+                        <div class="description">
+                            <p>Convert the Hexidecimal string (e.g., "#fff") to uint</p>
+                    
+                        </div>
+                    
+                    
+                    
+                    </div>
+            </div>
+
+
+
+    </div>
 </div>
                     </div>
                 </div>

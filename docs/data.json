@@ -2,15 +2,26 @@
     "project": {
         "name": "PixiAnimate",
         "description": "Runtime library to play Pixi.js content from Adobe Animate CC",
-        "version": "0.3.0",
+        "version": "0.3.4",
         "url": "https://github.com/jiborobot/pixi-animate"
     },
     "files": {
-        "src/animate/MovieClip.js": {
-            "name": "src/animate/MovieClip.js",
+        "src/animate/ColorUtils.js": {
+            "name": "src/animate/ColorUtils.js",
             "modules": {
                 "PixiAnimate": 1
             },
+            "classes": {
+                "PIXI.animate.ColorUtils": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "PIXI.animate": 1
+            }
+        },
+        "src/animate/MovieClip.js": {
+            "name": "src/animate/MovieClip.js",
+            "modules": {},
             "classes": {
                 "PIXI.animate.MovieClip": 1
             },
@@ -186,6 +197,7 @@
             "name": "PixiAnimate",
             "submodules": {},
             "classes": {
+                "PIXI.animate.ColorUtils": 1,
                 "PIXI.animate.MovieClip": 1,
                 "PIXI.animate.ShapesCache": 1,
                 "PIXI.animate.SymbolLoader": 1,
@@ -228,6 +240,22 @@
         }
     },
     "classes": {
+        "PIXI.animate.ColorUtils": {
+            "name": "PIXI.animate.ColorUtils",
+            "shortname": "ColorUtils",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate",
+            "file": "src/animate/ColorUtils.js",
+            "line": 7,
+            "access": "private",
+            "tagname": "",
+            "description": "For converting colors"
+        },
         "PIXI.animate.MovieClip": {
             "name": "PIXI.animate.MovieClip",
             "shortname": "MovieClip",
@@ -239,7 +267,7 @@
             "module": "PixiAnimate",
             "namespace": "PIXI.animate",
             "file": "src/animate/MovieClip.js",
-            "line": 13,
+            "line": 14,
             "description": "Provide timeline playback of movieclip",
             "extends": "PIXI.Container",
             "is_constructor": 1,
@@ -305,7 +333,7 @@
             "module": "PixiAnimate",
             "namespace": "PIXI.animate",
             "file": "src/animate/ShapesCache.js",
-            "line": 7,
+            "line": 10,
             "description": "Contains the collection of graphics data"
         },
         "PIXI.animate.SymbolLoader": {
@@ -621,8 +649,21 @@
     },
     "classitems": [
         {
+            "file": "src/animate/ColorUtils.js",
+            "line": 14,
+            "description": "Convert the Hexidecimal string (e.g., \"#fff\") to uint",
+            "static": 1,
+            "access": "private",
+            "tagname": "",
+            "itemtype": "method",
+            "name": "hexToUint",
+            "class": "PIXI.animate.ColorUtils",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
             "file": "src/animate/MovieClip.js",
-            "line": 59,
+            "line": 62,
             "description": "Controls how this MovieClip advances its time. Must be one of 0 (INDEPENDENT), 1 (SINGLE_FRAME), or 2 (SYNCHED).\nSee each constant for a description of the behaviour.",
             "itemtype": "property",
             "name": "mode",
@@ -634,7 +675,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 68,
+            "line": 71,
             "description": "Specifies what the first frame to play in this movieclip, or the only frame to display if mode is SINGLE_FRAME.",
             "itemtype": "property",
             "name": "startPosition",
@@ -646,7 +687,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 76,
+            "line": 79,
             "description": "Indicates whether this MovieClip should loop when it reaches the end of its timeline.",
             "itemtype": "property",
             "name": "loop",
@@ -658,7 +699,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 84,
+            "line": 87,
             "description": "The current frame of the movieclip.",
             "itemtype": "property",
             "name": "currentFrame",
@@ -671,7 +712,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 111,
+            "line": 114,
             "description": "If true, this movieclip will animate automatically whenever it is on the stage.",
             "itemtype": "property",
             "name": "selfAdvance",
@@ -683,7 +724,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 119,
+            "line": 122,
             "description": "If true, the MovieClip's position will not advance when ticked.",
             "itemtype": "property",
             "name": "paused",
@@ -695,7 +736,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 127,
+            "line": 130,
             "description": "If true, actions in this MovieClip's tweens will be run when the playhead advances.",
             "itemtype": "property",
             "name": "actionsEnabled",
@@ -707,7 +748,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 135,
+            "line": 138,
             "description": "If true, the MovieClip will automatically be reset to its first frame whenever the timeline adds\nit back onto the display list. This only applies to MovieClip instances with mode=INDEPENDENT.\n<br><br>\nFor example, if you had a character animation with a \"body\" child MovieClip instance\nwith different costumes on each frame, you could set body.autoReset = false, so that\nyou can manually change the frame it is on, without worrying that it will be reset\nautomatically.",
             "itemtype": "property",
             "name": "autoReset",
@@ -719,7 +760,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 149,
+            "line": 152,
             "itemtype": "property",
             "name": "_synchOffset",
             "type": "Number",
@@ -732,7 +773,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 157,
+            "line": 160,
             "itemtype": "property",
             "name": "_prevPos",
             "type": "Number",
@@ -745,7 +786,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 165,
+            "line": 168,
             "description": "Note - changed from default: When the MovieClip is framerate independent, this is the time\nelapsed from frame 0 in seconds.",
             "itemtype": "property",
             "name": "_t",
@@ -759,7 +800,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 175,
+            "line": 178,
             "description": "By default MovieClip instances advance one frame per tick. Specifying a framerate for the MovieClip\nwill cause it to advance based on elapsed time between ticks as appropriate to maintain the target\nframerate.",
             "itemtype": "property",
             "name": "_framerate",
@@ -771,7 +812,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 186,
+            "line": 189,
             "description": "The total time in seconds for the animation. This is changed when setting the framerate.",
             "itemtype": "property",
             "name": "_duration",
@@ -785,7 +826,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 195,
+            "line": 198,
             "description": "The total duration in frames for the animation.",
             "itemtype": "property",
             "name": "_totalFrames",
@@ -799,7 +840,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 204,
+            "line": 207,
             "description": "Standard tween timelines for all objects. Each element in the _timelines array\nis a Timeline object - an array of tweens for one target, in order of occurrence.",
             "itemtype": "property",
             "name": "_timelines",
@@ -812,7 +853,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 213,
+            "line": 216,
             "description": "Array of child timelines denoting if a child is actively a child of this movieclip\non any given frame. Each element in the _timedChildTimelines is an array with a 'target'\nproperty, and is an array of boolean values indexed by frame.",
             "itemtype": "property",
             "name": "_timedChildTimelines",
@@ -825,7 +866,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 223,
+            "line": 226,
             "description": "Array of frame scripts, indexed by frame.",
             "itemtype": "property",
             "name": "_actions",
@@ -838,7 +879,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 246,
+            "line": 249,
             "description": "The MovieClip will advance independently of its parent, even if its parent is paused.\nThis is the default mode.",
             "itemtype": "property",
             "name": "INDEPENDENT",
@@ -852,7 +893,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 257,
+            "line": 260,
             "description": "The MovieClip will only display a single frame (as determined by the startPosition property).",
             "itemtype": "property",
             "name": "SINGLE_FRAME",
@@ -866,7 +907,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 267,
+            "line": 270,
             "description": "The MovieClip will be advanced only when its parent advances and will be synched to the position of\nthe parent MovieClip.",
             "itemtype": "property",
             "name": "SYNCHED",
@@ -880,7 +921,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 303,
+            "line": 306,
             "description": "Returns a sorted list of the labels defined on this AdvancedMovieClip.",
             "itemtype": "method",
             "name": "getLabels",
@@ -894,7 +935,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 314,
+            "line": 317,
             "description": "Returns the name of the label on or immediately before the current frame.",
             "itemtype": "method",
             "name": "getCurrentLabel",
@@ -908,7 +949,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 333,
+            "line": 336,
             "description": "Returns an array of objects with label and position (aka frame) properties, sorted by position.",
             "itemtype": "property",
             "name": "labels",
@@ -920,7 +961,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 340,
+            "line": 343,
             "description": "Returns the name of the label on or immediately before the current frame.",
             "itemtype": "property",
             "name": "currentLabel",
@@ -932,7 +973,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 365,
+            "line": 368,
             "description": "When the MovieClip is framerate independent, this is the time elapsed from frame 0 in seconds.",
             "itemtype": "property",
             "name": "elapsedTime",
@@ -946,7 +987,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 384,
+            "line": 387,
             "description": "By default MovieClip instances advance one frame per tick. Specifying a framerate for the MovieClip\nwill cause it to advance based on elapsed time between ticks as appropriate to maintain the target\nframerate.\n\nFor example, if a MovieClip with a framerate of 10 is placed on a Stage being updated at 40fps, then the MovieClip will\nadvance roughly one frame every 4 ticks. This will not be exact, because the time between each tick will\nvary slightly between frames.\n\nThis feature is dependent on the tick event object (or an object with an appropriate \"delta\" property) being\npassed into {{#crossLink \"Stage/update\"}}{{/crossLink}}.",
             "itemtype": "property",
             "name": "framerate",
@@ -958,7 +999,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 417,
+            "line": 420,
             "description": "Get the total number of frames (duration) of this MovieClip",
             "itemtype": "property",
             "name": "totalFrames",
@@ -971,7 +1012,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 433,
+            "line": 436,
             "description": "Convenience method for setting multiple frames at once and adding the child",
             "itemtype": "method",
             "name": "addKeyframes",
@@ -995,7 +1036,59 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 548,
+            "line": 551,
+            "description": "Add mask or masks",
+            "itemtype": "method",
+            "name": "addTimedMask",
+            "params": [
+                {
+                    "name": "instance",
+                    "description": "Instance to mask",
+                    "type": "PIXI.DisplayObject"
+                },
+                {
+                    "name": "keyframes",
+                    "description": "The map of frames to mask objects",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "instance of clip for chaining",
+                "type": "PIXI.animate.MovieClip"
+            },
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 558,
+            "description": "Shortcut alias for `addTimedMask`",
+            "itemtype": "method",
+            "name": "am",
+            "params": [
+                {
+                    "name": "instance",
+                    "description": "Instance to mask",
+                    "type": "PIXI.DisplayObject"
+                },
+                {
+                    "name": "keyframes",
+                    "description": "The map of frames to mask objects",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "instance of clip for chaining",
+                "type": "PIXI.animate.MovieClip"
+            },
+            "class": "PIXI.animate.MovieClip",
+            "module": "PixiAnimate",
+            "namespace": "PIXI.animate"
+        },
+        {
+            "file": "src/animate/MovieClip.js",
+            "line": 580,
             "description": "Add a tween to the clip",
             "itemtype": "method",
             "name": "addTween",
@@ -1039,7 +1132,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 559,
+            "line": 591,
             "description": "Alias for method `addTween`",
             "itemtype": "method",
             "name": "tw",
@@ -1053,7 +1146,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 603,
+            "line": 635,
             "description": "Add a child to show for a certain number of frames before automatic removal.",
             "itemtype": "method",
             "name": "addTimedChild",
@@ -1092,7 +1185,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 612,
+            "line": 644,
             "description": "Alias for method `addTimedChild`",
             "itemtype": "method",
             "name": "at",
@@ -1106,7 +1199,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 691,
+            "line": 723,
             "description": "Handle frame actions, callback is bound to the instance of the MovieClip",
             "itemtype": "method",
             "name": "addAction",
@@ -1132,7 +1225,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 718,
+            "line": 750,
             "description": "Sets paused to false.",
             "itemtype": "method",
             "name": "play",
@@ -1142,7 +1235,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 727,
+            "line": 759,
             "description": "Sets paused to true.",
             "itemtype": "method",
             "name": "stop",
@@ -1152,7 +1245,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 736,
+            "line": 768,
             "description": "Advances this movie clip to the specified position or label and sets paused to false.",
             "itemtype": "method",
             "name": "gotoAndPlay",
@@ -1169,7 +1262,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 747,
+            "line": 779,
             "description": "Advances this movie clip to the specified position or label and sets paused to true.",
             "itemtype": "method",
             "name": "gotoAndStop",
@@ -1186,7 +1279,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 758,
+            "line": 790,
             "description": "Advances the playhead. This occurs automatically each tick by default.",
             "params": [
                 {
@@ -1204,7 +1297,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 792,
+            "line": 824,
             "itemtype": "method",
             "name": "_goto",
             "params": [
@@ -1222,7 +1315,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 818,
+            "line": 850,
             "itemtype": "method",
             "name": "_reset",
             "access": "private",
@@ -1233,7 +1326,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 829,
+            "line": 861,
             "itemtype": "method",
             "name": "_updateTimeline",
             "access": "protected",
@@ -1244,7 +1337,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 856,
+            "line": 888,
             "description": "Set the timeline position",
             "itemtype": "method",
             "name": "_setTimelinePostion",
@@ -1273,7 +1366,7 @@
         },
         {
             "file": "src/animate/MovieClip.js",
-            "line": 962,
+            "line": 994,
             "description": "Extend a container",
             "itemtype": "method",
             "name": "extend",
@@ -1295,7 +1388,7 @@
         },
         {
             "file": "src/animate/ShapesCache.js",
-            "line": 13,
+            "line": 16,
             "description": "Add an item or itesm to the cache",
             "itemtype": "method",
             "name": "add",
@@ -1319,7 +1412,7 @@
         },
         {
             "file": "src/animate/ShapesCache.js",
-            "line": 38,
+            "line": 41,
             "description": "Decode a shapes string into draw commands",
             "itemtype": "method",
             "name": "decode",
@@ -1337,7 +1430,7 @@
         },
         {
             "file": "src/animate/ShapesCache.js",
-            "line": 70,
+            "line": 73,
             "description": "Get the graphic from cache",
             "itemtype": "method",
             "name": "fromCache",
@@ -1359,7 +1452,7 @@
         },
         {
             "file": "src/animate/ShapesCache.js",
-            "line": 86,
+            "line": 89,
             "description": "Remove the graphic from cache",
             "itemtype": "method",
             "name": "remove",
@@ -1377,7 +1470,7 @@
         },
         {
             "file": "src/animate/ShapesCache.js",
-            "line": 105,
+            "line": 108,
             "description": "Remove all graphics from cache",
             "itemtype": "method",
             "name": "removeAll",
@@ -1733,7 +1826,7 @@
         },
         {
             "file": "src/mixins/DisplayObject.js",
-            "line": 70,
+            "line": 84,
             "description": "Setter for the alpha",
             "itemtype": "method",
             "name": "setAlpha",
@@ -1754,7 +1847,7 @@
         },
         {
             "file": "src/mixins/DisplayObject.js",
-            "line": 76,
+            "line": 90,
             "description": "Shortcut for setAlpha.",
             "itemtype": "method",
             "name": "a",
@@ -1775,7 +1868,7 @@
         },
         {
             "file": "src/mixins/DisplayObject.js",
-            "line": 88,
+            "line": 102,
             "description": "Set the tint values by color.",
             "itemtype": "method",
             "name": "setTint",
@@ -1796,7 +1889,7 @@
         },
         {
             "file": "src/mixins/DisplayObject.js",
-            "line": 94,
+            "line": 108,
             "description": "Shortcut to setTint.",
             "itemtype": "method",
             "name": "tn",
@@ -1817,7 +1910,7 @@
         },
         {
             "file": "src/mixins/DisplayObject.js",
-            "line": 114,
+            "line": 128,
             "description": "Set additive and multiply color, tinting",
             "itemtype": "method",
             "name": "setColorTransform",
@@ -1863,7 +1956,7 @@
         },
         {
             "file": "src/mixins/DisplayObject.js",
-            "line": 125,
+            "line": 139,
             "description": "Shortcut to setColor.",
             "itemtype": "method",
             "name": "c",
@@ -1909,7 +2002,7 @@
         },
         {
             "file": "src/mixins/DisplayObject.js",
-            "line": 149,
+            "line": 163,
             "description": "The current default color transforming filters",
             "itemtype": "property",
             "name": "colorTransformFilter",
@@ -1920,7 +2013,7 @@
         },
         {
             "file": "src/mixins/DisplayObject.js",
-            "line": 165,
+            "line": 182,
             "description": "Extend a container",
             "itemtype": "method",
             "name": "extend",

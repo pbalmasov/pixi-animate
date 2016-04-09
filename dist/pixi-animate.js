@@ -1,4 +1,4 @@
-/*! PixiAnimate 0.3.0 */
+/*! PixiAnimate 0.3.4 */
 /**
  * @module PixiAnimate
  * @namespace PIXI.animate
@@ -14,8 +14,12 @@
 	// Export for Node-compatible environments like Electron
 	if (typeof module !== 'undefined' && module.exports)
 	{
-		// Include the Pixi.js module
-		require('pixi.js');
+		// Attempt to require the pixi module
+		if (typeof PIXI === 'undefined')
+		{
+			// Include the Pixi.js module
+			require('pixi.js');
+		}
 
 		// Export the module
 		module.exports = animate;
@@ -173,6 +177,45 @@
 (function(PIXI)
 {
 	/**
+	 * @class ColorUtils
+	 * @private
+	 * @description For converting colors
+	 */
+	var ColorUtils = {};
+
+	/**
+	 * Convert the Hexidecimal string (e.g., "#fff") to uint
+	 * @static
+	 * @private
+	 * @method hexToUint
+	 */
+	ColorUtils.hexToUint = function(hex)
+	{
+		// Remove the hash
+		hex = hex.substr(1);
+
+		// Convert shortcolors fc9 to ffcc99
+		if (hex.length == 3)
+		{
+			hex = hex.replace(/([a-f0-9])/g, '$1$1');
+		}
+		return parseInt(hex, 16);
+	};
+
+	// Assign to namespace
+	PIXI.animate.ColorUtils = ColorUtils;
+
+}(PIXI));
+/**
+ * @module PixiAnimate
+ * @namespace PIXI.animate
+ */
+(function(PIXI)
+{
+	// Import classes
+	var ColorUtils = PIXI.animate.ColorUtils;
+
+	/**
 	 * Contains the collection of graphics data
 	 * @class ShapesCache
 	 */
@@ -196,7 +239,7 @@
 				var arg = draw[d];
 				if (typeof arg == "string" && arg[0] == "#")
 				{
-					draw[d] = parseInt(arg.substr(1), 16);
+					draw[d] = ColorUtils.hexToUint(arg);
 				}
 			}
 			ShapesCache[prop] = draw;
@@ -562,7 +605,7 @@
 				target.visible = value;
 				break;
 			case "m":
-				target.mask = value;
+				target.ma(value);
 				break;
 		}
 	}
@@ -683,8 +726,6 @@
 				return target.mask;
 				// case "t":
 				//   return target.tint;
-				// case "c": 
-				//   return target.colorTransform;
 				//not sure if we'll actually handle graphics this way?
 				//g: return null;
 		}
@@ -705,6 +746,7 @@
 	var DisplayObject = PIXI.DisplayObject;
 	var Timeline = PIXI.animate.Timeline;
 	var Tween = PIXI.animate.Tween;
+	var ColorUtils = PIXI.animate.ColorUtils;
 	var SharedTicker = PIXI.ticker.shared;
 
 	/**
@@ -725,14 +767,14 @@
 		Container.call(this);
 
 		// Default options
-		options = options ||
-		{};
+		options = options === undefined ?
+		{} : options;
 
 		// Options can also be the mode
 		if (typeof options == "number")
 		{
 			options = {
-				mode: options,
+				mode: options || MovieClip.INDEPENDENT,
 				duration: duration || 0,
 				loop: loop === undefined ? true : loop,
 				labels: labels ||
@@ -740,18 +782,20 @@
 				framerate: framerate || 0
 			};
 		}
-
-		// Apply defaults to options
-		options = Object.assign(
+		else
 		{
-			mode: MovieClip.INDEPENDENT,
-			startPosition: 0,
-			loop: true,
-			labels:
-			{},
-			duration: 0,
-			framerate: 0
-		}, options);
+			// Apply defaults to options
+			options = Object.assign(
+			{
+				mode: MovieClip.INDEPENDENT,
+				startPosition: 0,
+				loop: true,
+				labels:
+				{},
+				duration: 0,
+				framerate: 0
+			}, options);
+		}
 
 		/**
 		 * Controls how this MovieClip advances its time. Must be one of 0 (INDEPENDENT), 1 (SINGLE_FRAME), or 2 (SYNCHED).
@@ -1243,6 +1287,35 @@
 	};
 
 	/**
+	 * Add mask or masks
+	 * @method addTimedMask
+	 * @param {PIXI.DisplayObject} instance Instance to mask
+	 * @param {Object} keyframes The map of frames to mask objects
+	 * @return {PIXI.animate.MovieClip} instance of clip for chaining
+	 */
+	/**
+	 * Shortcut alias for `addTimedMask`
+	 * @method am
+	 * @param {PIXI.DisplayObject} instance Instance to mask
+	 * @param {Object} keyframes The map of frames to mask objects
+	 * @return {PIXI.animate.MovieClip} instance of clip for chaining
+	 */
+	p.addTimedMask = p.am = function(instance, keyframes)
+	{
+		for (var i in keyframes)
+		{
+			this.addTween(instance,
+			{
+				m: keyframes[i]
+			}, parseInt(i, 10));
+		}
+
+		// Set the initial position/add
+		this._setTimelinePosition(this.currentFrame, this.currentFrame, true);
+		return this;
+	};
+
+	/**
 	 * Add a tween to the clip
 	 * @method addTween
 	 * @param {PIXI.DisplayObject} instance The clip to tween
@@ -1282,7 +1355,7 @@
 		// Convert any string colors to uints
 		if (typeof properties.t == "string")
 		{
-			properties.t = parseInt(properties.t.substr(1), 16);
+			properties.t = ColorUtils.hexToUint(properties.t);
 		}
 		else if (typeof properties.v == "number")
 		{
@@ -1775,6 +1848,20 @@
 	 */
 	p.setMask = p.ma = function(mask)
 	{
+		// According to PIXI, only Graphics and Sprites can 
+		// be used as mask, let's ignore everything else, like other
+		// movieclips and displayobjects/containers
+		if (mask)
+		{
+			if (!(mask instanceof PIXI.Graphics) && !(mask instanceof PIXI.Sprite))
+			{
+				if (typeof console !== "undefined" && console.warn)
+				{
+					console.warn("Warning: Masks can only be PIXI.Graphics or PIXI.Sprite objects.");
+				}
+				return;
+			}
+		}
 		this.mask = mask;
 		return this;
 	};
@@ -1862,17 +1949,20 @@
 	 * The current default color transforming filters
 	 * @property {PIXI.filters.ColorMatrixFilter} colorTransformFilter
 	 */
-	Object.defineProperty(p, 'colorTransformFilter',
+	if (!p.hasOwnProperty('colorTransformFilter'))
 	{
-		set: function(filter)
+		Object.defineProperty(p, 'colorTransformFilter',
 		{
-			this._colorTransformFilter = filter;
-		},
-		get: function()
-		{
-			return this._colorTransformFilter || new ColorMatrixFilter();
-		}
-	});
+			set: function(filter)
+			{
+				this._colorTransformFilter = filter;
+			},
+			get: function()
+			{
+				return this._colorTransformFilter || new ColorMatrixFilter();
+			}
+		});
+	}
 
 	/**
 	 * Extend a container
@@ -2214,37 +2304,6 @@
 	};
 
 }(PIXI));
-// From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
-if (typeof Object.assign != 'function')
-{
-	(function()
-	{
-		Object.assign = function(target)
-		{
-			'use strict';
-			if (target === undefined || target === null)
-			{
-				throw new TypeError('Cannot convert undefined or null to object');
-			}
-			var output = Object(target);
-			for (var index = 1; index < arguments.length; index++)
-			{
-				var source = arguments[index];
-				if (source !== undefined && source !== null)
-				{
-					for (var nextKey in source)
-					{
-						if (source.hasOwnProperty(nextKey))
-						{
-							output[nextKey] = source[nextKey];
-						}
-					}
-				}
-			}
-			return output;
-		};
-	})();
-}
 /**
  * @module PixiAnimate
  * @namespace PIXI

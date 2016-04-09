@@ -6,6 +6,7 @@ YUI.add("yuidoc-meta", function(Y) {
         "PIXI.Graphics",
         "PIXI.Sprite",
         "PIXI.Text",
+        "PIXI.animate.ColorUtils",
         "PIXI.animate.FlashArt",
         "PIXI.animate.FlashArtTask",
         "PIXI.animate.MovieClip",
