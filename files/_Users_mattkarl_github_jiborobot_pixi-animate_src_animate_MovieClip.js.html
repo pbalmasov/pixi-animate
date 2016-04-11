@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>/Users/mattkarl/github/jiborobot/pixi-animate/src/animate/MovieClip.js - pixi-animate</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/lucid.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+        
+            pixi-animate
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>0.3.4</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/PIXI.animate.ColorUtils", "classes/PIXI.animate.load", "classes/PIXI.animate.MovieClip", "classes/PIXI.animate.ShapesCache", "classes/PIXI.animate.SymbolLoader", "classes/PIXI.animate.Timeline", "classes/PIXI.animate.Tween", "classes/PIXI.Container", "classes/PIXI.DisplayObject", "classes/PIXI.Graphics", "classes/PIXI.Sprite", "classes/PIXI.Text"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+<div>
+    <div id="sidebar">
+    <div id="classes">
+        <ul id="api-classes" class="nav nav-list">
+            
+                <li><a href="../classes/PIXI.animate.load.html">PIXI.animate.load</a></li>
+            
+                <li><a href="../classes/PIXI.animate.MovieClip.html">PIXI.animate.MovieClip</a></li>
+            
+                <li><a href="../classes/PIXI.animate.ShapesCache.html">PIXI.animate.ShapesCache</a></li>
+            
+                <li><a href="../classes/PIXI.animate.SymbolLoader.html">PIXI.animate.SymbolLoader</a></li>
+            
+                <li><a href="../classes/PIXI.animate.Timeline.html">PIXI.animate.Timeline</a></li>
+            
+                <li><a href="../classes/PIXI.animate.Tween.html">PIXI.animate.Tween</a></li>
+            
+                <li><a href="../classes/PIXI.Container.html">PIXI.Container</a></li>
+            
+                <li><a href="../classes/PIXI.DisplayObject.html">PIXI.DisplayObject</a></li>
+            
+                <li><a href="../classes/PIXI.Graphics.html">PIXI.Graphics</a></li>
+            
+                <li><a href="../classes/PIXI.Sprite.html">PIXI.Sprite</a></li>
+            
+                <li><a href="../classes/PIXI.Text.html">PIXI.Text</a></li>
+            
+        </ul>
+    </div>
+    </div>
+</div>
+
+        </div>
+        <div class="span9">
+    <form id="options-form" class="form-inline pull-right">
+        Show:
+        <label for="api-show-inherited" class="checkbox">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected" class="checkbox">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private" class="checkbox">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated" class="checkbox">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </form>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>/Users/mattkarl/github/jiborobot/pixi-animate/src/animate/MovieClip.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+import Timeline from &#x27;./Timeline&#x27;;
+import ColorUtils from &#x27;./ColorUtils&#x27;;
+
+const Container = PIXI.Container;
+const SharedTicker = PIXI.ticker.shared;
+
+/**
+ * Provide timeline playback of movieclip
+ * @namespace PIXI.animate
+ * @class MovieClip
+ * @extends PIXI.Container
+ * @constructor
+ * @param {Object|int} [options] The options object or the mode to play
+ * @param {int} [options.mode=0] The playback mode default is independent (0),
+ * @param {int} [options.startPosition=0] The starting frame
+ * @param {Boolean} [options.loop=true] If playback is looped
+ * @param {Object} [options.labels] The frame labels map of label to frames
+ * @param {int} [options.duration] The duration, if no duration is provided, auto determines length
+ * @param {int} [options.framerate=24] The framerate to use for independent mode
+ */
+class MovieClip extends Container {
+    constructor(options, duration, loop, framerate, labels) {
+        super();
+
+        // Default options
+        options = options === undefined ? {} : options;
+
+        // Options can also be the mode
+        if (typeof options === &#x27;number&#x27;) {
+            options = {
+                mode: options || MovieClip.INDEPENDENT,
+                duration: duration || 0,
+                loop: loop === undefined ? true : loop,
+                labels: labels || {},
+                framerate: framerate || 0
+            };
+        } else {
+            // Apply defaults to options
+            options = Object.assign({
+                mode: MovieClip.INDEPENDENT,
+                startPosition: 0,
+                loop: true,
+                labels: {},
+                duration: 0,
+                framerate: 0
+            }, options);
+        }
+
+        /**
+         * Controls how this MovieClip advances its time. Must be one of 0 (INDEPENDENT), 1 (SINGLE_FRAME), or 2 (SYNCHED).
+         * See each constant for a description of the behaviour.
+         * @property mode
+         * @type int
+         * @default null
+         */
+        this.mode = options.mode;
+
+        /**
+         * Specifies what the first frame to play in this movieclip, or the only frame to display if mode is SINGLE_FRAME.
+         * @property startPosition
+         * @type Number
+         * @default 0
+         */
+        this.startPosition = options.startPosition;
+
+        /**
+         * Indicates whether this MovieClip should loop when it reaches the end of its timeline.
+         * @property loop
+         * @type Boolean
+         * @default true
+         */
+        this.loop = !!options.loop;
+
+        /**
+         * The current frame of the movieclip.
+         * @property currentFrame
+         * @type Number
+         * @default 0
+         * @readOnly
+         */
+        this.currentFrame = 0;
+
+        this._labels = [];
+        this._labelDict = options.labels;
+        if (options.labels) {
+            for (let name in options.labels) {
+                let label = {
+                    label: name,
+                    position: options.labels[name]
+                };
+                this._labels.push(label);
+            }
+            this._labels.sort(function(a, b) {
+                return a.position - b.position;
+            });
+        }
+
+        /**
+         * If true, this movieclip will animate automatically whenever it is on the stage.
+         * @property selfAdvance
+         * @type Boolean
+         * @default true
+         */
+        this.selfAdvance = true;
+
+        /**
+         * If true, the MovieClip&#x27;s position will not advance when ticked.
+         * @property paused
+         * @type Boolean
+         * @default false
+         */
+        this.paused = false;
+
+        /**
+         * If true, actions in this MovieClip&#x27;s tweens will be run when the playhead advances.
+         * @property actionsEnabled
+         * @type Boolean
+         * @default true
+         */
+        this.actionsEnabled = true;
+
+        /**
+         * If true, the MovieClip will automatically be reset to its first frame whenever the timeline adds
+         * it back onto the display list. This only applies to MovieClip instances with mode=INDEPENDENT.
+         * &lt;br&gt;&lt;br&gt;
+         * For example, if you had a character animation with a &#x27;body&#x27; child MovieClip instance
+         * with different costumes on each frame, you could set body.autoReset = false, so that
+         * you can manually change the frame it is on, without worrying that it will be reset
+         * automatically.
+         * @property autoReset
+         * @type Boolean
+         * @default true
+         */
+        this.autoReset = true;
+
+        /**
+         * @property _synchOffset
+         * @type Number
+         * @default 0
+         * @private
+         */
+        this._synchOffset = 0;
+
+        /**
+         * @property _prevPos
+         * @type Number
+         * @default -1
+         * @private
+         */
+        this._prevPos = -1; // TODO: evaluate using a ._reset Boolean prop instead of -1.
+
+        /**
+         * Note - changed from default: When the MovieClip is framerate independent, this is the time
+         * elapsed from frame 0 in seconds.
+         * @property _t
+         * @type Number
+         * @default 0
+         * @private
+         */
+        this._t = 0;
+
+        /**
+         * By default MovieClip instances advance one frame per tick. Specifying a framerate for the MovieClip
+         * will cause it to advance based on elapsed time between ticks as appropriate to maintain the target
+         * framerate.
+         *
+         * @property _framerate
+         * @type {Number}
+         * @default 0
+         */
+        this._framerate = options.framerate;
+
+        /**
+         * The total time in seconds for the animation. This is changed when setting the framerate.
+         * @property _duration
+         * @type Number
+         * @default 0
+         * @private
+         */
+        this._duration = 0;
+
+        /**
+         * The total duration in frames for the animation.
+         * @property _totalFrames
+         * @type Number
+         * @default 0
+         * @private
+         */
+        this._totalFrames = options.duration;
+
+        /**
+         * Standard tween timelines for all objects. Each element in the _timelines array
+         * is a Timeline object - an array of tweens for one target, in order of occurrence.
+         * @property _timelines
+         * @type Array
+         * @protected
+         */
+        this._timelines = [];
+
+        /**
+         * Array of child timelines denoting if a child is actively a child of this movieclip
+         * on any given frame. Each element in the _timedChildTimelines is an array with a &#x27;target&#x27;
+         * property, and is an array of boolean values indexed by frame.
+         * @property _timedChildTimelines
+         * @type {Array}
+         * @protected
+         */
+        this._timedChildTimelines = [];
+
+        /**
+         * Array of frame scripts, indexed by frame.
+         * @property _actions
+         * @type {Array}
+         * @protected
+         */
+        this._actions = [];
+
+        if (this.mode === MovieClip.INDEPENDENT) {
+            this._tickListener = this._tickListener.bind(this);
+            this._onAdded = this._onAdded.bind(this);
+            this._onRemoved = this._onRemoved.bind(this);
+            this.on(&#x27;added&#x27;, this._onAdded);
+            this.on(&#x27;removed&#x27;, this._onRemoved);
+        }
+
+        if (options.framerate) {
+            this.framerate = options.framerate;
+        }
+    }
+
+    _onAdded() {
+        SharedTicker.add(this._tickListener);
+    }
+
+    _tickListener(tickerDeltaTime) {
+        if (this.paused || !this.selfAdvance) {
+            //see if the movieclip needs to be updated even though it isn&#x27;t animating
+            if (this._prevPos &lt; 0) {
+                this._goto(this.currentFrame);
+            }
+            return;
+        }
+        let seconds = tickerDeltaTime / SharedTicker.speed / PIXI.TARGET_FPMS / 1000;
+        this.advance(seconds);
+    }
+
+    _onRemoved() {
+        SharedTicker.remove(this._tickListener);
+    }
+
+    /**
+     * Returns an array of objects with label and position (aka frame) properties, sorted by position.
+     * @property labels
+     * @type {Array}
+     * @readonly
+     */
+    get labels() {
+        return this._labels;
+    }
+
+    /**
+     * Returns the name of the label on or immediately before the current frame.
+     * @property currentLabel
+     * @type {String}
+     * @readonly
+     */
+    get currentLabel() {
+        let labels = this._labels;
+        let current = null;
+        for (let i = 0, len = labels.length; i &lt; len; ++i) {
+            if (labels[i].position &lt;= this.currentFrame) {
+                current = labels[i].label;
+            } else {
+                break;
+            }
+        }
+        return current;
+    }
+
+    /**
+     * When the MovieClip is framerate independent, this is the time elapsed from frame 0 in seconds.
+     * @property elapsedTime
+     * @type Number
+     * @default 0
+     * @public
+     */
+    get elapsedTime() {
+        return this._t;
+    }
+
+    set elapsedTime(value) {
+        this._t = value;
+    }
+
+    /**
+     * By default MovieClip instances advance one frame per tick. Specifying a framerate for the MovieClip
+     * will cause it to advance based on elapsed time between ticks as appropriate to maintain the target
+     * framerate.
+     *
+     * For example, if a MovieClip with a framerate of 10 is placed on a Stage being updated at 40fps, then the MovieClip will
+     * advance roughly one frame every 4 ticks. This will not be exact, because the time between each tick will
+     * vary slightly between frames.
+     *
+     * This feature is dependent on the tick event object (or an object with an appropriate &#x27;delta&#x27; property) being
+     * passed into {{#crossLink &#x27;Stage/update&#x27;}}{{/crossLink}}.
+     * @property framerate
+     * @type {Number}
+     * @default 0
+     */
+    get framerate() {
+        return this._framerate;
+    }
+    set framerate(value) {
+        if (value &gt; 0) {
+            this._framerate = value;
+            this._duration = value ? this._totalFrames / value : 0;
+        } else {
+            this._framerate = this._duration = 0;
+        }
+    }
+
+    /**
+     * Get the total number of frames (duration) of this MovieClip
+     * @property totalFrames
+     * @type {Number}
+     * @default 0
+     * @readOnly
+     */
+    get totalFrames() {
+        return this._totalFrames;
+    }
+
+    /**
+     * Convenience method for setting multiple frames at once and adding the child
+     * @method addKeyframes
+     * @private
+     * @param {PIXI.DisplayObject} instance The clip to animate
+     * @param {Object} keyframes The collection of keyframe objects or data string, the key is frame number
+     */
+    addKeyframes(instance, keyframes) {
+        if (!keyframes) {
+            return;
+        }
+
+        let i = 0;
+
+        // Parse the value of the compressed keyframe
+        let parseValue = function(frame, prop, buffer) {
+            switch (prop) {
+                case &#x27;c&#x27;:
+                    {
+                        buffer = buffer.split(&#x27;,&#x27;);
+                        buffer.forEach(function(val, i, buffer) {
+                            buffer[i] = parseFloat(val);
+                        });
+                        frame.c = buffer;
+                        break;
+                    }
+                case &#x27;t&#x27;:
+                    {
+                        frame.t = buffer;
+                        break;
+                    }
+                case &#x27;v&#x27;:
+                    {
+                        frame.v = !!parseInt(buffer);
+                        break;
+                    }
+                default:
+                    {
+                        frame[prop] = parseFloat(buffer);
+                        break;
+                    }
+            }
+        };
+
+        // Convert serialized array into keyframes
+        // &quot;0x100y100,1x150&quot; to: { &quot;0&quot;: {&quot;x&quot;:100, &quot;y&quot;: 100}, &quot;1&quot;: {&quot;x&quot;: 150} }
+        if (typeof keyframes === &#x27;string&#x27;) {
+            let result = {};
+            let keysMap = {
+                X: &#x27;x&#x27;, // x position
+                Y: &#x27;y&#x27;, // y position
+                A: &#x27;sx&#x27;, // scale x
+                B: &#x27;sy&#x27;, // scale y
+                C: &#x27;kx&#x27;, // skew x
+                D: &#x27;ky&#x27;, // skew y
+                R: &#x27;r&#x27;, // rotation
+                L: &#x27;a&#x27;, // alpha
+                T: &#x27;t&#x27;, // tint
+                F: &#x27;c&#x27;, // colorTransform
+                V: &#x27;v&#x27; // visibility
+            };
+            let c,
+                buffer = &#x27;&#x27;,
+                isFrameStarted = false,
+                prop,
+                frame = {};
+
+            while (i &lt; keyframes.length) {
+                c = keyframes[i];
+                if (keysMap[c]) {
+                    if (!isFrameStarted) {
+                        isFrameStarted = true;
+                        result[buffer] = frame;
+                    }
+                    if (prop) {
+                        parseValue(frame, prop, buffer);
+                    }
+                    prop = keysMap[c];
+                    buffer = &#x27;&#x27;;
+                    i++;
+                }
+                // Start a new prop
+                else if (c === &#x27; &#x27;) {
+                    i++;
+                    parseValue(frame, prop, buffer);
+                    buffer = &#x27;&#x27;;
+                    prop = null;
+                    frame = {};
+                    isFrameStarted = false;
+                } else {
+                    buffer += c;
+                    i++;
+                }
+            }
+            keyframes = result;
+        }
+
+        // Convert the keyframes object into
+        // individual properties
+        for (i in keyframes) {
+            this.addTween(instance, keyframes[i], parseInt(i, 10));
+        }
+    }
+
+    /**
+     * Add mask or masks
+     * @method addTimedMask
+     * @param {PIXI.DisplayObject} instance Instance to mask
+     * @param {Object} keyframes The map of frames to mask objects
+     * @return {PIXI.animate.MovieClip} instance of clip for chaining
+     */
+    addTimedMask(instance, keyframes) {
+        for (let i in keyframes) {
+            this.addTween(instance, {
+                m: keyframes[i]
+            }, parseInt(i, 10));
+        }
+
+        // Set the initial position/add
+        this._setTimelinePosition(this.currentFrame, this.currentFrame, true);
+        return this;
+    }
+
+    /**
+     * Shortcut alias for &#x60;addTimedMask&#x60;
+     * @method am
+     * @param {PIXI.DisplayObject} instance Instance to mask
+     * @param {Object} keyframes The map of frames to mask objects
+     * @return {PIXI.animate.MovieClip} instance of clip for chaining
+     */
+    am(instance, keyframes) {
+        return this.addTimedMask(instance, keyframes);
+    }
+
+    /**
+     * Alias for method &#x60;addTween&#x60;
+     * @method tw
+     * @return {PIXI.animate.MovieClip}
+     */
+    tw(instance, properties, startFrame, duration, ease) {
+        return this.addTween(instance, properties, startFrame, duration, ease);
+    }
+
+    /**
+     * Add a tween to the clip
+     * @method addTween
+     * @param {PIXI.DisplayObject} instance The clip to tween
+     * @param {Object} properties The property or property to tween
+     * @param {int} startFrame The frame to start tweening
+     * @param {int} [duration=0] Number of frames to tween. If 0, then the properties are set
+     *                           with no tweening.
+     * @param {Function} [ease] An optional easing function that takes the tween time from 0-1.
+     * @return {PIXI.animate.MovieClip}
+     */
+    addTween(instance, properties, startFrame, duration, ease) {
+        duration = duration || 0;
+
+        //1. determine if there is already a tween for this instance, and if so prepare to add it
+        //   on/insert it - if there isn&#x27;t, then make one and set up a wait until startFrame
+        let timeline, i;
+        for (i = this._timelines.length - 1; i &gt;= 0; --i) {
+            if (this._timelines[i].target === instance) {
+                timeline = this._timelines[i];
+                break;
+            }
+        }
+        if (!timeline) {
+            timeline = new Timeline(instance);
+            this._timelines.push(timeline);
+        }
+
+        // Convert any string colors to uints
+        if (typeof properties.t === &#x27;string&#x27;) {
+            properties.t = ColorUtils.hexToUint(properties.t);
+        } else if (typeof properties.v === &#x27;number&#x27;) {
+            properties.v = !!properties.v;
+        }
+
+        //2. create the tween segment, recording the starting values of properties and using the
+        //   supplied properties as the ending values
+        timeline.addTween(instance, properties, startFrame, duration, ease);
+        if (this._totalFrames &lt; startFrame + duration) {
+            this._totalFrames = startFrame + duration;
+        }
+        return this;
+    }
+
+    /**
+     * Alias for method &#x60;addTimedChild&#x60;
+     * @method at
+     * @return {PIXI.animate.MovieClip}
+     */
+    at(instance, startFrame, duration, keyframes) {
+        return this.addTimedChild(instance, startFrame, duration, keyframes);
+    }
+
+    /**
+     * Add a child to show for a certain number of frames before automatic removal.
+     * @method addTimedChild
+     * @param {PIXI.DisplayObject} instance The clip to show
+     * @param {int} startFrame The starting frame
+     * @param {int} [duration=1] The number of frames to display the child before removing it.
+     * @param {String|Array} [keyframes] The collection of static keyframes to add
+     * @return {PIXI.animate.MovieClip}
+     */
+    addTimedChild(instance, startFrame, duration, keyframes) {
+        if (startFrame === undefined) // jshint ignore:line
+        {
+            startFrame = 0;
+        }
+        if (duration === undefined || duration &lt; 1) // jshint ignore:line
+        {
+            duration = this._totalFrames || 1;
+        }
+
+        // Add the starting offset for synced movie clips
+        if (instance.mode === MovieClip.SYNCHED) {
+            instance.parentStartPosition = startFrame;
+        }
+
+        //add tweening info about this child&#x27;s presence on stage
+        //when the child is (re)added, if it has &#x27;autoReset&#x27; set to true, then it
+        //should be set back to frame 0
+        let timeline, i;
+        //get existing timeline
+        for (i = this._timedChildTimelines.length - 1; i &gt;= 0; --i) {
+            if (this._timedChildTimelines[i].target === instance) {
+                timeline = this._timedChildTimelines[i];
+                break;
+            }
+        }
+        //if there wasn&#x27;t one, make a new one
+        if (!timeline) {
+            timeline = [];
+            timeline.target = instance;
+            this._timedChildTimelines.push(timeline);
+        }
+        //ensure that the timeline is long enough
+        let oldLength = timeline.length;
+        if (oldLength &lt; startFrame + duration) {
+            timeline.length = startFrame + duration;
+            //fill any gaps with false to denote that the child should be removed for a bit
+            if (oldLength &lt; startFrame) {
+                //if the browser has implemented the ES6 fill() function, use that
+                if (timeline.fill) {
+                    timeline.fill(false, oldLength, startFrame);
+                } else {
+                    //if we can&#x27;t use fill, then do a for loop to fill it
+                    for (i = oldLength; i &lt; startFrame; ++i) {
+                        timeline[i] = false;
+                    }
+                }
+            }
+        }
+        //if the browser has implemented the ES6 fill() function, use that
+        if (timeline.fill) {
+            timeline.fill(true, startFrame, startFrame + duration);
+        } else {
+            let length = timeline.length;
+            //if we can&#x27;t use fill, then do a for loop to fill it
+            for (i = startFrame; i &lt; length; ++i) {
+                timeline[i] = true;
+            }
+        }
+        if (this._totalFrames &lt; startFrame + duration) {
+            this._totalFrames = startFrame + duration;
+        }
+
+        // Add the collection of keyframes
+        this.addKeyframes(instance, keyframes);
+
+        // Set the initial position/add
+        this._setTimelinePosition(startFrame, this.currentFrame, true);
+
+        return this;
+    }
+
+    /**
+     * Handle frame actions, callback is bound to the instance of the MovieClip
+     * @method addAction
+     * @param {Function} callback The clip call on a certain frame
+     * @param {int} startFrame The starting frame
+     * @return {PIXI.animate.MovieClip}
+     */
+    aa(callback, startFrame) {
+        return this.addAction(callback, startFrame);
+    }
+
+    addAction(callback, startFrame) {
+        let actions = this._actions;
+        //ensure that the movieclip timeline is long enough to support the target frame
+        if (actions.length &lt;= startFrame) {
+            actions.length = startFrame + 1;
+        }
+        if (this._totalFrames &lt; startFrame) {
+            this._totalFrames = startFrame;
+        }
+        //add the action
+        if (actions[startFrame]) {
+            actions[startFrame].push(callback);
+        } else {
+            actions[startFrame] = [callback];
+        }
+        return this;
+    }
+
+    /**
+     * Sets paused to false.
+     * @method play
+     */
+    play() {
+        this.paused = false;
+    }
+
+    /**
+     * Sets paused to true.
+     * @method stop
+     */
+    stop() {
+        this.paused = true;
+    }
+
+    /**
+     * Advances this movie clip to the specified position or label and sets paused to false.
+     * @method gotoAndPlay
+     * @param {String|Number} positionOrLabel The animation name or frame number to go to.
+     */
+    gotoAndPlay(positionOrLabel) {
+        this.paused = false;
+        this._goto(positionOrLabel);
+    }
+
+    /**
+     * Advances this movie clip to the specified position or label and sets paused to true.
+     * @method gotoAndStop
+     * @param {String|Number} positionOrLabel The animation or frame name to go to.
+     */
+    gotoAndStop(positionOrLabel) {
+        this.paused = true;
+        this._goto(positionOrLabel);
+    }
+
+    /**
+     * Advances the playhead. This occurs automatically each tick by default.
+     * @param [time] {Number} The amount of time in seconds to advance by. Only applicable if framerate is set.
+     * @method advance
+     */
+    advance(time) {
+        if (!this._framerate) {
+            let o = this,
+                fps = o._framerate;
+            while ((o = o.parent) &amp;&amp; !fps) {
+                if (o.mode === MovieClip.INDEPENDENT) {
+                    fps = o._framerate;
+                }
+            }
+            this.framerate = fps;
+        }
+
+        if (time) {
+            this._t += time;
+        }
+        if (this._t &gt; this._duration) {
+            this._t = this.loop ? this._t - this._duration : this._duration;
+        }
+        //add a tiny amount to account for potential floating point errors
+        this.currentFrame = Math.floor(this._t * this._framerate + 0.00000001);
+        //final error checking
+        if (this.currentFrame &gt;= this._totalFrames) {
+            this.currentFrame = this._totalFrames - 1;
+        }
+        //update all tweens &amp; actions in the timeline
+        this._updateTimeline();
+    }
+
+    /**
+     * @method _goto
+     * @param {String|Number} positionOrLabel The animation name or frame number to go to.
+     * @protected
+     */
+    _goto(positionOrLabel) {
+        let pos = typeof positionOrLabel === &#x27;string&#x27; ? this._labelDict[positionOrLabel] : positionOrLabel;
+        if (pos === undefined) // jshint ignore:line
+        {
+            return;
+        }
+        // prevent _updateTimeline from overwriting the new position because of a reset:
+        if (this._prevPos === -1) {
+            this._prevPos = NaN;
+        }
+        this.currentFrame = pos;
+        //update the elapsed time if a time based movieclip
+        if (this._framerate &gt; 0) {
+            this._t = pos / this._framerate;
+        } else {
+            this._t = 0;
+        }
+        this._updateTimeline();
+    }
+
+    /**
+     * @method _reset
+     * @private
+     */
+    _reset() {
+        this._prevPos = -1;
+        this._t = 0;
+        this.currentFrame = 0;
+    }
+
+    /**
+     * @method _updateTimeline
+     * @protected
+     */
+    _updateTimeline() {
+        let synched = this.mode !== MovieClip.INDEPENDENT;
+
+        if (synched) {
+            this.currentFrame = this.startPosition + (this.mode === MovieClip.SINGLE_FRAME ? 0 : this._synchOffset);
+            if (this.currentFrame &gt;= this._totalFrames) {
+                this.currentFrame %= this._totalFrames;
+            }
+        }
+
+        if (this._prevPos === this.currentFrame) {
+            return;
+        }
+
+        // update timeline position, ignoring actions if this is a graphic.
+        let startFrame = this._prevPos &lt; 0 ? 0 : this._prevPos;
+        this._setTimelinePosition(startFrame, this.currentFrame, synched ? false : this.actionsEnabled);
+
+        this._prevPos = this.currentFrame;
+    }
+
+    /**
+     * Set the timeline position
+     * @method _setTimelinePostion
+     * @protected
+     * @param {int} startFrame
+     * @param {int} currentFrame
+     * @param {Boolean} doActions
+     */
+    _setTimelinePosition(startFrame, currentFrame, doActions) {
+        //handle all tweens
+        let i, j, length, _timelines = this._timelines;
+        for (i = _timelines.length - 1; i &gt;= 0; --i) {
+            let timeline = _timelines[i];
+            for (j = 0, length = timeline.length; j &lt; length; ++j) {
+                let tween = timeline[j];
+                //if the tween contains part of the timeline that we are travelling through
+                if (currentFrame &gt;= tween.startFrame &amp;&amp;
+                    currentFrame &lt;= tween.endFrame) {
+                    // set the position within that tween
+                    //and break the loop to move onto the next timeline
+                    tween.setPosition(currentFrame);
+                    break;
+                }
+            }
+        }
+        //TODO: handle children removal and adding - try to avoid adding &amp; removing each child
+        //each frame the way CreateJS does
+        let _timedChildTimelines = this._timedChildTimelines;
+        for (i = 0, length = _timedChildTimelines.length; i &lt; length; ++i) {
+            let target = _timedChildTimelines[i].target;
+            let shouldBeChild = _timedChildTimelines[i][currentFrame];
+            //if child should be on stage and is not:
+            if (shouldBeChild &amp;&amp; target.parent !== this) {
+                this.addChild(target);
+                if (target.mode === MovieClip.INDEPENDENT &amp;&amp; target.autoReset) {
+                    target._reset();
+                }
+            } else if (!shouldBeChild &amp;&amp; target.parent === this) {
+                this.removeChild(target);
+            }
+        }
+
+        //go through all children and update synched movieclips that are not single frames
+        let children = this.children,
+            child;
+        for (i = 0, length = children.length; i &lt; length; ++i) {
+            child = children[i];
+            if (child.mode === MovieClip.SYNCHED) {
+                child._synchOffset = currentFrame - child.parentStartPosition;
+                child._updateTimeline();
+            }
+        }
+
+        //handle actions
+        if (doActions) {
+            let actions = this._actions;
+            //handle looping around
+            let needsLoop = false;
+            if (currentFrame &lt; startFrame) {
+                length = actions.length;
+                needsLoop = true;
+            } else {
+                length = Math.min(currentFrame + 1, actions.length);
+            }
+            for (i = startFrame, length = Math.min(currentFrame + 1, actions.length); i &lt; length; ++i) {
+                if (actions[i]) {
+                    let frameActions = actions[i];
+                    for (j = 0; j &lt; frameActions.length; ++j) {
+                        frameActions[j].call(this);
+                    }
+                }
+                //handle looping around
+                if (needsLoop &amp;&amp; i === length - 1) {
+                    i = 0;
+                    length = currentFrame + 1;
+                    needsLoop = false;
+                }
+            }
+        }
+    }
+
+    destroy(destroyChildren) {
+        if (this._tickListener) {
+            SharedTicker.remove(this._tickListener);
+            this._tickListener = null;
+        }
+
+        super.destroy(destroyChildren);
+    }
+}
+
+/**
+ * The MovieClip will advance independently of its parent, even if its parent is paused.
+ * This is the default mode.
+ * @property INDEPENDENT
+ * @static
+ * @type String
+ * @default 0
+ * @readonly
+ */
+MovieClip.INDEPENDENT = 0;
+
+/**
+ * The MovieClip will only display a single frame (as determined by the startPosition property).
+ * @property SINGLE_FRAME
+ * @static
+ * @type String
+ * @default 1
+ * @readonly
+ */
+MovieClip.SINGLE_FRAME = 1;
+
+/**
+ * The MovieClip will be advanced only when its parent advances and will be synched to the position of
+ * the parent MovieClip.
+ * @property SYNCHED
+ * @static
+ * @type String
+ * @default 2
+ * @readonly
+ */
+MovieClip.SYNCHED = 2;
+
+/**
+ * Extend a container
+ * @method extend
+ * @static
+ * @param {PIXI.animate.MovieClip} child The child function
+ * @return {PIXI.animate.MovieClip} The child
+ */
+/**
+ * Extend a container (alias for extend)
+ * @method e
+ * @static
+ * @param {PIXI.animate.MovieClip} child The child function
+ * @return {PIXI.animate.MovieClip} The child
+ */
+MovieClip.extend = MovieClip.e = function(child) {
+    child.prototype = Object.create(MovieClip.prototype);
+    child.prototype.__parent = MovieClip.prototype;
+    child.prototype.constructor = child;
+    return child;
+};
+
+// Assign to namespace
+export default MovieClip;
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

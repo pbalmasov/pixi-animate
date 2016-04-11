@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>/Users/mattkarl/github/jiborobot/pixi-animate/src/mixins/Graphics.js - pixi-animate</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/lucid.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+        
+            pixi-animate
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>0.3.4</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/PIXI.animate.ColorUtils", "classes/PIXI.animate.load", "classes/PIXI.animate.MovieClip", "classes/PIXI.animate.ShapesCache", "classes/PIXI.animate.SymbolLoader", "classes/PIXI.animate.Timeline", "classes/PIXI.animate.Tween", "classes/PIXI.Container", "classes/PIXI.DisplayObject", "classes/PIXI.Graphics", "classes/PIXI.Sprite", "classes/PIXI.Text"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+<div>
+    <div id="sidebar">
+    <div id="classes">
+        <ul id="api-classes" class="nav nav-list">
+            
+                <li><a href="../classes/PIXI.animate.load.html">PIXI.animate.load</a></li>
+            
+                <li><a href="../classes/PIXI.animate.MovieClip.html">PIXI.animate.MovieClip</a></li>
+            
+                <li><a href="../classes/PIXI.animate.ShapesCache.html">PIXI.animate.ShapesCache</a></li>
+            
+                <li><a href="../classes/PIXI.animate.SymbolLoader.html">PIXI.animate.SymbolLoader</a></li>
+            
+                <li><a href="../classes/PIXI.animate.Timeline.html">PIXI.animate.Timeline</a></li>
+            
+                <li><a href="../classes/PIXI.animate.Tween.html">PIXI.animate.Tween</a></li>
+            
+                <li><a href="../classes/PIXI.Container.html">PIXI.Container</a></li>
+            
+                <li><a href="../classes/PIXI.DisplayObject.html">PIXI.DisplayObject</a></li>
+            
+                <li><a href="../classes/PIXI.Graphics.html">PIXI.Graphics</a></li>
+            
+                <li><a href="../classes/PIXI.Sprite.html">PIXI.Sprite</a></li>
+            
+                <li><a href="../classes/PIXI.Text.html">PIXI.Text</a></li>
+            
+        </ul>
+    </div>
+    </div>
+</div>
+
+        </div>
+        <div class="span9">
+    <form id="options-form" class="form-inline pull-right">
+        Show:
+        <label for="api-show-inherited" class="checkbox">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected" class="checkbox">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private" class="checkbox">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated" class="checkbox">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </form>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>/Users/mattkarl/github/jiborobot/pixi-animate/src/mixins/Graphics.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+/**
+ * @namespace PIXI
+ * @class Graphics
+ */
+var p = PIXI.Graphics.prototype;
+
+/**
+ * Shortcut for drawCommands.
+ * @method d
+ * @param  {Array} commands The commands and parameters to draw
+ * @return {PIXI.Graphics}
+ */
+/**
+ * Execute a series of commands, this is the name of the short function
+ * followed by the parameters, e.g., &#x60;[&quot;f&quot;, &quot;#ff0000&quot;, &quot;r&quot;, 0, 0, 100, 200]&#x60;
+ * @method drawCommands
+ * @param  {Array} commands The commands and parameters to draw
+ * @return {PIXI.Graphics}
+ */
+p.drawCommands = p.d = function(commands) {
+    var currentCommand, params = [],
+        i = 0;
+
+    while (i &lt;= commands.length) {
+        var item = commands[i++];
+        if (item === undefined || this[item]) {
+            if (currentCommand) {
+                this[currentCommand].apply(this, params);
+                params.length = 0;
+            }
+            currentCommand = item;
+        } else {
+            params.push(item);
+        }
+    }
+    return this;
+};
+
+/**
+ * Closes the current path, effectively drawing a line from the current drawing point to the first drawing point specified
+ * since the fill or stroke was last set.
+ * @method c
+ * @return {PIXI.Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+ **/
+p.c = p.closePath;
+
+/**
+ * Alias for addHole
+ * @method h
+ * @return {PIXI.Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+ **/
+p.h = p.addHole;
+
+/**
+ * Shortcut to moveTo.
+ * @method m
+ * @param {Number} x The x coordinate the drawing point should move to.
+ * @param {Number} y The y coordinate the drawing point should move to.
+ * @return {PIXI.Graphics} The Graphics instance the method is called on (useful for chaining calls).
+ **/
+p.m = p.moveTo;
+
+/**
+ * Shortcut to lineTo.
+ * @method l
+ * @param {Number} x The x coordinate the drawing point should draw to.
+ * @param {Number} y The y coordinate the drawing point should draw to.
+ * @return {PIXI.Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+ **/
+p.l = p.lineTo;
+
+/**
+ * Draws a quadratic curve from the current drawing point to (x, y) using the control point (cpx, cpy). For detailed
+ * information, read the &lt;a href=&quot;http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html#dom-context-2d-quadraticcurveto&quot;&gt;
+ * whatwg spec&lt;/a&gt;. A tiny API method &quot;qt&quot; also exists.
+ * @method q
+ * @param {Number} cpx
+ * @param {Number} cpy
+ * @param {Number} x
+ * @param {Number} y
+ * @return {PIXI.Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+ **/
+p.q = p.quadraticCurveTo;
+
+/**
+ * Shortcut to bezierCurveTo.
+ * @method b
+ * @param {Number} cp1x
+ * @param {Number} cp1y
+ * @param {Number} cp2x
+ * @param {Number} cp2y
+ * @param {Number} x
+ * @param {Number} y
+ * @return {PIXI.Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+ **/
+p.b = p.bezierCurveTo;
+
+/**
+ * Shortcut to beginFill.
+ * @method f
+ * @param {Uint} color The hex color value (e.g. 0xFFFFFF)
+ * null will result in no fill.
+ * @param {Number} [alpha=1] The alpha value of fill
+ * @return {PIXI.Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+ **/
+p.f = p.beginFill;
+
+/**
+ * Shortcut to lineStyle.
+ * @method s
+ * @param {String} color A CSS compatible color value (ex. &quot;#FF0000&quot;, &quot;red&quot;, or &quot;rgba(255,0,0,0.5)&quot;). Setting to
+ * null will result in no stroke.
+ * @param {Number} [thickness=1] The thickness of the stroke
+ * @param {Number} [alpha=1] The alpha value from 0 (invisibile) to 1 (visible)
+ * @return {PIXI.Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+ **/
+p.s = p.lineStyle;
+
+/**
+ * Shortcut to drawRect.
+ * @method dr
+ * @param {Number} x
+ * @param {Number} y
+ * @param {Number} w Width of the rectangle
+ * @param {Number} h Height of the rectangle
+ * @return {PIXI.Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+ **/
+/**
+ * Shortcut to drawRect.
+ * @method r
+ * @param {Number} x
+ * @param {Number} y
+ * @param {Number} w Width of the rectangle
+ * @param {Number} h Height of the rectangle
+ * @return {PIXI.Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+ **/
+p.dr = p.drawRect;
+
+/**
+ * Shortcut to drawRoundedRect.
+ * @method rr
+ * @param {Number} x
+ * @param {Number} y
+ * @param {Number} w Width of the rectangle
+ * @param {Number} h Height of the rectangle
+ * @param {Number} radius The corner radius
+ * @return {PIXI.Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+ **/
+p.rr = p.drawRoundedRect;
+
+/**
+ * Shortcut to drawRoundedRect.
+ * @method rc
+ * @param {Number} x
+ * @param {Number} y
+ * @param {Number} w Width of the rectangle
+ * @param {Number} h Height of the rectangle
+ * @param {Number} radiusTL The top left corner radius
+ * @param {Number} radiusTR The top right corner radius
+ * @param {Number} radiusBR The bottom right corner radius
+ * @param {Number} radiusBL The bottom left corner radius
+ * @return {PIXI.Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+ **/
+p.rc = p.drawRoundedRect;
+
+/**
+ * Shortcut to drawCircle.
+ * @method dc
+ * @param {Number} x x coordinate center point of circle.
+ * @param {Number} y y coordinate center point of circle.
+ * @param {Number} radius Radius of circle.
+ * @return {PIXI.Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+ **/
+p.dc = p.drawCircle;
+
+/**
+ * Shortcut to arc.
+ * @method ac
+ * @param {Number} x
+ * @param {Number} y
+ * @param {Number} radius
+ * @param {Number} startAngle Measured in radians.
+ * @param {Number} endAngle Measured in radians.
+ * @param {Boolean} anticlockwise
+ * @return {PIXI.Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+ **/
+p.ar = p.arc;
+
+/**
+ * Shortcut to arcTo.
+ * @method at
+ * @param {Number} x1
+ * @param {Number} y1
+ * @param {Number} x2
+ * @param {Number} y2
+ * @param {Number} radius
+ * @return {PIXI.Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+ **/
+p.at = p.arcTo;
+
+/**
+ * Shortcut to drawEllipse.
+ * @method  de
+ * @param  {Number} x      [description]
+ * @param  {Number} y      [description]
+ * @param  {Number} width  [description]
+ * @param  {Number} height [description]
+ */
+p.de = p.drawEllipse;
+
+/**
+ * Placeholder method for a linear fill. Pixi does not support linear fills,
+ * so we just pick the first color in colorArray
+ * @method lf
+ * @param {Array} colorArray An array of CSS compatible color values @see &#x60;f&#x60;
+ * @return {PIXI.Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+ **/
+p.lf = function(colorArray) {
+    // @if DEBUG
+    console.warn(&quot;Linear gradient fills are not supported&quot;);
+    // @endif
+    return this.f(colorArray[0]);
+};
+
+/**
+ * Placeholder method for a radial fill. Pixi does not support radial fills,
+ * so we just pick the first color in colorArray
+ * @method rf
+ * @param {Array} colorArray An array of CSS compatible color values @see &#x60;f&#x60;
+ * @return {PIXI.Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+ **/
+p.rf = function(colorArray) {
+    // @if DEBUG
+    console.warn(&quot;Radial gradient fills are not supported&quot;);
+    // @endif
+    return this.f(colorArray[0]);
+};
+
+/**
+ * Placeholder method for a beginBitmapFill. Pixi does not support bitmap fills.
+ * @method bf
+ * @return {PIXI.Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+ **/
+p.bf = function() {
+    // @if DEBUG
+    console.warn(&quot;Bitmap fills are not supported&quot;);
+    // @endif
+    return this.f(0x0);
+};
+
+/**
+ * Placeholder method for a setStrokeDash. Pixi does not support dashed strokes.
+ * @method sd
+ * @return {PIXI.Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+ **/
+p.sd = function() {
+    // @if DEBUG
+    console.warn(&quot;Dashed strokes are not supported&quot;);
+    // @endif
+    return this;
+};
+
+/**
+ * Placeholder method for a beginBitmapStroke. Pixi does not support bitmap strokes.
+ * @method bs
+ * @return {PIXI.Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+ **/
+p.bs = function() {
+    // @if DEBUG
+    console.warn(&quot;Bitmap strokes are not supported&quot;);
+    // @endif
+    return this;
+};
+
+/**
+ * Placeholder method for a beginLinearGradientStroke. Pixi does not support gradient strokes.
+ * @method ls
+ * @return {PIXI.Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+ **/
+p.ls = function() {
+    // @if DEBUG
+    console.warn(&quot;Linear gradient strokes are not supported&quot;);
+    // @endif
+    return this;
+};
+
+/**
+ * Placeholder method for a beginRadialGradientStroke. Pixi does not support gradient strokes.
+ * @method rs
+ * @return {PIXI.Graphics} The Graphics instance the method is called on (useful for chaining calls.)
+ **/
+p.rs = function() {
+    // @if DEBUG
+    console.warn(&quot;Radial gradient strokes are not supported&quot;);
+    // @endif
+    return this;
+};
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

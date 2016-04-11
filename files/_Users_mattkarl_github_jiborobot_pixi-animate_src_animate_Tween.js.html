@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>/Users/mattkarl/github/jiborobot/pixi-animate/src/animate/Tween.js - pixi-animate</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/lucid.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+        
+            pixi-animate
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>0.3.4</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/PIXI.animate.ColorUtils", "classes/PIXI.animate.load", "classes/PIXI.animate.MovieClip", "classes/PIXI.animate.ShapesCache", "classes/PIXI.animate.SymbolLoader", "classes/PIXI.animate.Timeline", "classes/PIXI.animate.Tween", "classes/PIXI.Container", "classes/PIXI.DisplayObject", "classes/PIXI.Graphics", "classes/PIXI.Sprite", "classes/PIXI.Text"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+<div>
+    <div id="sidebar">
+    <div id="classes">
+        <ul id="api-classes" class="nav nav-list">
+            
+                <li><a href="../classes/PIXI.animate.load.html">PIXI.animate.load</a></li>
+            
+                <li><a href="../classes/PIXI.animate.MovieClip.html">PIXI.animate.MovieClip</a></li>
+            
+                <li><a href="../classes/PIXI.animate.ShapesCache.html">PIXI.animate.ShapesCache</a></li>
+            
+                <li><a href="../classes/PIXI.animate.SymbolLoader.html">PIXI.animate.SymbolLoader</a></li>
+            
+                <li><a href="../classes/PIXI.animate.Timeline.html">PIXI.animate.Timeline</a></li>
+            
+                <li><a href="../classes/PIXI.animate.Tween.html">PIXI.animate.Tween</a></li>
+            
+                <li><a href="../classes/PIXI.Container.html">PIXI.Container</a></li>
+            
+                <li><a href="../classes/PIXI.DisplayObject.html">PIXI.DisplayObject</a></li>
+            
+                <li><a href="../classes/PIXI.Graphics.html">PIXI.Graphics</a></li>
+            
+                <li><a href="../classes/PIXI.Sprite.html">PIXI.Sprite</a></li>
+            
+                <li><a href="../classes/PIXI.Text.html">PIXI.Text</a></li>
+            
+        </ul>
+    </div>
+    </div>
+</div>
+
+        </div>
+        <div class="span9">
+    <form id="options-form" class="form-inline pull-right">
+        Show:
+        <label for="api-show-inherited" class="checkbox">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected" class="checkbox">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private" class="checkbox">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated" class="checkbox">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </form>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>/Users/mattkarl/github/jiborobot/pixi-animate/src/animate/Tween.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+/**
+ * Provide timeline playback of movieclip
+ * @namespace PIXI.animate
+ * @class Tween
+ * @constructor
+ * @param {PIXI.animate.MovieClip} target The target to play
+ * @param {Object} startProps The starting properties
+ * @param {Object} endProps The ending properties
+ * @param {int} duration Number oframes to tween
+ * @param {Function} [ease] Ease function to use
+ */
+
+class Tween {
+
+    constructor(target, startProps, endProps, startFrame, duration, ease) {
+        //target display object
+        this.target = target;
+
+        //properties at the start of the tween
+        this.startProps = startProps;
+
+        //properties at the end of the tween, as well as any properties that are set
+        //instead of tweened
+        this.endProps = {};
+        let prop;
+
+        //make a copy to safely include any unchanged values from the start of the tween
+        for (prop in endProps) {
+            this.endProps[prop] = endProps[prop];
+        }
+
+        //copy in any starting properties don&#x27;t change
+        for (prop in startProps) {
+            if (!this.endProps.hasOwnProperty(prop)) {
+                this.endProps[prop] = startProps[prop];
+            }
+        }
+        //duration of tween in frames. For a keyframe with no tweening, the duration
+        //will be 0.
+        this.duration = duration;
+
+        //the frame that the tween starts on
+        this.startFrame = startFrame;
+
+        //the frame that the tween ends on
+        this.endFrame = startFrame + duration;
+
+        //easing function to use, if any
+        this.ease = ease;
+    }
+
+    setPosition(currentFrame) {
+        //if this is a single frame with no tweening, or at the end of the tween, then
+        //just speed up the process by setting values
+        if (currentFrame &gt;= this.endFrame) {
+            this.setToEnd();
+            return;
+        }
+
+        let time = (currentFrame - this.startFrame) / this.duration;
+        if (this.ease) {
+            time = this.ease(time);
+        }
+        let target = this.target;
+        let startProps = this.startProps;
+        let endProps = this.endProps;
+        for (let prop in endProps) {
+            let lerp = props[prop];
+            if (lerp) {
+                setPropFromShorthand(target, prop, lerp(startProps[prop], endProps[prop], time));
+            } else {
+                setPropFromShorthand(target, prop, startProps[prop]);
+            }
+        }
+    }
+
+    setToEnd() {
+        let endProps = this.endProps;
+        let target = this.target;
+        for (let prop in endProps) {
+            setPropFromShorthand(target, prop, endProps[prop]);
+        }
+    }
+}
+
+//standard tweening
+function lerpValue(start, end, t) {
+    return start + (end - start) * t;
+}
+
+const props = {
+    //position
+    x: lerpValue,
+    y: lerpValue,
+    //scale
+    sx: lerpValue,
+    sy: lerpValue,
+    //skew
+    kx: lerpValue,
+    ky: lerpValue,
+    //rotation
+    r: lerpRotation,
+    //alpha
+    a: lerpValue,
+    //tinting
+    // t: lerpColor,
+    t: null,
+    //values to be set
+    v: null, //visible
+    c: null, //colorTransform
+    m: null, //mask
+    g: null //not sure if we&#x27;ll actually handle graphics this way?
+};
+
+//split r, g, b into separate values for tweening
+/*function lerpColor(start, end, t)
+{
+    //split start color into components
+    let sR = start &gt;&gt; 16 &amp; 0xFF;
+    let sG = start &gt;&gt; 8 &amp; 0xFF;
+    let sB = start &amp; 0xFF;
+    //split end color into components
+    let eR = end &gt;&gt; 16 &amp; 0xFF;
+    let eG = end &gt;&gt; 8 &amp; 0xFF;
+    let eB = end &amp; 0xFF;
+    //lerp red
+    let r = sR + (eR - sR) * percent;
+    //clamp red to valid values
+    if (r &lt; 0)
+        r = 0;
+    else if (r &gt; 255)
+        r = 255;
+    //lerp green
+    let g = sG + (eG - sG) * percent;
+    //clamp green to valid values
+    if (g &lt; 0)
+        g = 0;
+    else if (g &gt; 255)
+        g = 255;
+    //lerp blue
+    let b = sB + (eB - sB) * percent;
+    //clamp blue to valid values
+    if (b &lt; 0)
+        b = 0;
+    else if (b &gt; 255)
+        b = 255;
+
+    let combined = (r &lt;&lt; 16) | (g &lt;&lt; 8) | b;
+    return combined;
+}*/
+
+const PI = Math.PI;
+const TWO_PI = PI * 2;
+
+//handle 355 -&gt; 5 degrees only going through a 10 degree change instead of
+//the long way around
+//Math from http://stackoverflow.com/a/2708740
+function lerpRotation(start, end, t) {
+    let difference = Math.abs(end - start);
+    if (difference &gt; PI) {
+        // We need to add on to one of the values.
+        if (end &gt; start) {
+            // We&#x27;ll add it on to start...
+            start += TWO_PI;
+        } else {
+            // Add it on to end.
+            end += PI + TWO_PI;
+        }
+    }
+
+    // Interpolate it.
+    let value = (start + ((end - start) * t));
+
+    // wrap to 0-2PI
+    /*if (value &gt;= 0 &amp;&amp; value &lt;= TWO_PI)
+        return value;
+    return value % TWO_PI;*/
+
+    //just return, as it&#x27;s faster
+    return value;
+}
+
+function setPropFromShorthand(target, prop, value) {
+    switch (prop) {
+        case &quot;x&quot;:
+            target.position.x = value;
+            break;
+        case &quot;y&quot;:
+            target.position.y = value;
+            break;
+        case &quot;sx&quot;:
+            target.scale.x = value;
+            break;
+        case &quot;sy&quot;:
+            target.scale.y = value;
+            break;
+        case &quot;kx&quot;:
+            target.skew.x = value;
+            break;
+        case &quot;ky&quot;:
+            target.skew.y = value;
+            break;
+        case &quot;r&quot;:
+            target.rotation = value;
+            break;
+        case &quot;a&quot;:
+            target.alpha = value;
+            break;
+        case &quot;t&quot;:
+            target.i(value); // i = setTint
+            break;
+        case &quot;c&quot;:
+            target.c.apply(target, value); // c = setColorTransform
+            break;
+        case &quot;v&quot;:
+            target.visible = value;
+            break;
+        case &quot;m&quot;:
+            target.ma(value);
+            break;
+    }
+}
+
+// Assign to namespace
+export default Tween;
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

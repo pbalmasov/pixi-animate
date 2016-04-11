@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>/Users/mattkarl/github/jiborobot/pixi-animate/src/animate/ShapesCache.js - pixi-animate</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/lucid.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+        
+            pixi-animate
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>0.3.4</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/PIXI.animate.ColorUtils", "classes/PIXI.animate.load", "classes/PIXI.animate.MovieClip", "classes/PIXI.animate.ShapesCache", "classes/PIXI.animate.SymbolLoader", "classes/PIXI.animate.Timeline", "classes/PIXI.animate.Tween", "classes/PIXI.Container", "classes/PIXI.DisplayObject", "classes/PIXI.Graphics", "classes/PIXI.Sprite", "classes/PIXI.Text"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+<div>
+    <div id="sidebar">
+    <div id="classes">
+        <ul id="api-classes" class="nav nav-list">
+            
+                <li><a href="../classes/PIXI.animate.load.html">PIXI.animate.load</a></li>
+            
+                <li><a href="../classes/PIXI.animate.MovieClip.html">PIXI.animate.MovieClip</a></li>
+            
+                <li><a href="../classes/PIXI.animate.ShapesCache.html">PIXI.animate.ShapesCache</a></li>
+            
+                <li><a href="../classes/PIXI.animate.SymbolLoader.html">PIXI.animate.SymbolLoader</a></li>
+            
+                <li><a href="../classes/PIXI.animate.Timeline.html">PIXI.animate.Timeline</a></li>
+            
+                <li><a href="../classes/PIXI.animate.Tween.html">PIXI.animate.Tween</a></li>
+            
+                <li><a href="../classes/PIXI.Container.html">PIXI.Container</a></li>
+            
+                <li><a href="../classes/PIXI.DisplayObject.html">PIXI.DisplayObject</a></li>
+            
+                <li><a href="../classes/PIXI.Graphics.html">PIXI.Graphics</a></li>
+            
+                <li><a href="../classes/PIXI.Sprite.html">PIXI.Sprite</a></li>
+            
+                <li><a href="../classes/PIXI.Text.html">PIXI.Text</a></li>
+            
+        </ul>
+    </div>
+    </div>
+</div>
+
+        </div>
+        <div class="span9">
+    <form id="options-form" class="form-inline pull-right">
+        Show:
+        <label for="api-show-inherited" class="checkbox">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected" class="checkbox">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private" class="checkbox">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated" class="checkbox">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </form>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>/Users/mattkarl/github/jiborobot/pixi-animate/src/animate/ShapesCache.js <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums">
+import ColorUtils from &#x27;./ColorUtils&#x27;;
+
+/**
+ * Contains the collection of graphics data
+ * @namespace PIXI.animate
+ * @class ShapesCache
+ */
+const ShapesCache = {};
+
+/**
+ * Add an item or itesm to the cache
+ * @method add
+ * @static
+ * @param {String} prop  The id of graphic
+ * @param {Array} [value] If adding a single property, the draw commands
+ */
+Object.defineProperty(ShapesCache, &#x27;add&#x27;, {
+    enumerable: false,
+    value: function(prop, draw) {
+        // Convert all hex string colors (animate) to int (pixi.js)
+        for (let d in draw) {
+            let arg = draw[d];
+            if (typeof arg === &#x27;string&#x27; &amp;&amp; arg[0] === &#x27;#&#x27;) {
+                draw[d] = ColorUtils.hexToUint(arg);
+            }
+        }
+        ShapesCache[prop] = draw;
+    }
+});
+
+/**
+ * Decode a shapes string into draw commands
+ * @method decode
+ * @static
+ * @param  {String} str The string to decode
+ */
+Object.defineProperty(ShapesCache, &#x27;decode&#x27;, {
+    enumerable: false,
+    value: function(str) {
+        // each shape is a new line
+        let shapes = str.split(&quot;\n&quot;);
+        let isCommand = /^[a-z]{1,2}$/;
+        for (let i = 0; i &lt; shapes.length; i++) {
+            let shape = shapes[i].split(&#x27; &#x27;); // arguments are space separated
+            let name = shape.shift(); // first argument is the ID
+            for (let j = 0; j &lt; shape.length; j++) {
+                // Convert all numbers to floats, ignore colors
+                let arg = shape[j];
+                if (arg[0] !== &#x27;#&#x27; &amp;&amp; !isCommand.test(arg)) {
+                    shape[j] = parseFloat(arg);
+                }
+            }
+            this.add(name, shape);
+        }
+    }
+});
+
+/**
+ * Get the graphic from cache
+ * @method  fromCache
+ * @static
+ * @param  {String} id The cache id
+ * @return {Array} Series of graphic draw commands
+ */
+Object.defineProperty(ShapesCache, &#x27;fromCache&#x27;, {
+    enumerable: false,
+    value: function(id) {
+        return ShapesCache[id] || null;
+    }
+});
+
+/**
+ * Remove the graphic from cache
+ * @method  remove
+ * @static
+ * @param  {String} id The cache id
+ */
+Object.defineProperty(ShapesCache, &#x27;remove&#x27;, {
+    enumerable: false,
+    value: function(id) {
+        if (ShapesCache[id]) {
+            ShapesCache[id].length = 0;
+            delete ShapesCache[id];
+        }
+    }
+});
+
+/**
+ * Remove all graphics from cache
+ * @method  removeAll
+ * @static
+ */
+Object.defineProperty(ShapesCache, &#x27;removeAll&#x27;, {
+    enumerable: false,
+    value: function() {
+        for (let id in ShapesCache) {
+            ShapesCache.remove(id);
+        }
+    }
+});
+
+// Assign to namespace
+export default ShapesCache;
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>

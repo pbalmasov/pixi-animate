@@ -1,0 +1,3852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>PIXI.animate.MovieClip - pixi-animate</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+    <link rel="stylesheet" href="../assets/css/lucid.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-skin-sam">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <h1 class="brand" style="padding: 10px 16px 10px; height: 20px; line-height: 20px; margin-left: 0;">
+        
+            pixi-animate
+        </h1>
+	<div class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+                <p class="navbar-text">
+                    API Docs for Version: <b>0.3.4</b>
+                </p>
+            </li>
+        </div>
+        <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/PIXI.animate.ColorUtils", "classes/PIXI.animate.load", "classes/PIXI.animate.MovieClip", "classes/PIXI.animate.ShapesCache", "classes/PIXI.animate.SymbolLoader", "classes/PIXI.animate.Timeline", "classes/PIXI.animate.Tween", "classes/PIXI.Container", "classes/PIXI.DisplayObject", "classes/PIXI.Graphics", "classes/PIXI.Sprite", "classes/PIXI.Text"]'>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span3">
+<div>
+    <div id="sidebar">
+    <div id="classes">
+        <ul id="api-classes" class="nav nav-list">
+            
+                <li><a href="../classes/PIXI.animate.load.html">PIXI.animate.load</a></li>
+            
+                <li><a href="../classes/PIXI.animate.MovieClip.html">PIXI.animate.MovieClip</a></li>
+            
+                <li><a href="../classes/PIXI.animate.ShapesCache.html">PIXI.animate.ShapesCache</a></li>
+            
+                <li><a href="../classes/PIXI.animate.SymbolLoader.html">PIXI.animate.SymbolLoader</a></li>
+            
+                <li><a href="../classes/PIXI.animate.Timeline.html">PIXI.animate.Timeline</a></li>
+            
+                <li><a href="../classes/PIXI.animate.Tween.html">PIXI.animate.Tween</a></li>
+            
+                <li><a href="../classes/PIXI.Container.html">PIXI.Container</a></li>
+            
+                <li><a href="../classes/PIXI.DisplayObject.html">PIXI.DisplayObject</a></li>
+            
+                <li><a href="../classes/PIXI.Graphics.html">PIXI.Graphics</a></li>
+            
+                <li><a href="../classes/PIXI.Sprite.html">PIXI.Sprite</a></li>
+            
+                <li><a href="../classes/PIXI.Text.html">PIXI.Text</a></li>
+            
+        </ul>
+    </div>
+    </div>
+</div>
+
+        </div>
+        <div class="span9">
+    <form id="options-form" class="form-inline pull-right">
+        Show:
+        <label for="api-show-inherited" class="checkbox">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected" class="checkbox">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private" class="checkbox">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated" class="checkbox">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </form>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+<div class="page-header">
+    <h1>PIXI.animate.MovieClip</h1>
+</div>
+
+    
+
+    
+	<div class="well well-small">
+        <div class="extends">
+            Extends <a href="../classes/PIXI.Container.html" class="crosslink">PIXI.Container</a>
+        </div>
+    </div>
+    
+
+    
+
+    
+
+
+
+
+<div class="yuidoc-class-description">
+<p>Provide timeline playback of movieclip</p>
+
+</div>
+
+
+<!-- table of contents -->
+
+<div id="class-toc" class="page-section">
+	<h2>Table of Contents</h2>
+    <ul>
+		
+		<li>
+			<strong>Methods</strong>
+			<ul>
+				
+				
+				<li><a href="#method-_goto"><span class="im">_goto</span>(<span class="ia">positionOrLabel</span>)</a></li>
+				
+				
+				
+				<li><a href="#method-_reset"><span class="im">_reset</span>()</a></li>
+				
+				
+				
+				<li><a href="#method-_setTimelinePostion"><span class="im">_setTimelinePostion</span>(<span class="ia">startFrame</span><span class="ia">currentFrame</span><span class="ia">doActions</span>)</a></li>
+				
+				
+				
+				<li><a href="#method-_updateTimeline"><span class="im">_updateTimeline</span>()</a></li>
+				
+				
+				
+				<li><a href="#method-ac"><span class="im">ac</span>(<span class="ia">child*</span>)</a></li>
+				
+				
+				
+				<li><a href="#method-addAction"><span class="im">addAction</span>(<span class="ia">callback</span><span class="ia">startFrame</span>)</a></li>
+				
+				
+				
+				<li><a href="#method-addKeyframes"><span class="im">addKeyframes</span>(<span class="ia">instance</span><span class="ia">keyframes</span>)</a></li>
+				
+				
+				
+				<li><a href="#method-addTimedChild"><span class="im">addTimedChild</span>(<span class="ia">instance</span><span class="ia">startFrame</span><span class="ia">duration</span><span class="ia">keyframes</span>)</a></li>
+				
+				
+				
+				<li><a href="#method-addTimedMask"><span class="im">addTimedMask</span>(<span class="ia">instance</span><span class="ia">keyframes</span>)</a></li>
+				
+				
+				
+				<li><a href="#method-addTween"><span class="im">addTween</span>(<span class="ia">instance</span><span class="ia">properties</span><span class="ia">startFrame</span><span class="ia">duration</span><span class="ia">ease</span>)</a></li>
+				
+				
+				
+				<li><a href="#method-advance"><span class="im">advance</span>(<span class="ia">time</span>)</a></li>
+				
+				
+				
+				<li><a href="#method-am"><span class="im">am</span>(<span class="ia">instance</span><span class="ia">keyframes</span>)</a></li>
+				
+				
+				
+				<li><a href="#method-at"><span class="im">at</span>()</a></li>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<li><a href="#method-gotoAndPlay"><span class="im">gotoAndPlay</span>(<span class="ia">positionOrLabel</span>)</a></li>
+				
+				
+				
+				<li><a href="#method-gotoAndStop"><span class="im">gotoAndStop</span>(<span class="ia">positionOrLabel</span>)</a></li>
+				
+				
+				
+				<li><a href="#method-play"><span class="im">play</span>()</a></li>
+				
+				
+				
+				<li><a href="#method-stop"><span class="im">stop</span>()</a></li>
+				
+				
+				
+				<li><a href="#method-tw"><span class="im">tw</span>()</a></li>
+				
+				
+			</ul>
+		</li>
+		
+
+		
+		<li>
+			<strong>Properties</strong>
+			<ul>
+				
+				<li><a href="#prop-_actions"><span class="ip">_actions</span></a></li>
+				
+				<li><a href="#prop-_duration"><span class="ip">_duration</span></a></li>
+				
+				<li><a href="#prop-_framerate"><span class="ip">_framerate</span></a></li>
+				
+				<li><a href="#prop-_prevPos"><span class="ip">_prevPos</span></a></li>
+				
+				<li><a href="#prop-_synchOffset"><span class="ip">_synchOffset</span></a></li>
+				
+				<li><a href="#prop-_t"><span class="ip">_t</span></a></li>
+				
+				<li><a href="#prop-_timedChildTimelines"><span class="ip">_timedChildTimelines</span></a></li>
+				
+				<li><a href="#prop-_timelines"><span class="ip">_timelines</span></a></li>
+				
+				<li><a href="#prop-_totalFrames"><span class="ip">_totalFrames</span></a></li>
+				
+				<li><a href="#prop-actionsEnabled"><span class="ip">actionsEnabled</span></a></li>
+				
+				<li><a href="#prop-autoReset"><span class="ip">autoReset</span></a></li>
+				
+				<li><a href="#prop-currentFrame"><span class="ip">currentFrame</span></a></li>
+				
+				<li><a href="#prop-currentLabel"><span class="ip">currentLabel</span></a></li>
+				
+				<li><a href="#prop-elapsedTime"><span class="ip">elapsedTime</span></a></li>
+				
+				<li><a href="#prop-framerate"><span class="ip">framerate</span></a></li>
+				
+				<li><a href="#prop-INDEPENDENT"><span class="ip">INDEPENDENT</span></a></li>
+				
+				<li><a href="#prop-labels"><span class="ip">labels</span></a></li>
+				
+				<li><a href="#prop-loop"><span class="ip">loop</span></a></li>
+				
+				<li><a href="#prop-mode"><span class="ip">mode</span></a></li>
+				
+				<li><a href="#prop-paused"><span class="ip">paused</span></a></li>
+				
+				<li><a href="#prop-selfAdvance"><span class="ip">selfAdvance</span></a></li>
+				
+				<li><a href="#prop-SINGLE_FRAME"><span class="ip">SINGLE_FRAME</span></a></li>
+				
+				<li><a href="#prop-startPosition"><span class="ip">startPosition</span></a></li>
+				
+				<li><a href="#prop-SYNCHED"><span class="ip">SYNCHED</span></a></li>
+				
+				<li><a href="#prop-totalFrames"><span class="ip">totalFrames</span></a></li>
+				
+			</ul>
+		</li>
+		
+
+		
+
+		
+		<li>
+			<strong>Static Methods</strong>
+			<ul>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<li><a href="#method-e"><span class="im">PIXI.animate.MovieClip.e</span>(<span class="ia">child</span>)</a></li>
+				
+				
+				
+				<li><a href="#method-extend"><span class="im">PIXI.animate.MovieClip.extend</span>(<span class="ia">child</span>)</a></li>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</ul>
+		</li>
+		
+	</ul>
+</div>
+
+<!-- details -->
+
+
+    <div class="constructor yuidoc-class-constructor page-section">
+        <h2>Constructor</h2>
+        <div class="item-list">
+<div id="method-PIXI.animate.MovieClip" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>PIXI.animate.MovieClip</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code class="optional">options</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l7"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:7</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name optional">[options]</code>
+						<span class="type">Object  |  Int</span>
+						<span class="flag optional" title="This parameter is optional.">optional</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The options object or the mode to play</p>
+</div>
+					
+
+					
+						<ul class="params-list">
+							
+							<li class="param">
+								
+									<code class="param-name optional">[mode=0]</code>
+									<span class="type">Int</span>
+									<span class="flag optional" title="This parameter is optional.">optional</span>
+								
+
+								<div class="param-description"><p>The playback mode default is independent (0),</p>
+</div>
+
+								
+							</li>
+							
+							<li class="param">
+								
+									<code class="param-name optional">[startPosition=0]</code>
+									<span class="type">Int</span>
+									<span class="flag optional" title="This parameter is optional.">optional</span>
+								
+
+								<div class="param-description"><p>The starting frame</p>
+</div>
+
+								
+							</li>
+							
+							<li class="param">
+								
+									<code class="param-name optional">[loop=true]</code>
+									<span class="type">Boolean</span>
+									<span class="flag optional" title="This parameter is optional.">optional</span>
+								
+
+								<div class="param-description"><p>If playback is looped</p>
+</div>
+
+								
+							</li>
+							
+							<li class="param">
+								
+									<code class="param-name optional">[labels]</code>
+									<span class="type">Object</span>
+									<span class="flag optional" title="This parameter is optional.">optional</span>
+								
+
+								<div class="param-description"><p>The frame labels map of label to frames</p>
+</div>
+
+								
+							</li>
+							
+							<li class="param">
+								
+									<code class="param-name optional">[duration]</code>
+									<span class="type">Int</span>
+									<span class="flag optional" title="This parameter is optional.">optional</span>
+								
+
+								<div class="param-description"><p>The duration, if no duration is provided, auto determines length</p>
+</div>
+
+								
+							</li>
+							
+							<li class="param">
+								
+									<code class="param-name optional">[framerate=24]</code>
+									<span class="type">Int</span>
+									<span class="flag optional" title="This parameter is optional.">optional</span>
+								
+
+								<div class="param-description"><p>The framerate to use for independent mode</p>
+</div>
+
+								
+							</li>
+							
+						</ul>
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
+	
+
+	
+</div>
+
+        </div>
+    </div>
+
+
+
+    <div id="methods" class="page-section">
+        <h2 class="off-left">Methods</h2>
+        <div class="item-list">
+       		
+        	
+<div id="method-_goto" class="method item protected">
+	<div class="method-signature">
+	<span class="name"><code>_goto</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code>positionOrLabel</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+	</div>
+
+	
+
+	
+		<span class="flag protected">protected</span>
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l708"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:708</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name">positionOrLabel</code>
+						<span class="type">String  |  Number</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The animation name or frame number to go to.</p>
+</div>
+					
+
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
+	
+
+	
+</div>
+
+            
+        
+        	
+<div id="method-_reset" class="method item private">
+	<div class="method-signature">
+	<span class="name"><code>_reset</code></span>
+
+	
+		<span class="paren">()</span>
+	
+	
+	</div>
+
+	
+
+	
+		<span class="flag private">private</span>
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l733"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:733</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+
+	
+
+	
+
+	
+</div>
+
+            
+        
+        	
+<div id="method-_setTimelinePostion" class="method item protected">
+	<div class="method-signature">
+	<span class="name"><code>_setTimelinePostion</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code>startFrame</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code>currentFrame</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code>doActions</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+	</div>
+
+	
+
+	
+		<span class="flag protected">protected</span>
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l768"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:768</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Set the timeline position</p>
+</div>
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name">startFrame</code>
+						<span class="type">Int</span>
+					
+
+					
+
+					
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name">currentFrame</code>
+						<span class="type">Int</span>
+					
+
+					
+
+					
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name">doActions</code>
+						<span class="type">Boolean</span>
+					
+
+					
+
+					
+
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
+	
+
+	
+</div>
+
+            
+        
+        	
+<div id="method-_updateTimeline" class="method item protected">
+	<div class="method-signature">
+	<span class="name"><code>_updateTimeline</code></span>
+
+	
+		<span class="paren">()</span>
+	
+	
+	</div>
+
+	
+
+	
+		<span class="flag protected">protected</span>
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l743"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:743</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+
+	
+
+	
+
+	
+</div>
+
+            
+        
+        	
+<div id="method-ac" class="method item inherited">
+	<div class="method-signature">
+	<span class="name"><code>ac</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code class="optional">child*</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+		<span class="returns-inline">
+			<span class="type"><a href="../classes/PIXI.DisplayObject.html" class="crosslink">PIXI.DisplayObject</a></span>
+		</span>
+	
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				<p>Inherited from
+				<a href="../classes/PIXI.Container.html#method_ac">PIXI.Container</a>:
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_mixins_Container.js.html#l7"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;mixins&#x2F;Container.js:7</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Shortcut for addChild.</p>
+</div>
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name optional">[child*]</code>
+						<span class="type"></span>
+						<span class="flag optional" title="This parameter is optional.">optional</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>N-number of children</p>
+</div>
+					
+
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
+	
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+				
+					
+						<span class="type"><a href="../classes/PIXI.DisplayObject.html" class="crosslink">PIXI.DisplayObject</a></span>:
+					
+					<p>Instance of first child added</p>
+
+				
+			</div>
+		</div>
+	
+
+	
+</div>
+
+            
+        
+        	
+<div id="method-addAction" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>addAction</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code>callback</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code>startFrame</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+		<span class="returns-inline">
+			<span class="type"><a href="../classes/PIXI.animate.MovieClip.html" class="crosslink">PIXI.animate.MovieClip</a></span>
+		</span>
+	
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l610"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:610</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Handle frame actions, callback is bound to the instance of the MovieClip</p>
+</div>
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name">callback</code>
+						<span class="type">Function</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The clip call on a certain frame</p>
+</div>
+					
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name">startFrame</code>
+						<span class="type">Int</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The starting frame</p>
+</div>
+					
+
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
+	
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+				
+					
+						<span class="type"><a href="../classes/PIXI.animate.MovieClip.html" class="crosslink">PIXI.animate.MovieClip</a></span>
+					
+				
+			</div>
+		</div>
+	
+
+	
+</div>
+
+            
+        
+        	
+<div id="method-addKeyframes" class="method item private">
+	<div class="method-signature">
+	<span class="name"><code>addKeyframes</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code>instance</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code>keyframes</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+	</div>
+
+	
+
+	
+		<span class="flag private">private</span>
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l333"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:333</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Convenience method for setting multiple frames at once and adding the child</p>
+</div>
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name">instance</code>
+						<span class="type"><a href="../classes/PIXI.DisplayObject.html" class="crosslink">PIXI.DisplayObject</a></span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The clip to animate</p>
+</div>
+					
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name">keyframes</code>
+						<span class="type">Object</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The collection of keyframe objects or data string, the key is frame number</p>
+</div>
+					
+
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
+	
+
+	
+</div>
+
+            
+        
+        	
+<div id="method-addTimedChild" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>addTimedChild</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code>instance</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code>startFrame</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code class="optional">duration=1</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code class="optional">keyframes</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+		<span class="returns-inline">
+			<span class="type"><a href="../classes/PIXI.animate.MovieClip.html" class="crosslink">PIXI.animate.MovieClip</a></span>
+		</span>
+	
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l529"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:529</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Add a child to show for a certain number of frames before automatic removal.</p>
+</div>
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name">instance</code>
+						<span class="type"><a href="../classes/PIXI.DisplayObject.html" class="crosslink">PIXI.DisplayObject</a></span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The clip to show</p>
+</div>
+					
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name">startFrame</code>
+						<span class="type">Int</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The starting frame</p>
+</div>
+					
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name optional">[duration=1]</code>
+						<span class="type">Int</span>
+						<span class="flag optional" title="This parameter is optional.">optional</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The number of frames to display the child before removing it.</p>
+</div>
+					
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name optional">[keyframes]</code>
+						<span class="type">String  |  Array</span>
+						<span class="flag optional" title="This parameter is optional.">optional</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The collection of static keyframes to add</p>
+</div>
+					
+
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
+	
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+				
+					
+						<span class="type"><a href="../classes/PIXI.animate.MovieClip.html" class="crosslink">PIXI.animate.MovieClip</a></span>
+					
+				
+			</div>
+		</div>
+	
+
+	
+</div>
+
+            
+        
+        	
+<div id="method-addTimedMask" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>addTimedMask</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code>instance</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code>keyframes</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+		<span class="returns-inline">
+			<span class="type"><a href="../classes/PIXI.animate.MovieClip.html" class="crosslink">PIXI.animate.MovieClip</a></span>
+		</span>
+	
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l437"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:437</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Add mask or masks</p>
+</div>
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name">instance</code>
+						<span class="type"><a href="../classes/PIXI.DisplayObject.html" class="crosslink">PIXI.DisplayObject</a></span>
+					
+
+					
+
+					
+					<div class="param-description"><p>Instance to mask</p>
+</div>
+					
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name">keyframes</code>
+						<span class="type">Object</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The map of frames to mask objects</p>
+</div>
+					
+
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
+	
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+				
+					
+						<span class="type"><a href="../classes/PIXI.animate.MovieClip.html" class="crosslink">PIXI.animate.MovieClip</a></span>:
+					
+					<p>instance of clip for chaining</p>
+
+				
+			</div>
+		</div>
+	
+
+	
+</div>
+
+            
+        
+        	
+<div id="method-addTween" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>addTween</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code>instance</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code>properties</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code>startFrame</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code class="optional">duration=0</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code class="optional">ease</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+		<span class="returns-inline">
+			<span class="type"><a href="../classes/PIXI.animate.MovieClip.html" class="crosslink">PIXI.animate.MovieClip</a></span>
+		</span>
+	
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l476"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:476</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Add a tween to the clip</p>
+</div>
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name">instance</code>
+						<span class="type"><a href="../classes/PIXI.DisplayObject.html" class="crosslink">PIXI.DisplayObject</a></span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The clip to tween</p>
+</div>
+					
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name">properties</code>
+						<span class="type">Object</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The property or property to tween</p>
+</div>
+					
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name">startFrame</code>
+						<span class="type">Int</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The frame to start tweening</p>
+</div>
+					
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name optional">[duration=0]</code>
+						<span class="type">Int</span>
+						<span class="flag optional" title="This parameter is optional.">optional</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>Number of frames to tween. If 0, then the properties are set
+                          with no tweening.</p>
+</div>
+					
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name optional">[ease]</code>
+						<span class="type">Function</span>
+						<span class="flag optional" title="This parameter is optional.">optional</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>An optional easing function that takes the tween time from 0-1.</p>
+</div>
+					
+
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
+	
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+				
+					
+						<span class="type"><a href="../classes/PIXI.animate.MovieClip.html" class="crosslink">PIXI.animate.MovieClip</a></span>
+					
+				
+			</div>
+		</div>
+	
+
+	
+</div>
+
+            
+        
+        	
+<div id="method-advance" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>advance</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code class="optional">time</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l675"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:675</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Advances the playhead. This occurs automatically each tick by default.</p>
+</div>
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name optional">[time]</code>
+						<span class="type">Number</span>
+						<span class="flag optional" title="This parameter is optional.">optional</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The amount of time in seconds to advance by. Only applicable if framerate is set.</p>
+</div>
+					
+
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
+	
+
+	
+</div>
+
+            
+        
+        	
+<div id="method-am" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>am</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code>instance</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code>keyframes</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+		<span class="returns-inline">
+			<span class="type"><a href="../classes/PIXI.animate.MovieClip.html" class="crosslink">PIXI.animate.MovieClip</a></span>
+		</span>
+	
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l456"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:456</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Shortcut alias for <code>addTimedMask</code></p>
+</div>
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name">instance</code>
+						<span class="type"><a href="../classes/PIXI.DisplayObject.html" class="crosslink">PIXI.DisplayObject</a></span>
+					
+
+					
+
+					
+					<div class="param-description"><p>Instance to mask</p>
+</div>
+					
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name">keyframes</code>
+						<span class="type">Object</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The map of frames to mask objects</p>
+</div>
+					
+
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
+	
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+				
+					
+						<span class="type"><a href="../classes/PIXI.animate.MovieClip.html" class="crosslink">PIXI.animate.MovieClip</a></span>:
+					
+					<p>instance of clip for chaining</p>
+
+				
+			</div>
+		</div>
+	
+
+	
+</div>
+
+            
+        
+        	
+<div id="method-at" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>at</code></span>
+
+	
+		<span class="paren">()</span>
+	
+	
+		<span class="returns-inline">
+			<span class="type"><a href="../classes/PIXI.animate.MovieClip.html" class="crosslink">PIXI.animate.MovieClip</a></span>
+		</span>
+	
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l520"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:520</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Alias for method <code>addTimedChild</code></p>
+</div>
+	
+
+	
+
+	
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+				
+					
+						<span class="type"><a href="../classes/PIXI.animate.MovieClip.html" class="crosslink">PIXI.animate.MovieClip</a></span>
+					
+				
+			</div>
+		</div>
+	
+
+	
+</div>
+
+            
+        
+        	
+            
+        
+        	
+            
+        
+        	
+<div id="method-gotoAndPlay" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>gotoAndPlay</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code>positionOrLabel</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l655"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:655</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Advances this movie clip to the specified position or label and sets paused to false.</p>
+</div>
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name">positionOrLabel</code>
+						<span class="type">String  |  Number</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The animation name or frame number to go to.</p>
+</div>
+					
+
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
+	
+
+	
+</div>
+
+            
+        
+        	
+<div id="method-gotoAndStop" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>gotoAndStop</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code>positionOrLabel</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l665"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:665</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Advances this movie clip to the specified position or label and sets paused to true.</p>
+</div>
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name">positionOrLabel</code>
+						<span class="type">String  |  Number</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The animation or frame name to go to.</p>
+</div>
+					
+
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
+	
+
+	
+</div>
+
+            
+        
+        	
+<div id="method-play" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>play</code></span>
+
+	
+		<span class="paren">()</span>
+	
+	
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l639"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:639</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Sets paused to false.</p>
+</div>
+	
+
+	
+
+	
+
+	
+</div>
+
+            
+        
+        	
+<div id="method-stop" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>stop</code></span>
+
+	
+		<span class="paren">()</span>
+	
+	
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l647"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:647</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Sets paused to true.</p>
+</div>
+	
+
+	
+
+	
+
+	
+</div>
+
+            
+        
+        	
+<div id="method-tw" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>tw</code></span>
+
+	
+		<span class="paren">()</span>
+	
+	
+		<span class="returns-inline">
+			<span class="type"><a href="../classes/PIXI.animate.MovieClip.html" class="crosslink">PIXI.animate.MovieClip</a></span>
+		</span>
+	
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l467"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:467</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Alias for method <code>addTween</code></p>
+</div>
+	
+
+	
+
+	
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+				
+					
+						<span class="type"><a href="../classes/PIXI.animate.MovieClip.html" class="crosslink">PIXI.animate.MovieClip</a></span>
+					
+				
+			</div>
+		</div>
+	
+
+	
+</div>
+
+            
+        
+        </div>
+    </div>
+
+
+
+    <div id="properties" class="page-section">
+        <h2 class="off-left">Properties</h2>
+
+        <div class="item-list">
+        
+<div id="prop-_actions" class="property item protected">
+    <h3 class="name"><code>_actions</code></h3>
+    <span class="type">Array</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l210"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:210</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Array of frame scripts, indexed by frame.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+        
+<div id="prop-_duration" class="property item private">
+    <h3 class="name"><code>_duration</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l173"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:173</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The total time in seconds for the animation. This is changed when setting the framerate.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+        
+<div id="prop-_framerate" class="property item">
+    <h3 class="name"><code>_framerate</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l162"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:162</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>By default MovieClip instances advance one frame per tick. Specifying a framerate for the MovieClip
+will cause it to advance based on elapsed time between ticks as appropriate to maintain the target
+framerate.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+        
+<div id="prop-_prevPos" class="property item private">
+    <h3 class="name"><code>_prevPos</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l144"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:144</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <p><strong>Default:</strong> -1</p>
+    
+
+    
+
+    
+</div>
+
+        
+<div id="prop-_synchOffset" class="property item private">
+    <h3 class="name"><code>_synchOffset</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l136"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:136</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+        
+<div id="prop-_t" class="property item private">
+    <h3 class="name"><code>_t</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l152"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:152</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Note - changed from default: When the MovieClip is framerate independent, this is the time
+elapsed from frame 0 in seconds.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+        
+<div id="prop-_timedChildTimelines" class="property item protected">
+    <h3 class="name"><code>_timedChildTimelines</code></h3>
+    <span class="type">Array</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l200"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:200</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Array of child timelines denoting if a child is actively a child of this movieclip
+on any given frame. Each element in the _timedChildTimelines is an array with a &#39;target&#39;
+property, and is an array of boolean values indexed by frame.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+        
+<div id="prop-_timelines" class="property item protected">
+    <h3 class="name"><code>_timelines</code></h3>
+    <span class="type">Array</span>
+
+    
+
+    
+        <span class="flag protected">protected</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l191"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:191</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Standard tween timelines for all objects. Each element in the _timelines array
+is a Timeline object - an array of tweens for one target, in order of occurrence.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+        
+<div id="prop-_totalFrames" class="property item private">
+    <h3 class="name"><code>_totalFrames</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+        <span class="flag private">private</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l182"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:182</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The total duration in frames for the animation.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+        
+<div id="prop-actionsEnabled" class="property item">
+    <h3 class="name"><code>actionsEnabled</code></h3>
+    <span class="type">Boolean</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l114"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:114</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>If true, actions in this MovieClip&#39;s tweens will be run when the playhead advances.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> true</p>
+    
+
+    
+
+    
+</div>
+
+        
+<div id="prop-autoReset" class="property item">
+    <h3 class="name"><code>autoReset</code></h3>
+    <span class="type">Boolean</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l122"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:122</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>If true, the MovieClip will automatically be reset to its first frame whenever the timeline adds
+it back onto the display list. This only applies to MovieClip instances with mode=INDEPENDENT.
+<br><br>
+For example, if you had a character animation with a &#39;body&#39; child MovieClip instance
+with different costumes on each frame, you could set body.autoReset = false, so that
+you can manually change the frame it is on, without worrying that it will be reset
+automatically.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> true</p>
+    
+
+    
+
+    
+</div>
+
+        
+<div id="prop-currentFrame" class="property item">
+    <h3 class="name"><code>currentFrame</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l74"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:74</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The current frame of the movieclip.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+        
+<div id="prop-currentLabel" class="property item">
+    <h3 class="name"><code>currentLabel</code></h3>
+    <span class="type">String</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l261"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:261</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Returns the name of the label on or immediately before the current frame.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+        
+<div id="prop-elapsedTime" class="property item public">
+    <h3 class="name"><code>elapsedTime</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l280"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:280</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>When the MovieClip is framerate independent, this is the time elapsed from frame 0 in seconds.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+        
+<div id="prop-framerate" class="property item">
+    <h3 class="name"><code>framerate</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l295"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:295</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>By default MovieClip instances advance one frame per tick. Specifying a framerate for the MovieClip
+will cause it to advance based on elapsed time between ticks as appropriate to maintain the target
+framerate.</p>
+<p>For example, if a MovieClip with a framerate of 10 is placed on a Stage being updated at 40fps, then the MovieClip will
+advance roughly one frame every 4 ticks. This will not be exact, because the time between each tick will
+vary slightly between frames.</p>
+<p>This feature is dependent on the tick event object (or an object with an appropriate &#39;delta&#39; property) being
+passed into {{#crossLink &#39;Stage/update&#39;}}{{/crossLink}}.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+        
+<div id="prop-INDEPENDENT" class="property item">
+    <h3 class="name"><code>INDEPENDENT</code></h3>
+    <span class="type">String</span>
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l859"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:859</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The MovieClip will advance independently of its parent, even if its parent is paused.
+This is the default mode.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+        
+<div id="prop-labels" class="property item">
+    <h3 class="name"><code>labels</code></h3>
+    <span class="type">Array</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l251"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:251</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Returns an array of objects with label and position (aka frame) properties, sorted by position.</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+        
+<div id="prop-loop" class="property item">
+    <h3 class="name"><code>loop</code></h3>
+    <span class="type">Boolean</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l66"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:66</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Indicates whether this MovieClip should loop when it reaches the end of its timeline.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> true</p>
+    
+
+    
+
+    
+</div>
+
+        
+<div id="prop-mode" class="property item">
+    <h3 class="name"><code>mode</code></h3>
+    <span class="type">Int</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l49"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:49</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Controls how this MovieClip advances its time. Must be one of 0 (INDEPENDENT), 1 (SINGLE_FRAME), or 2 (SYNCHED).
+See each constant for a description of the behaviour.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> null</p>
+    
+
+    
+
+    
+</div>
+
+        
+<div id="prop-paused" class="property item">
+    <h3 class="name"><code>paused</code></h3>
+    <span class="type">Boolean</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l106"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:106</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>If true, the MovieClip&#39;s position will not advance when ticked.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> false</p>
+    
+
+    
+
+    
+</div>
+
+        
+<div id="prop-selfAdvance" class="property item">
+    <h3 class="name"><code>selfAdvance</code></h3>
+    <span class="type">Boolean</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l98"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:98</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>If true, this movieclip will animate automatically whenever it is on the stage.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> true</p>
+    
+
+    
+
+    
+</div>
+
+        
+<div id="prop-SINGLE_FRAME" class="property item">
+    <h3 class="name"><code>SINGLE_FRAME</code></h3>
+    <span class="type">String</span>
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l870"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:870</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The MovieClip will only display a single frame (as determined by the startPosition property).</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> 1</p>
+    
+
+    
+
+    
+</div>
+
+        
+<div id="prop-startPosition" class="property item">
+    <h3 class="name"><code>startPosition</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l58"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:58</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Specifies what the first frame to play in this movieclip, or the only frame to display if mode is SINGLE_FRAME.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+        
+<div id="prop-SYNCHED" class="property item">
+    <h3 class="name"><code>SYNCHED</code></h3>
+    <span class="type">String</span>
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l880"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:880</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The MovieClip will be advanced only when its parent advances and will be synched to the position of
+the parent MovieClip.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> 2</p>
+    
+
+    
+
+    
+</div>
+
+        
+<div id="prop-totalFrames" class="property item">
+    <h3 class="name"><code>totalFrames</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l322"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:322</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Get the total number of frames (duration) of this MovieClip</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+        
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <div id="static-methods" class="page-section">
+        <h2 class="off-left">Static Methods</h2>
+        <div class="item-list">
+        
+			
+        
+			
+        
+			
+        
+			
+        
+			
+        
+			
+        
+			
+        
+			
+        
+			
+        
+			
+        
+			
+        
+			
+        
+			
+        
+			
+<div id="method-e" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>PIXI.animate.MovieClip.e</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code>child</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+		<span class="returns-inline">
+			<span class="type"><a href="../classes/PIXI.animate.MovieClip.html" class="crosslink">PIXI.animate.MovieClip</a></span>
+		</span>
+	
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l898"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:898</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Extend a container (alias for extend)</p>
+</div>
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name">child</code>
+						<span class="type"><a href="../classes/PIXI.animate.MovieClip.html" class="crosslink">PIXI.animate.MovieClip</a></span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The child function</p>
+</div>
+					
+
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
+	
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+				
+					
+						<span class="type"><a href="../classes/PIXI.animate.MovieClip.html" class="crosslink">PIXI.animate.MovieClip</a></span>:
+					
+					<p>The child</p>
+
+				
+			</div>
+		</div>
+	
+
+	
+</div>
+
+            
+        
+			
+<div id="method-extend" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>PIXI.animate.MovieClip.extend</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code>child</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+		<span class="returns-inline">
+			<span class="type"><a href="../classes/PIXI.animate.MovieClip.html" class="crosslink">PIXI.animate.MovieClip</a></span>
+		</span>
+	
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l891"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:891</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Extend a container</p>
+</div>
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name">child</code>
+						<span class="type"><a href="../classes/PIXI.animate.MovieClip.html" class="crosslink">PIXI.animate.MovieClip</a></span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The child function</p>
+</div>
+					
+
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
+	
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+				
+					
+						<span class="type"><a href="../classes/PIXI.animate.MovieClip.html" class="crosslink">PIXI.animate.MovieClip</a></span>:
+					
+					<p>The child</p>
+
+				
+			</div>
+		</div>
+	
+
+	
+</div>
+
+            
+        
+			
+        
+			
+        
+			
+        
+			
+        
+			
+        
+        </div>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/jquery/jquery-1.8.2.min.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/yuidoc-bootstrap.js"></script>
+<script>prettyPrint();</script>
+</body>
+</html>
