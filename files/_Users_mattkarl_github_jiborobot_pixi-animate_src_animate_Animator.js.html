@@ -22,7 +22,7 @@
             <li class="divider-vertical"></li>
             <li>
                 <p class="navbar-text">
-                    API Docs for Version: <b>0.3.14</b>
+                    API Docs for Version: <b>0.4.0</b>
                 </p>
             </li>
         </div>
@@ -228,6 +228,7 @@ class Animator {
         this._timelines.splice(this._timelines.indexOf(timeline), 1);
         timeline.instance.stop();
         timeline.destroy();
+        this._refresh();
     }
 
     /**
@@ -240,9 +241,7 @@ class Animator {
         if (this._updateBind) {
             SharedTicker.remove(this._updateBind);
         }
-
         this._updateBind = this._update.bind(this);
-
         if (this._timelines.length &gt; 0) {
             SharedTicker.add(this._updateBind);
         }
