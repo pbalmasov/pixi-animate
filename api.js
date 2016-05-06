@@ -6,13 +6,15 @@ YUI.add("yuidoc-meta", function(Y) {
         "PIXI.Graphics",
         "PIXI.Sprite",
         "PIXI.Text",
-        "PIXI.animate.ColorUtils",
+        "PIXI.animate.Animator",
+        "PIXI.animate.AnimatorTimeline",
         "PIXI.animate.MovieClip",
         "PIXI.animate.ShapesCache",
         "PIXI.animate.SymbolLoader",
         "PIXI.animate.Timeline",
         "PIXI.animate.Tween",
-        "PIXI.animate.load"
+        "PIXI.animate.load",
+        "PIXI.animate.utils"
     ],
     "modules": [],
     "allModules": []

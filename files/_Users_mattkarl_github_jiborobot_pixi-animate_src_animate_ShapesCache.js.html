@@ -22,12 +22,12 @@
             <li class="divider-vertical"></li>
             <li>
                 <p class="navbar-text">
-                    API Docs for Version: <b>0.3.5</b>
+                    API Docs for Version: <b>0.3.13</b>
                 </p>
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/PIXI.animate.ColorUtils", "classes/PIXI.animate.load", "classes/PIXI.animate.MovieClip", "classes/PIXI.animate.ShapesCache", "classes/PIXI.animate.SymbolLoader", "classes/PIXI.animate.Timeline", "classes/PIXI.animate.Tween", "classes/PIXI.Container", "classes/PIXI.DisplayObject", "classes/PIXI.Graphics", "classes/PIXI.Sprite", "classes/PIXI.Text"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/PIXI.animate.Animator", "classes/PIXI.animate.AnimatorTimeline", "classes/PIXI.animate.load", "classes/PIXI.animate.MovieClip", "classes/PIXI.animate.ShapesCache", "classes/PIXI.animate.SymbolLoader", "classes/PIXI.animate.Timeline", "classes/PIXI.animate.Tween", "classes/PIXI.animate.utils", "classes/PIXI.Container", "classes/PIXI.DisplayObject", "classes/PIXI.Graphics", "classes/PIXI.Sprite", "classes/PIXI.Text"]'>
         </form>
     </div>
 </div>
@@ -38,6 +38,10 @@
     <div id="sidebar">
     <div id="classes">
         <ul id="api-classes" class="nav nav-list">
+            
+                <li><a href="../classes/PIXI.animate.Animator.html">PIXI.animate.Animator</a></li>
+            
+                <li><a href="../classes/PIXI.animate.AnimatorTimeline.html">PIXI.animate.AnimatorTimeline</a></li>
             
                 <li><a href="../classes/PIXI.animate.load.html">PIXI.animate.load</a></li>
             
@@ -101,7 +105,7 @@
 
 <div class="file">
     <pre class="prettyprint linenums">
-import ColorUtils from &#x27;./ColorUtils&#x27;;
+import utils from &#x27;./utils&#x27;;
 
 /**
  * Contains the collection of graphics data
@@ -114,17 +118,23 @@ const ShapesCache = {};
  * Add an item or itesm to the cache
  * @method add
  * @static
- * @param {String} prop  The id of graphic
+ * @param {String|Object} prop  The id of graphic or the map of graphics to add
  * @param {Array} [value] If adding a single property, the draw commands
  */
 Object.defineProperty(ShapesCache, &#x27;add&#x27;, {
     enumerable: false,
     value: function(prop, draw) {
+        if (typeof prop === &quot;object&quot;) {
+            for (let p in prop) {
+                ShapesCache.add(p, prop[p]);
+            }
+            return;
+        }
         // Convert all hex string colors (animate) to int (pixi.js)
         for (let d in draw) {
             let arg = draw[d];
             if (typeof arg === &#x27;string&#x27; &amp;&amp; arg[0] === &#x27;#&#x27;) {
-                draw[d] = ColorUtils.hexToUint(arg);
+                draw[d] = utils.hexToUint(arg);
             }
         }
         ShapesCache[prop] = draw;
@@ -136,25 +146,12 @@ Object.defineProperty(ShapesCache, &#x27;add&#x27;, {
  * @method decode
  * @static
  * @param  {String} str The string to decode
+ * @return {Object} The map of shape drawing commands
  */
 Object.defineProperty(ShapesCache, &#x27;decode&#x27;, {
     enumerable: false,
     value: function(str) {
-        // each shape is a new line
-        let shapes = str.split(&quot;\n&quot;);
-        let isCommand = /^[a-z]{1,2}$/;
-        for (let i = 0; i &lt; shapes.length; i++) {
-            let shape = shapes[i].split(&#x27; &#x27;); // arguments are space separated
-            let name = shape.shift(); // first argument is the ID
-            for (let j = 0; j &lt; shape.length; j++) {
-                // Convert all numbers to floats, ignore colors
-                let arg = shape[j];
-                if (arg[0] !== &#x27;#&#x27; &amp;&amp; !isCommand.test(arg)) {
-                    shape[j] = parseFloat(arg);
-                }
-            }
-            this.add(name, shape);
-        }
+        return utils.deserializeShapes(str);
     }
 });
 
@@ -176,11 +173,17 @@ Object.defineProperty(ShapesCache, &#x27;fromCache&#x27;, {
  * Remove the graphic from cache
  * @method  remove
  * @static
- * @param  {String} id The cache id
+ * @param  {String|Object} id The cache id or map
  */
 Object.defineProperty(ShapesCache, &#x27;remove&#x27;, {
     enumerable: false,
     value: function(id) {
+        if (typeof id === &quot;object&quot;) {
+            for (let name in id) {
+                ShapesCache.remove(name);
+            }
+            return;
+        }
         if (ShapesCache[id]) {
             ShapesCache[id].length = 0;
             delete ShapesCache[id];

@@ -22,12 +22,12 @@
             <li class="divider-vertical"></li>
             <li>
                 <p class="navbar-text">
-                    API Docs for Version: <b>0.3.5</b>
+                    API Docs for Version: <b>0.3.13</b>
                 </p>
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/PIXI.animate.ColorUtils", "classes/PIXI.animate.load", "classes/PIXI.animate.MovieClip", "classes/PIXI.animate.ShapesCache", "classes/PIXI.animate.SymbolLoader", "classes/PIXI.animate.Timeline", "classes/PIXI.animate.Tween", "classes/PIXI.Container", "classes/PIXI.DisplayObject", "classes/PIXI.Graphics", "classes/PIXI.Sprite", "classes/PIXI.Text"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/PIXI.animate.Animator", "classes/PIXI.animate.AnimatorTimeline", "classes/PIXI.animate.load", "classes/PIXI.animate.MovieClip", "classes/PIXI.animate.ShapesCache", "classes/PIXI.animate.SymbolLoader", "classes/PIXI.animate.Timeline", "classes/PIXI.animate.Tween", "classes/PIXI.animate.utils", "classes/PIXI.Container", "classes/PIXI.DisplayObject", "classes/PIXI.Graphics", "classes/PIXI.Sprite", "classes/PIXI.Text"]'>
         </form>
     </div>
 </div>
@@ -38,6 +38,10 @@
     <div id="sidebar">
     <div id="classes">
         <ul id="api-classes" class="nav nav-list">
+            
+                <li><a href="../classes/PIXI.animate.Animator.html">PIXI.animate.Animator</a></li>
+            
+                <li><a href="../classes/PIXI.animate.AnimatorTimeline.html">PIXI.animate.AnimatorTimeline</a></li>
             
                 <li><a href="../classes/PIXI.animate.load.html">PIXI.animate.load</a></li>
             
@@ -102,7 +106,7 @@
 <div class="file">
     <pre class="prettyprint linenums">
 import Timeline from &#x27;./Timeline&#x27;;
-import ColorUtils from &#x27;./ColorUtils&#x27;;
+import utils from &#x27;./utils&#x27;;
 
 const Container = PIXI.Container;
 const SharedTicker = PIXI.ticker.shared;
@@ -135,7 +139,8 @@ class MovieClip extends Container {
                 duration: duration || 0,
                 loop: loop === undefined ? true : loop,
                 labels: labels || {},
-                framerate: framerate || 0
+                framerate: framerate || 0,
+                startPosition: 0
             };
         } else {
             // Apply defaults to options
@@ -311,6 +316,14 @@ class MovieClip extends Container {
         this._timedChildTimelines = [];
 
         /**
+         * Array to depth sort timed children
+         * @property _depthSorted
+         * @type {Array}
+         * @private
+         */
+        this._depthSorted = [];
+
+        /**
          * Array of frame scripts, indexed by frame.
          * @property _actions
          * @type {Array}
@@ -434,110 +447,6 @@ class MovieClip extends Container {
     }
 
     /**
-     * Convenience method for setting multiple frames at once and adding the child
-     * @method addKeyframes
-     * @private
-     * @param {PIXI.DisplayObject} instance The clip to animate
-     * @param {Object} keyframes The collection of keyframe objects or data string, the key is frame number
-     */
-    addKeyframes(instance, keyframes) {
-        if (!keyframes) {
-            return;
-        }
-
-        let i = 0;
-
-        // Parse the value of the compressed keyframe
-        let parseValue = function(frame, prop, buffer) {
-            switch (prop) {
-                case &#x27;c&#x27;:
-                    {
-                        buffer = buffer.split(&#x27;,&#x27;);
-                        buffer.forEach(function(val, i, buffer) {
-                            buffer[i] = parseFloat(val);
-                        });
-                        frame.c = buffer;
-                        break;
-                    }
-                case &#x27;t&#x27;:
-                    {
-                        frame.t = buffer;
-                        break;
-                    }
-                case &#x27;v&#x27;:
-                    {
-                        frame.v = !!parseInt(buffer);
-                        break;
-                    }
-                default:
-                    {
-                        frame[prop] = parseFloat(buffer);
-                        break;
-                    }
-            }
-        };
-
-        // Convert serialized array into keyframes
-        // &quot;0x100y100,1x150&quot; to: { &quot;0&quot;: {&quot;x&quot;:100, &quot;y&quot;: 100}, &quot;1&quot;: {&quot;x&quot;: 150} }
-        if (typeof keyframes === &#x27;string&#x27;) {
-            let result = {};
-            let keysMap = {
-                X: &#x27;x&#x27;, // x position
-                Y: &#x27;y&#x27;, // y position
-                A: &#x27;sx&#x27;, // scale x
-                B: &#x27;sy&#x27;, // scale y
-                C: &#x27;kx&#x27;, // skew x
-                D: &#x27;ky&#x27;, // skew y
-                R: &#x27;r&#x27;, // rotation
-                L: &#x27;a&#x27;, // alpha
-                T: &#x27;t&#x27;, // tint
-                F: &#x27;c&#x27;, // colorTransform
-                V: &#x27;v&#x27; // visibility
-            };
-            let c,
-                buffer = &#x27;&#x27;,
-                isFrameStarted = false,
-                prop,
-                frame = {};
-
-            while (i &lt; keyframes.length) {
-                c = keyframes[i];
-                if (keysMap[c]) {
-                    if (!isFrameStarted) {
-                        isFrameStarted = true;
-                        result[buffer] = frame;
-                    }
-                    if (prop) {
-                        parseValue(frame, prop, buffer);
-                    }
-                    prop = keysMap[c];
-                    buffer = &#x27;&#x27;;
-                    i++;
-                }
-                // Start a new prop
-                else if (c === &#x27; &#x27;) {
-                    i++;
-                    parseValue(frame, prop, buffer);
-                    buffer = &#x27;&#x27;;
-                    prop = null;
-                    frame = {};
-                    isFrameStarted = false;
-                } else {
-                    buffer += c;
-                    i++;
-                }
-            }
-            keyframes = result;
-        }
-
-        // Convert the keyframes object into
-        // individual properties
-        for (i in keyframes) {
-            this.addTween(instance, keyframes[i], parseInt(i, 10));
-        }
-    }
-
-    /**
      * Add mask or masks
      * @method addTimedMask
      * @param {PIXI.DisplayObject} instance Instance to mask
@@ -606,7 +515,7 @@ class MovieClip extends Container {
 
         // Convert any string colors to uints
         if (typeof properties.t === &#x27;string&#x27;) {
-            properties.t = ColorUtils.hexToUint(properties.t);
+            properties.t = utils.hexToUint(properties.t);
         } else if (typeof properties.v === &#x27;number&#x27;) {
             properties.v = !!properties.v;
         }
@@ -639,6 +548,7 @@ class MovieClip extends Container {
      * @return {PIXI.animate.MovieClip}
      */
     addTimedChild(instance, startFrame, duration, keyframes) {
+
         if (startFrame === undefined) // jshint ignore:line
         {
             startFrame = 0;
@@ -670,39 +580,27 @@ class MovieClip extends Container {
             timeline.target = instance;
             this._timedChildTimelines.push(timeline);
         }
-        //ensure that the timeline is long enough
-        let oldLength = timeline.length;
-        if (oldLength &lt; startFrame + duration) {
-            timeline.length = startFrame + duration;
-            //fill any gaps with false to denote that the child should be removed for a bit
-            if (oldLength &lt; startFrame) {
-                //if the browser has implemented the ES6 fill() function, use that
-                if (timeline.fill) {
-                    timeline.fill(false, oldLength, startFrame);
-                } else {
-                    //if we can&#x27;t use fill, then do a for loop to fill it
-                    for (i = oldLength; i &lt; startFrame; ++i) {
-                        timeline[i] = false;
-                    }
-                }
-            }
-        }
-        //if the browser has implemented the ES6 fill() function, use that
-        if (timeline.fill) {
-            timeline.fill(true, startFrame, startFrame + duration);
-        } else {
-            let length = timeline.length;
-            //if we can&#x27;t use fill, then do a for loop to fill it
-            for (i = startFrame; i &lt; length; ++i) {
-                timeline[i] = true;
-            }
-        }
+
+        // Fill the timeline with keyframe booleans
+        utils.fillFrames(timeline, startFrame, duration);
+
+        // Update the total frames if the instance extends our current
+        // total frames for this movieclip
         if (this._totalFrames &lt; startFrame + duration) {
             this._totalFrames = startFrame + duration;
         }
 
         // Add the collection of keyframes
-        this.addKeyframes(instance, keyframes);
+        if (keyframes) {
+            if (typeof keyframes === &quot;string&quot;) {
+                keyframes = utils.deserializeKeyframes(keyframes);
+            }
+            // Convert the keyframes object into
+            // individual properties
+            for (let i in keyframes) {
+                this.addTween(instance, keyframes[i], parseInt(i, 10));
+            }
+        }
 
         // Set the initial position/add
         this._setTimelinePosition(startFrame, this.currentFrame, true);
@@ -893,22 +791,40 @@ class MovieClip extends Container {
                 }
             }
         }
-        //TODO: handle children removal and adding - try to avoid adding &amp; removing each child
-        //each frame the way CreateJS does
-        let _timedChildTimelines = this._timedChildTimelines;
-        for (i = 0, length = _timedChildTimelines.length; i &lt; length; ++i) {
-            let target = _timedChildTimelines[i].target;
-            let shouldBeChild = _timedChildTimelines[i][currentFrame];
+
+        let timedChildTimelines = this._timedChildTimelines;
+        let depthSorted = this._depthSorted;
+        for (i = 0, length = timedChildTimelines.length; i &lt; length; ++i) {
+            let target = timedChildTimelines[i].target;
+            let shouldBeChild = timedChildTimelines[i][currentFrame];
             //if child should be on stage and is not:
-            if (shouldBeChild &amp;&amp; target.parent !== this) {
-                this.addChild(target);
-                if (target.mode === MovieClip.INDEPENDENT &amp;&amp; target.autoReset) {
-                    target._reset();
+            if (shouldBeChild) {
+                // Add to the depthSorted object so we can
+                // check that items are property drawn later
+                depthSorted.push(target);
+                if (target.parent !== this) {
+                    // add the target if it&#x27;s not there already
+                    this.addChild(target);
+                    if (target.mode === MovieClip.INDEPENDENT &amp;&amp; target.autoReset) {
+                        target._reset();
+                    }
                 }
             } else if (!shouldBeChild &amp;&amp; target.parent === this) {
                 this.removeChild(target);
             }
         }
+
+        // Properly depth sort the children
+        for (i = 0, length = depthSorted.length; i &lt; length; i++) {
+            let target = depthSorted[i];
+            let currentIndex = this.children.indexOf(target);
+            if (currentIndex !== i) {
+                this.addChildAt(target, i);
+            }
+        }
+
+        // Clear the temporary depth sorting array
+        depthSorted.length = 0;
 
         //go through all children and update synched movieclips that are not single frames
         let children = this.children,
@@ -954,7 +870,10 @@ class MovieClip extends Container {
             SharedTicker.remove(this._tickListener);
             this._tickListener = null;
         }
-
+        this._actions = null;
+        this._timelines = null;
+        this._depthSorted = null;
+        this._timedChildTimelines = null;
         super.destroy(destroyChildren);
     }
 }

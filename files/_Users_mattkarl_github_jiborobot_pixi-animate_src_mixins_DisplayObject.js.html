@@ -22,12 +22,12 @@
             <li class="divider-vertical"></li>
             <li>
                 <p class="navbar-text">
-                    API Docs for Version: <b>0.3.5</b>
+                    API Docs for Version: <b>0.3.13</b>
                 </p>
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/PIXI.animate.ColorUtils", "classes/PIXI.animate.load", "classes/PIXI.animate.MovieClip", "classes/PIXI.animate.ShapesCache", "classes/PIXI.animate.SymbolLoader", "classes/PIXI.animate.Timeline", "classes/PIXI.animate.Tween", "classes/PIXI.Container", "classes/PIXI.DisplayObject", "classes/PIXI.Graphics", "classes/PIXI.Sprite", "classes/PIXI.Text"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/PIXI.animate.Animator", "classes/PIXI.animate.AnimatorTimeline", "classes/PIXI.animate.load", "classes/PIXI.animate.MovieClip", "classes/PIXI.animate.ShapesCache", "classes/PIXI.animate.SymbolLoader", "classes/PIXI.animate.Timeline", "classes/PIXI.animate.Tween", "classes/PIXI.animate.utils", "classes/PIXI.Container", "classes/PIXI.DisplayObject", "classes/PIXI.Graphics", "classes/PIXI.Sprite", "classes/PIXI.Text"]'>
         </form>
     </div>
 </div>
@@ -38,6 +38,10 @@
     <div id="sidebar">
     <div id="classes">
         <ul id="api-classes" class="nav nav-list">
+            
+                <li><a href="../classes/PIXI.animate.Animator.html">PIXI.animate.Animator</a></li>
+            
+                <li><a href="../classes/PIXI.animate.AnimatorTimeline.html">PIXI.animate.AnimatorTimeline</a></li>
             
                 <li><a href="../classes/PIXI.animate.load.html">PIXI.animate.load</a></li>
             
@@ -101,7 +105,7 @@
 
 <div class="file">
     <pre class="prettyprint linenums">
-import ColorUtils from &#x27;../animate/ColorUtils&#x27;;
+import utils from &#x27;../animate/utils&#x27;;
 
 /**
  * @namespace PIXI
@@ -206,7 +210,7 @@ p.setAlpha = p.a = function(alpha) {
  */
 p.setTint = p.i = function(tint) {
     if (typeof tint === &quot;string&quot;) {
-        tint = ColorUtils.hexToUint(tint);
+        tint = utils.hexToUint(tint);
     }
     // this.tint = tint
     // return this;

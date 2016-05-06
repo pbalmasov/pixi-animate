@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>PIXI.animate.load - pixi-animate</title>
+    <title>PIXI.animate.utils - pixi-animate</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -100,7 +100,7 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>PIXI.animate.load</h1>
+    <h1>PIXI.animate.utils</h1>
 </div>
 
     
@@ -115,27 +115,7 @@
 
 
 <div class="yuidoc-class-description">
-<p>Entry point for loading Adobe Animate exports:</p>
-<p><strong>Load and auto-add to parent</strong></p>
-<pre class="code prettyprint"><code>let renderer = new PIXI.autoDetectRenderer(1280, 720);
-let stage = new PIXI.Container();
-PIXI.animate.load(lib.MyStage, stage);
-function update() {
-     renderer.render(stage);
-     update();
-}
-update();</code></pre>
-<p><strong>Load and handle with callback</strong></p>
-<pre class="code prettyprint"><code>let renderer = new PIXI.autoDetectRenderer(1280, 720);
-let stage = new PIXI.Container();
-PIXI.animate.load(lib.MyStage, function(instance){
-    stage.addChild(instance);
-});
-function update() {
-     renderer.render(stage);
-     update();
-}
-update();</code></pre>
+<p>For keyframe conversions</p>
 
 </div>
 
@@ -146,30 +126,38 @@ update();</code></pre>
 	<h2>Table of Contents</h2>
     <ul>
 		
+
+		
+
+		
+
+		
 		<li>
-			<strong>Methods</strong>
+			<strong>Static Methods</strong>
 			<ul>
 				
 				
-				<li><a href="#method-load"><span class="im">load</span>(<span class="ia">StageRef</span><span class="ia">parent</span><span class="ia">complete</span><span class="ia">assetBaseDir</span>)</a></li>
+				<li><a href="#method-deserializeKeyframes"><span class="im">PIXI.animate.utils.deserializeKeyframes</span>(<span class="ia">keyframes</span><span class="ia">Resulting</span>)</a></li>
 				
 				
 				
-				<li><a href="#method-load"><span class="im">load</span>(<span class="ia">StageRef</span><span class="ia">parent</span><span class="ia">assetBaseDir</span>)</a></li>
+				<li><a href="#method-deserializeShapes"><span class="im">PIXI.animate.utils.deserializeShapes</span>(<span class="ia">str</span><span class="ia">Resulting</span>)</a></li>
 				
 				
 				
-				<li><a href="#method-load"><span class="im">load</span>(<span class="ia">StageRef</span><span class="ia">complete</span><span class="ia">assetBaseDir</span>)</a></li>
+				<li><a href="#method-fillFrames"><span class="im">PIXI.animate.utils.fillFrames</span>(<span class="ia">timeline</span><span class="ia">startFrame</span><span class="ia">duration</span>)</a></li>
+				
+				
+				
+				<li><a href="#method-hexToUint"><span class="im">PIXI.animate.utils.hexToUint</span>()</a></li>
+				
+				
+				
+				<li><a href="#method-parseValue"><span class="im">PIXI.animate.utils.parseValue</span>(<span class="ia">prop</span><span class="ia">buffer</span>)</a></li>
 				
 				
 			</ul>
 		</li>
-		
-
-		
-
-		
-
 		
 	</ul>
 </div>
@@ -179,14 +167,22 @@ update();</code></pre>
 
 
 
-    <div id="methods" class="page-section">
-        <h2 class="off-left">Methods</h2>
+
+
+
+
+
+
+
+
+    <div id="static-methods" class="page-section">
+        <h2 class="off-left">Static Methods</h2>
         <div class="item-list">
-       		
-        	
-<div id="method-load" class="method item">
+        
+			
+<div id="method-deserializeKeyframes" class="method item">
 	<div class="method-signature">
-	<span class="name"><code>load</code></span>
+	<span class="name"><code>PIXI.animate.utils.deserializeKeyframes</code></span>
 
 	
 		<div class="args">
@@ -194,25 +190,13 @@ update();</code></pre>
 			
 				<li class="arg">
 					
-						<code>StageRef</code>
+						<code>keyframes</code>
 					
 				</li>
 			
 				<li class="arg">
 					
-						<code>parent</code>
-					
-				</li>
-			
-				<li class="arg">
-					
-						<code class="optional">complete</code>
-					
-				</li>
-			
-				<li class="arg">
-					
-						<code class="optional">assetBaseDir</code>
+						<code>Resulting</code>
 					
 				</li>
 			
@@ -243,7 +227,7 @@ update();</code></pre>
 			
 		
 		
-		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_load.js.html#l31"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;load.js:31</code></a>
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_utils.js.html#l63"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;utils.js:63</code></a>
 		
 		</p>
 
@@ -254,7 +238,8 @@ update();</code></pre>
 	</div>
 
 	
-	<div class="description"><p>Load the stage class and preload any assets</p>
+	<div class="description"><p>Convert serialized array into keyframes
+<code>"0x100y100 1x150"</code> to: <code>{ "0": {"x":100, "y": 100}, "1": {"x": 150} }</code></p>
 </div>
 	
 
@@ -266,81 +251,27 @@ update();</code></pre>
 			
 				<li class="param">
 					
-						<code class="param-name">StageRef</code>
-						<span class="type">Function</span>
-					
-
-					
-
-					
-					<div class="param-description"><p>Reference to the stage class</p>
-</div>
-					
-
-					
-						<ul class="params-list">
-							
-							<li class="param">
-								
-									<code class="param-name optional">[assets]</code>
-									<span class="type">Array</span>
-									<span class="flag optional" title="This parameter is optional.">optional</span>
-								
-
-								<div class="param-description"><p>Assets used to preload</p>
-</div>
-
-								
-							</li>
-							
-						</ul>
-					
-				</li>
-			
-				<li class="param">
-					
-						<code class="param-name">parent</code>
-						<span class="type"><a href="../classes/PIXI.Container.html" class="crosslink">PIXI.Container</a></span>
-					
-
-					
-
-					
-					<div class="param-description"><p>The Container to auto-add the stage to.</p>
-</div>
-					
-
-					
-				</li>
-			
-				<li class="param">
-					
-						<code class="param-name optional">[complete]</code>
-						<span class="type">Function</span>
-						<span class="flag optional" title="This parameter is optional.">optional</span>
-					
-
-					
-
-					
-					<div class="param-description"><p>Function to call when complete</p>
-</div>
-					
-
-					
-				</li>
-			
-				<li class="param">
-					
-						<code class="param-name optional">[assetBaseDir]</code>
+						<code class="param-name">keyframes</code>
 						<span class="type">String</span>
-						<span class="flag optional" title="This parameter is optional.">optional</span>
 					
 
 					
 
 					
-					<div class="param-description"><p>Base root directory</p>
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name">Resulting</code>
+						<span class="type">Object</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>keyframes</p>
 </div>
 					
 
@@ -358,10 +289,10 @@ update();</code></pre>
 
             
         
-        	
-<div id="method-load" class="method item">
+			
+<div id="method-deserializeShapes" class="method item">
 	<div class="method-signature">
-	<span class="name"><code>load</code></span>
+	<span class="name"><code>PIXI.animate.utils.deserializeShapes</code></span>
 
 	
 		<div class="args">
@@ -369,19 +300,13 @@ update();</code></pre>
 			
 				<li class="arg">
 					
-						<code>StageRef</code>
+						<code>str</code>
 					
 				</li>
 			
 				<li class="arg">
 					
-						<code>parent</code>
-					
-				</li>
-			
-				<li class="arg">
-					
-						<code class="optional">assetBaseDir</code>
+						<code>Resulting</code>
 					
 				</li>
 			
@@ -412,7 +337,7 @@ update();</code></pre>
 			
 		
 		
-		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_load.js.html#l40"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;load.js:40</code></a>
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_utils.js.html#l123"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;utils.js:123</code></a>
 		
 		</p>
 
@@ -423,7 +348,7 @@ update();</code></pre>
 	</div>
 
 	
-	<div class="description"><p>Load the stage class and preload any assets</p>
+	<div class="description"><p>Convert serialized shapes into draw commands for PIXI.Graphics.</p>
 </div>
 	
 
@@ -435,64 +360,27 @@ update();</code></pre>
 			
 				<li class="param">
 					
-						<code class="param-name">StageRef</code>
-						<span class="type">Function</span>
-					
-
-					
-
-					
-					<div class="param-description"><p>Reference to the stage class</p>
-</div>
-					
-
-					
-						<ul class="params-list">
-							
-							<li class="param">
-								
-									<code class="param-name optional">[assets]</code>
-									<span class="type">Array</span>
-									<span class="flag optional" title="This parameter is optional.">optional</span>
-								
-
-								<div class="param-description"><p>Assets used to preload</p>
-</div>
-
-								
-							</li>
-							
-						</ul>
-					
-				</li>
-			
-				<li class="param">
-					
-						<code class="param-name">parent</code>
-						<span class="type"><a href="../classes/PIXI.Container.html" class="crosslink">PIXI.Container</a></span>
-					
-
-					
-
-					
-					<div class="param-description"><p>The Container to auto-add the stage to.</p>
-</div>
-					
-
-					
-				</li>
-			
-				<li class="param">
-					
-						<code class="param-name optional">[assetBaseDir]</code>
+						<code class="param-name">str</code>
 						<span class="type">String</span>
-						<span class="flag optional" title="This parameter is optional.">optional</span>
 					
 
 					
 
 					
-					<div class="param-description"><p>Base root directory</p>
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name">Resulting</code>
+						<span class="type">Array</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>shapes map</p>
 </div>
 					
 
@@ -510,10 +398,10 @@ update();</code></pre>
 
             
         
-        	
-<div id="method-load" class="method item">
+			
+<div id="method-fillFrames" class="method item">
 	<div class="method-signature">
-	<span class="name"><code>load</code></span>
+	<span class="name"><code>PIXI.animate.utils.fillFrames</code></span>
 
 	
 		<div class="args">
@@ -521,19 +409,19 @@ update();</code></pre>
 			
 				<li class="arg">
 					
-						<code>StageRef</code>
+						<code>timeline</code>
 					
 				</li>
 			
 				<li class="arg">
 					
-						<code>complete</code>
+						<code>startFrame</code>
 					
 				</li>
 			
 				<li class="arg">
 					
-						<code class="optional">assetBaseDir</code>
+						<code>duration</code>
 					
 				</li>
 			
@@ -564,7 +452,7 @@ update();</code></pre>
 			
 		
 		
-		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_load.js.html#l48"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;load.js:48</code></a>
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_utils.js.html#l25"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;utils.js:25</code></a>
 		
 		</p>
 
@@ -575,7 +463,7 @@ update();</code></pre>
 	</div>
 
 	
-	<div class="description"><p>Load the stage class and preload any assets</p>
+	<div class="description"><p>Fill frames with booleans of true (showing) and false (hidden).</p>
 </div>
 	
 
@@ -587,47 +475,27 @@ update();</code></pre>
 			
 				<li class="param">
 					
-						<code class="param-name">StageRef</code>
-						<span class="type">Function</span>
+						<code class="param-name">timeline</code>
+						<span class="type">Array<Boolean></span>
 					
 
 					
 
 					
-					<div class="param-description"><p>Reference to the stage class</p>
-</div>
-					
 
-					
-						<ul class="params-list">
-							
-							<li class="param">
-								
-									<code class="param-name optional">[assets]</code>
-									<span class="type">Array</span>
-									<span class="flag optional" title="This parameter is optional.">optional</span>
-								
-
-								<div class="param-description"><p>Assets used to preload</p>
-</div>
-
-								
-							</li>
-							
-						</ul>
 					
 				</li>
 			
 				<li class="param">
 					
-						<code class="param-name">complete</code>
-						<span class="type">Function</span>
+						<code class="param-name">startFrame</code>
+						<span class="type">Int</span>
 					
 
 					
 
 					
-					<div class="param-description"><p>The callback function when complete.</p>
+					<div class="param-description"><p>The start frame when the timeline shows up</p>
 </div>
 					
 
@@ -636,15 +504,14 @@ update();</code></pre>
 			
 				<li class="param">
 					
-						<code class="param-name optional">[assetBaseDir]</code>
-						<span class="type">String</span>
-						<span class="flag optional" title="This parameter is optional.">optional</span>
+						<code class="param-name">duration</code>
+						<span class="type">Int</span>
 					
 
 					
 
 					
-					<div class="param-description"><p>Base root directory</p>
+					<div class="param-description"><p>The length of showing</p>
 </div>
 					
 
@@ -655,6 +522,194 @@ update();</code></pre>
 		</div>
 	
 
+	
+
+	
+</div>
+
+            
+        
+			
+<div id="method-hexToUint" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>PIXI.animate.utils.hexToUint</code></span>
+
+	
+		<span class="paren">()</span>
+	
+	
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_utils.js.html#l9"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;utils.js:9</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Convert the Hexidecimal string (e.g., "#fff") to uint</p>
+</div>
+	
+
+	
+
+	
+
+	
+</div>
+
+            
+        
+			
+<div id="method-parseValue" class="method item private">
+	<div class="method-signature">
+	<span class="name"><code>PIXI.animate.utils.parseValue</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code>prop</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code>buffer</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+		<span class="returns-inline">
+			<span class="type"></span>
+		</span>
+	
+	</div>
+
+	
+
+	
+		<span class="flag private">private</span>
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_utils.js.html#l150"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;utils.js:150</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Parse the value of the compressed keyframe.</p>
+</div>
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name">prop</code>
+						<span class="type">String</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The property key</p>
+</div>
+					
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name">buffer</code>
+						<span class="type">String</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The contents</p>
+</div>
+					
+
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
+	
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+				
+					
+						<span class="type"></span>:
+					
+					<p>The parsed value</p>
+
+				
+			</div>
+		</div>
 	
 
 	
@@ -664,14 +719,6 @@ update();</code></pre>
         
         </div>
     </div>
-
-
-
-
-
-
-
-
 
                     </div>
                 </div>

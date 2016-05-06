@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>/Users/mattkarl/github/jiborobot/pixi-animate/src/animate/ColorUtils.js - pixi-animate</title>
+    <title>/Users/mattkarl/github/jiborobot/pixi-animate/src/animate/AnimatorTimeline.js - pixi-animate</title>
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -22,12 +22,12 @@
             <li class="divider-vertical"></li>
             <li>
                 <p class="navbar-text">
-                    API Docs for Version: <b>0.3.5</b>
+                    API Docs for Version: <b>0.3.13</b>
                 </p>
             </li>
         </div>
         <form class="navbar-form pull-right" style="line-height: 40px; height: 40px;">
-            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/PIXI.animate.ColorUtils", "classes/PIXI.animate.load", "classes/PIXI.animate.MovieClip", "classes/PIXI.animate.ShapesCache", "classes/PIXI.animate.SymbolLoader", "classes/PIXI.animate.Timeline", "classes/PIXI.animate.Tween", "classes/PIXI.Container", "classes/PIXI.DisplayObject", "classes/PIXI.Graphics", "classes/PIXI.Sprite", "classes/PIXI.Text"]'>
+            <input style="margin-top: 0;" type="text" class="search-query" placeholder="Search for classes/modules..." data-obj='["classes/PIXI.animate.Animator", "classes/PIXI.animate.AnimatorTimeline", "classes/PIXI.animate.load", "classes/PIXI.animate.MovieClip", "classes/PIXI.animate.ShapesCache", "classes/PIXI.animate.SymbolLoader", "classes/PIXI.animate.Timeline", "classes/PIXI.animate.Tween", "classes/PIXI.animate.utils", "classes/PIXI.Container", "classes/PIXI.DisplayObject", "classes/PIXI.Graphics", "classes/PIXI.Sprite", "classes/PIXI.Text"]'>
         </form>
     </div>
 </div>
@@ -38,6 +38,10 @@
     <div id="sidebar">
     <div id="classes">
         <ul id="api-classes" class="nav nav-list">
+            
+                <li><a href="../classes/PIXI.animate.Animator.html">PIXI.animate.Animator</a></li>
+            
+                <li><a href="../classes/PIXI.animate.AnimatorTimeline.html">PIXI.animate.AnimatorTimeline</a></li>
             
                 <li><a href="../classes/PIXI.animate.load.html">PIXI.animate.load</a></li>
             
@@ -96,35 +100,126 @@
                 <div id="docs-main">
                     <div class="content">
 <div class="page-header">
-    <h1>/Users/mattkarl/github/jiborobot/pixi-animate/src/animate/ColorUtils.js <small>File</small></h1>
+    <h1>/Users/mattkarl/github/jiborobot/pixi-animate/src/animate/AnimatorTimeline.js <small>File</small></h1>
 </div>
 
 <div class="file">
     <pre class="prettyprint linenums">
+const pool = [];
+
 /**
+ * Represents a single animation play.
+ * @class AnimatorTimeline
  * @namespace PIXI.animate
- * @class ColorUtils
- * @private
- * @description For converting colors
  */
-export default class ColorUtils {
+class AnimatorTimeline {
+    constructor() {
+        this.init(null, null, false, 0, 0);
+    }
+
     /**
-     * Convert the Hexidecimal string (e.g., &quot;#fff&quot;) to uint
+     * The pool of timelines to use
+     * @method init
+     * @param {PIXI.animate.MovieClip} instance
+     * @param {Boolean} loop
+     * @param {Number} start
+     * @param {Number} init
+     * @private
+     */
+    init(instance, loop, start, end, callback) {
+        this.instance = instance;
+        this.loop = loop;
+        this.start = start;
+        this.end = end;
+        this.callback = callback;
+
+        if (instance) {
+            instance.gotoAndStop(start);
+        }
+    }
+
+    /**
+     * Don&#x27;t use after this
+     * @method destroy
+     * @private
+     */
+    destroy() {
+        this.init(null, null, false, 0, 0, null);
+        AnimatorTimeline._pool.push(this);
+    }
+
+    /**
+     * Is the animation complete
+     * @method update
+     * @return {Boolean} 
+     * @private
+     */
+    update() {
+        if (this.instance.currentFrame &gt;= this.end) {
+            if (this.loop) {
+                this.instance.gotoAndPlay(this.start);
+            } else {
+                var callback = this.callback;
+                this.stop();
+                if (callback) {
+                    callback();
+                }
+            }
+        }
+    }
+
+    /**
+     * Stop the animation, cannot be reused.
+     * @method stop
+     */
+    stop() {
+        PIXI.animate.Animator._internalStop(this);
+    }
+
+    /**
+     * The progress from 0 to 1 of the playback.
+     * @property {Number} progress
+     * @readOnly
+     */
+    get progress() {
+        const progress = (this.instance.currentFrame - this.start) / (this.end - this.start);
+        return Math.max(0, Math.min(1, progress)); // clamp
+    }
+
+    /**
+     * The pool of timelines to use
+     * @property {Array&lt;AnimatorTimeline&gt;} _pool
      * @static
      * @private
-     * @method hexToUint
      */
-    static hexToUint(hex) {
-        // Remove the hash
-        hex = hex.substr(1);
+    static get _pool() {
+        return pool;
+    }
 
-        // Convert shortcolors fc9 to ffcc99
-        if (hex.length === 3) {
-            hex = hex.replace(/([a-f0-9])/g, &#x27;$1$1&#x27;);
+    /**
+     * Create a new timeline
+     * @method create
+     * @static
+     * @param {PIXI.animate.MovieClip} instance
+     * @param {Boolean} loop
+     * @param {Number} start
+     * @param {Number} init
+     * @param {Function} callback
+     * @return {PIXI.animate.AnimatorTimeline}
+     */
+    static create(instance, loop, start, end, callback) {
+        var timeline;
+        if (this._pool.length) {
+            timeline = this._pool.pop();
+        } else {
+            timeline = new AnimatorTimeline();
         }
-        return parseInt(hex, 16);
+        timeline.init(instance, loop, start, end, callback);
+        return timeline;
     }
 }
+
+module.exports = AnimatorTimeline;
     </pre>
 </div>
 
