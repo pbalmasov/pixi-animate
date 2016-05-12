@@ -22,7 +22,7 @@
             <li class="divider-vertical"></li>
             <li>
                 <p class="navbar-text">
-                    API Docs for Version: <b>0.4.0</b>
+                    API Docs for Version: <b>0.4.2</b>
                 </p>
             </li>
         </div>
@@ -597,8 +597,10 @@ class MovieClip extends Container {
             }
             // Convert the keyframes object into
             // individual properties
+            let lastFrame = {};
             for (let i in keyframes) {
-                this.addTween(instance, keyframes[i], parseInt(i, 10));
+                lastFrame = Object.assign({}, lastFrame, keyframes[i]);
+                this.addTween(instance, lastFrame, parseInt(i, 10));
             }
         }
 
