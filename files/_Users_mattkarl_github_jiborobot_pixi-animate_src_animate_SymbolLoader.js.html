@@ -22,7 +22,7 @@
             <li class="divider-vertical"></li>
             <li>
                 <p class="navbar-text">
-                    API Docs for Version: <b>0.4.2</b>
+                    API Docs for Version: <b>0.5.0</b>
                 </p>
             </li>
         </div>
@@ -119,13 +119,7 @@ let SymbolLoader = function() {
         let data = resource.data;
 
         if (url.search(/\.shapes\.(json|txt)$/i) &gt; -1) {
-            if (typeof data === &quot;string&quot;) {
-                // Decode string to map of files
-                data = ShapesCache.decode(data);
-            }
-            for (let name in data) {
-                ShapesCache.add(name, data[name]);
-            }
+            ShapesCache.add(resource.name, data);
         } else if (data.nodeName &amp;&amp; data.nodeName === &#x27;IMG&#x27;) {
             // Add individual images to the texture cache by their
             // short symbol name, not the URL
