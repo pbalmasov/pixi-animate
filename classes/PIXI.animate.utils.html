@@ -22,7 +22,7 @@
             <li class="divider-vertical"></li>
             <li>
                 <p class="navbar-text">
-                    API Docs for Version: <b>0.5.0</b>
+                    API Docs for Version: <b>0.5.1</b>
                 </p>
             </li>
         </div>
@@ -128,6 +128,15 @@
 		
 
 		
+		<li>
+			<strong>Properties</strong>
+			<ul>
+				
+				<li><a href="#prop-UPLOADS_PER_FRAME"><span class="ip">UPLOADS_PER_FRAME</span></a></li>
+				
+			</ul>
+		</li>
+		
 
 		
 
@@ -149,11 +158,19 @@
 				
 				
 				
+				<li><a href="#method-getUploadable"><span class="im">PIXI.animate.utils.getUploadable</span>(<span class="ia">displayObject</span><span class="ia">textures</span><span class="ia">graphics</span>)</a></li>
+				
+				
+				
 				<li><a href="#method-hexToUint"><span class="im">PIXI.animate.utils.hexToUint</span>()</a></li>
 				
 				
 				
 				<li><a href="#method-parseValue"><span class="im">PIXI.animate.utils.parseValue</span>(<span class="ia">prop</span><span class="ia">buffer</span>)</a></li>
+				
+				
+				
+				<li><a href="#method-upload"><span class="im">PIXI.animate.utils.upload</span>(<span class="ia">renderer</span><span class="ia">clip</span><span class="ia">done</span>)</a></li>
 				
 				
 			</ul>
@@ -168,6 +185,64 @@
 
 
 
+
+    <div id="properties" class="page-section">
+        <h2 class="off-left">Properties</h2>
+
+        <div class="item-list">
+        
+<div id="prop-UPLOADS_PER_FRAME" class="property item">
+    <h3 class="name"><code>UPLOADS_PER_FRAME</code></h3>
+    <span class="type">Int</span>
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_utils.js.html#l197"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;utils.js:197</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The number of graphics or textures to upload to the GPU, if using
+utils.upload and WebGLRenderer</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> 4</p>
+    
+
+    
+
+    
+</div>
+
+        
+        </div>
+    </div>
 
 
 
@@ -227,7 +302,7 @@
 			
 		
 		
-		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_utils.js.html#l63"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;utils.js:63</code></a>
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_utils.js.html#l72"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;utils.js:72</code></a>
 		
 		</p>
 
@@ -337,7 +412,7 @@
 			
 		
 		
-		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_utils.js.html#l123"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;utils.js:123</code></a>
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_utils.js.html#l132"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;utils.js:132</code></a>
 		
 		</p>
 
@@ -452,7 +527,7 @@
 			
 		
 		
-		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_utils.js.html#l25"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;utils.js:25</code></a>
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_utils.js.html#l34"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;utils.js:34</code></a>
 		
 		</p>
 
@@ -530,6 +605,139 @@
             
         
 			
+<div id="method-getUploadable" class="method item private">
+	<div class="method-signature">
+	<span class="name"><code>PIXI.animate.utils.getUploadable</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code>displayObject</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code>textures</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code>graphics</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+	</div>
+
+	
+
+	
+		<span class="flag private">private</span>
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_utils.js.html#l262"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;utils.js:262</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Get the list of renderable items.</p>
+</div>
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name">displayObject</code>
+						<span class="type"><a href="../classes/PIXI.DisplayObject.html" class="crosslink">PIXI.DisplayObject</a></span>
+					
+
+					
+
+					
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name">textures</code>
+						<span class="type">Array<PIXI.Texture></span>
+					
+
+					
+
+					
+					<div class="param-description"><p>Collection of textures</p>
+</div>
+					
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name">graphics</code>
+						<span class="type">Array<PIXI.Graphics></span>
+					
+
+					
+
+					
+					<div class="param-description"><p>Collection of graphics</p>
+</div>
+					
+
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
+	
+
+	
+</div>
+
+            
+        
+			
 <div id="method-hexToUint" class="method item">
 	<div class="method-signature">
 	<span class="name"><code>PIXI.animate.utils.hexToUint</code></span>
@@ -561,7 +769,7 @@
 			
 		
 		
-		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_utils.js.html#l9"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;utils.js:9</code></a>
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_utils.js.html#l18"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;utils.js:18</code></a>
 		
 		</p>
 
@@ -639,7 +847,7 @@
 			
 		
 		
-		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_utils.js.html#l149"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;utils.js:149</code></a>
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_utils.js.html#l158"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;utils.js:158</code></a>
 		
 		</p>
 
@@ -710,6 +918,140 @@
 				
 			</div>
 		</div>
+	
+
+	
+</div>
+
+            
+        
+			
+<div id="method-upload" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>PIXI.animate.utils.upload</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code>renderer</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code>clip</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code>done</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_utils.js.html#l211"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;utils.js:211</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Upload all the textures and graphics to the GPU.</p>
+</div>
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name">renderer</code>
+						<span class="type">PIXI.WebGLRenderer</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>Render to upload to</p>
+</div>
+					
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name">clip</code>
+						<span class="type"><a href="../classes/PIXI.DisplayObject.html" class="crosslink">PIXI.DisplayObject</a></span>
+					
+
+					
+
+					
+					<div class="param-description"><p>MovieClip to upload</p>
+</div>
+					
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name">done</code>
+						<span class="type">Function</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>When complete</p>
+</div>
+					
+
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
 	
 
 	

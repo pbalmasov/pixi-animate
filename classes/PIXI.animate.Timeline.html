@@ -22,7 +22,7 @@
             <li class="divider-vertical"></li>
             <li>
                 <p class="navbar-text">
-                    API Docs for Version: <b>0.5.0</b>
+                    API Docs for Version: <b>0.5.1</b>
                 </p>
             </li>
         </div>
@@ -137,7 +137,19 @@
 			<ul>
 				
 				
+				<li><a href="#method-addKeyframe"><span class="im">addKeyframe</span>(<span class="ia">properties</span><span class="ia">startFrame</span>)</a></li>
+				
+				
+				
 				<li><a href="#method-addTween"><span class="im">addTween</span>(<span class="ia">tween</span>)</a></li>
+				
+				
+				
+				<li><a href="#method-extendLastFrame"><span class="im">extendLastFrame</span>(<span class="ia">endFrame</span>)</a></li>
+				
+				
+				
+				<li><a href="#method-getPropFromShorthand"><span class="im">getPropFromShorthand</span>(<span class="ia">prop</span>)</a></li>
 				
 				
 			</ul>
@@ -263,6 +275,118 @@
         <div class="item-list">
        		
         	
+<div id="method-addKeyframe" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>addKeyframe</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code>properties</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code>startFrame</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_Timeline.js.html#l69"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;Timeline.js:69</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Add a single keyframe that doesn&#39;t tween.</p>
+</div>
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name">properties</code>
+						<span class="type">Object</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The properties to set.</p>
+</div>
+					
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name">startFrame</code>
+						<span class="type">Int</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The starting frame index.</p>
+</div>
+					
+
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
+	
+
+	
+</div>
+
+            
+        
+        	
 <div id="method-addTween" class="method item">
 	<div class="method-signature">
 	<span class="name"><code>addTween</code></span>
@@ -362,6 +486,183 @@ and managed by this timeline. Adding a tween to multiple timelines will result i
 				
 			</div>
 		</div>
+	
+
+	
+</div>
+
+            
+        
+        	
+<div id="method-extendLastFrame" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>extendLastFrame</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code>endFrame</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_Timeline.js.html#l84"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;Timeline.js:84</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Extend the last frame of the tween.</p>
+</div>
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name">endFrame</code>
+						<span class="type">Int</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The ending frame index.</p>
+</div>
+					
+
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
+	
+
+	
+</div>
+
+            
+        
+        	
+<div id="method-getPropFromShorthand" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>getPropFromShorthand</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code>prop</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_Timeline.js.html#l106"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;Timeline.js:106</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Get the value for a property</p>
+</div>
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name">prop</code>
+						<span class="type">String</span>
+					
+
+					
+
+					
+
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
 	
 
 	

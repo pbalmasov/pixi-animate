@@ -22,7 +22,7 @@
             <li class="divider-vertical"></li>
             <li>
                 <p class="navbar-text">
-                    API Docs for Version: <b>0.5.0</b>
+                    API Docs for Version: <b>0.5.1</b>
                 </p>
             </li>
         </div>
@@ -137,7 +137,19 @@
 			<ul>
 				
 				
+				<li><a href="#method-_autoExtend"><span class="im">_autoExtend</span>(<span class="ia">endFrame</span>)</a></li>
+				
+				
+				
+				<li><a href="#method-_getChildTimeline"><span class="im">_getChildTimeline</span>(<span class="ia">instance</span>)</a></li>
+				
+				
+				
 				<li><a href="#method-_goto"><span class="im">_goto</span>(<span class="ia">positionOrLabel</span>)</a></li>
+				
+				
+				
+				<li><a href="#method-_parseProperties"><span class="im">_parseProperties</span>(<span class="ia">properties</span>)</a></li>
 				
 				
 				
@@ -153,11 +165,19 @@
 				
 				
 				
+				<li><a href="#method-aa"><span class="im">aa</span>(<span class="ia">callback</span><span class="ia">startFrame</span>)</a></li>
+				
+				
+				
 				<li><a href="#method-ac"><span class="im">ac</span>(<span class="ia">child*</span>)</a></li>
 				
 				
 				
 				<li><a href="#method-addAction"><span class="im">addAction</span>(<span class="ia">callback</span><span class="ia">startFrame</span>)</a></li>
+				
+				
+				
+				<li><a href="#method-addKeyframe"><span class="im">addKeyframe</span>(<span class="ia">instance</span><span class="ia">properties</span><span class="ia">startFrame</span><span class="ia">duration</span><span class="ia">ease</span>)</a></li>
 				
 				
 				
@@ -204,10 +224,6 @@
 				
 				
 				<li><a href="#method-stop"><span class="im">stop</span>()</a></li>
-				
-				
-				
-				<li><a href="#method-tw"><span class="im">tw</span>()</a></li>
 				
 				
 			</ul>
@@ -307,13 +323,21 @@
 				
 				
 				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 				<li><a href="#method-e"><span class="im">PIXI.animate.MovieClip.e</span>(<span class="ia">child</span>)</a></li>
 				
 				
 				
 				<li><a href="#method-extend"><span class="im">PIXI.animate.MovieClip.extend</span>(<span class="ia">child</span>)</a></li>
-				
-				
 				
 				
 				
@@ -513,6 +537,200 @@
         <div class="item-list">
        		
         	
+<div id="method-_autoExtend" class="method item private">
+	<div class="method-signature">
+	<span class="name"><code>_autoExtend</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code>endFrame</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+	</div>
+
+	
+
+	
+		<span class="flag private">private</span>
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l342"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:342</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Extend the timeline to the last frame.</p>
+</div>
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name">endFrame</code>
+						<span class="type">Int</span>
+					
+
+					
+
+					
+
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
+	
+
+	
+</div>
+
+            
+        
+        	
+<div id="method-_getChildTimeline" class="method item private">
+	<div class="method-signature">
+	<span class="name"><code>_getChildTimeline</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code>instance</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+		<span class="returns-inline">
+			<span class="type"><a href="../classes/PIXI.animate.Timeline.html" class="crosslink">PIXI.animate.Timeline</a></span>
+		</span>
+	
+	</div>
+
+	
+
+	
+		<span class="flag private">private</span>
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l369"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:369</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Get a timeline for a child, synced timeline.</p>
+</div>
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name">instance</code>
+						<span class="type"><a href="../classes/PIXI.animate.MovieClip.html" class="crosslink">PIXI.animate.MovieClip</a></span>
+					
+
+					
+
+					
+
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
+	
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+				
+					
+						<span class="type"><a href="../classes/PIXI.animate.Timeline.html" class="crosslink">PIXI.animate.Timeline</a></span>
+					
+				
+			</div>
+		</div>
+	
+
+	
+</div>
+
+            
+        
+        	
 <div id="method-_goto" class="method item protected">
 	<div class="method-signature">
 	<span class="name"><code>_goto</code></span>
@@ -556,7 +774,7 @@
 			
 		
 		
-		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l604"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:604</code></a>
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l645"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:645</code></a>
 		
 		</p>
 
@@ -585,6 +803,95 @@
 					
 					<div class="param-description"><p>The animation name or frame number to go to.</p>
 </div>
+					
+
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
+	
+
+	
+</div>
+
+            
+        
+        	
+<div id="method-_parseProperties" class="method item private">
+	<div class="method-signature">
+	<span class="name"><code>_parseProperties</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code>properties</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+	</div>
+
+	
+
+	
+		<span class="flag private">private</span>
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l354"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:354</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Convert values of properties</p>
+</div>
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name">properties</code>
+						<span class="type">Object</span>
+					
+
+					
+
 					
 
 					
@@ -635,7 +942,7 @@
 			
 		
 		
-		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l629"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:629</code></a>
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l670"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:670</code></a>
 		
 		</p>
 
@@ -712,7 +1019,7 @@
 			
 		
 		
-		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l664"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:664</code></a>
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l705"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:705</code></a>
 		
 		</p>
 
@@ -817,7 +1124,7 @@
 			
 		
 		
-		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l639"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:639</code></a>
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l680"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:680</code></a>
 		
 		</p>
 
@@ -831,6 +1138,134 @@
 
 	
 
+	
+
+	
+</div>
+
+            
+        
+        	
+<div id="method-aa" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>aa</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code>callback</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code>startFrame</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+		<span class="returns-inline">
+			<span class="type"><a href="../classes/PIXI.animate.MovieClip.html" class="crosslink">PIXI.animate.MovieClip</a></span>
+		</span>
+	
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l540"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:540</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Short cut for <code>addAction</code></p>
+</div>
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name">callback</code>
+						<span class="type">Function</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The clip call on a certain frame</p>
+</div>
+					
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name">startFrame</code>
+						<span class="type">Int</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The starting frame</p>
+</div>
+					
+
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
+	
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+				
+					
+						<span class="type"><a href="../classes/PIXI.animate.MovieClip.html" class="crosslink">PIXI.animate.MovieClip</a></span>
+					
+				
+			</div>
+		</div>
 	
 
 	
@@ -996,7 +1431,7 @@
 			
 		
 		
-		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l506"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:506</code></a>
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l551"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:551</code></a>
 		
 		</p>
 
@@ -1007,7 +1442,7 @@
 	</div>
 
 	
-	<div class="description"><p>Handle frame actions, callback is bound to the instance of the MovieClip</p>
+	<div class="description"><p>Handle frame actions, callback is bound to the instance of the MovieClip.</p>
 </div>
 	
 
@@ -1043,6 +1478,203 @@
 
 					
 					<div class="param-description"><p>The starting frame</p>
+</div>
+					
+
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
+	
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+				
+					
+						<span class="type"><a href="../classes/PIXI.animate.MovieClip.html" class="crosslink">PIXI.animate.MovieClip</a></span>
+					
+				
+			</div>
+		</div>
+	
+
+	
+</div>
+
+            
+        
+        	
+<div id="method-addKeyframe" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>addKeyframe</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code>instance</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code>properties</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code>startFrame</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code class="optional">duration=0</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code class="optional">ease</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+		<span class="returns-inline">
+			<span class="type"><a href="../classes/PIXI.animate.MovieClip.html" class="crosslink">PIXI.animate.MovieClip</a></span>
+		</span>
+	
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l437"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:437</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Add a tween to the clip</p>
+</div>
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name">instance</code>
+						<span class="type"><a href="../classes/PIXI.DisplayObject.html" class="crosslink">PIXI.DisplayObject</a></span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The clip to tween</p>
+</div>
+					
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name">properties</code>
+						<span class="type">Object</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The property or property to tween</p>
+</div>
+					
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name">startFrame</code>
+						<span class="type">Int</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The frame to start tweening</p>
+</div>
+					
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name optional">[duration=0]</code>
+						<span class="type">Int</span>
+						<span class="flag optional" title="This parameter is optional.">optional</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>Number of frames to tween. If 0, then the properties are set
+                          with no tweening.</p>
+</div>
+					
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name optional">[ease]</code>
+						<span class="type">Function</span>
+						<span class="flag optional" title="This parameter is optional.">optional</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>An optional easing function that takes the tween time from 0-1.</p>
 </div>
 					
 
@@ -1136,7 +1768,7 @@
 			
 		
 		
-		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l434"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:434</code></a>
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l466"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:466</code></a>
 		
 		</p>
 
@@ -1298,7 +1930,7 @@
 			
 		
 		
-		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l342"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:342</code></a>
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l387"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:387</code></a>
 		
 		</p>
 
@@ -1446,7 +2078,7 @@
 			
 		
 		
-		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l381"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:381</code></a>
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l417"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:417</code></a>
 		
 		</p>
 
@@ -1615,7 +2247,7 @@
 			
 		
 		
-		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l571"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:571</code></a>
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l612"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:612</code></a>
 		
 		</p>
 
@@ -1716,7 +2348,7 @@
 			
 		
 		
-		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l361"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:361</code></a>
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l406"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:406</code></a>
 		
 		</p>
 
@@ -1830,7 +2462,7 @@
 			
 		
 		
-		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l425"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:425</code></a>
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l457"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:457</code></a>
 		
 		</p>
 
@@ -1914,7 +2546,7 @@
 			
 		
 		
-		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l551"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:551</code></a>
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l592"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:592</code></a>
 		
 		</p>
 
@@ -2004,7 +2636,7 @@
 			
 		
 		
-		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l561"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:561</code></a>
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l602"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:602</code></a>
 		
 		</p>
 
@@ -2084,7 +2716,7 @@
 			
 		
 		
-		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l535"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:535</code></a>
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l576"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:576</code></a>
 		
 		</p>
 
@@ -2140,7 +2772,7 @@
 			
 		
 		
-		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l543"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:543</code></a>
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l584"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:584</code></a>
 		
 		</p>
 
@@ -2157,78 +2789,6 @@
 
 	
 
-	
-
-	
-</div>
-
-            
-        
-        	
-<div id="method-tw" class="method item">
-	<div class="method-signature">
-	<span class="name"><code>tw</code></span>
-
-	
-		<span class="paren">()</span>
-	
-	
-		<span class="returns-inline">
-			<span class="type"><a href="../classes/PIXI.animate.MovieClip.html" class="crosslink">PIXI.animate.MovieClip</a></span>
-		</span>
-	
-	</div>
-
-	
-
-	
-
-	
-
-	
-
-	
-
-	<div class="meta">
-		
-			
-				
-				<p>
-				
-				Defined in
-				
-			
-		
-		
-		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l372"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:372</code></a>
-		
-		</p>
-
-
-		
-
-		
-	</div>
-
-	
-	<div class="description"><p>Alias for method <code>addTween</code></p>
-</div>
-	
-
-	
-
-	
-		<div class="returns">
-			<h4>Returns:</h4>
-
-			<div class="returns-description">
-				
-					
-						<span class="type"><a href="../classes/PIXI.animate.MovieClip.html" class="crosslink">PIXI.animate.MovieClip</a></span>
-					
-				
-			</div>
-		</div>
 	
 
 	
@@ -3050,7 +3610,7 @@ passed into {{#crossLink &#39;Stage/update&#39;}}{{/crossLink}}.</p>
             
         
         
-        <a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l776"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:776</code></a>
+        <a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l817"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:817</code></a>
         
         </p>
 
@@ -3334,7 +3894,7 @@ See each constant for a description of the behaviour.</p>
             
         
         
-        <a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l787"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:787</code></a>
+        <a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l828"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:828</code></a>
         
         </p>
 
@@ -3430,7 +3990,7 @@ See each constant for a description of the behaviour.</p>
             
         
         
-        <a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l797"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:797</code></a>
+        <a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l838"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:838</code></a>
         
         </p>
 
@@ -3540,6 +4100,16 @@ the parent MovieClip.</p>
 			
         
 			
+        
+			
+        
+			
+        
+			
+        
+			
+        
+			
 <div id="method-e" class="method item">
 	<div class="method-signature">
 	<span class="name"><code>PIXI.animate.MovieClip.e</code></span>
@@ -3585,7 +4155,7 @@ the parent MovieClip.</p>
 			
 		
 		
-		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l815"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:815</code></a>
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l856"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:856</code></a>
 		
 		</p>
 
@@ -3693,7 +4263,7 @@ the parent MovieClip.</p>
 			
 		
 		
-		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l808"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:808</code></a>
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_MovieClip.js.html#l849"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;MovieClip.js:849</code></a>
 		
 		</p>
 
@@ -3754,8 +4324,6 @@ the parent MovieClip.</p>
 </div>
 
             
-        
-			
         
 			
         

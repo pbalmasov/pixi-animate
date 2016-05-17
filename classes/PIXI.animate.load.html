@@ -22,7 +22,7 @@
             <li class="divider-vertical"></li>
             <li>
                 <p class="navbar-text">
-                    API Docs for Version: <b>0.5.0</b>
+                    API Docs for Version: <b>0.5.1</b>
                 </p>
             </li>
         </div>
@@ -151,15 +151,15 @@ update();</code></pre>
 			<ul>
 				
 				
-				<li><a href="#method-load"><span class="im">load</span>(<span class="ia">StageRef</span><span class="ia">parent</span><span class="ia">complete</span><span class="ia">assetBaseDir</span>)</a></li>
+				<li><a href="#method-load"><span class="im">load</span>(<span class="ia">options</span>)</a></li>
 				
 				
 				
-				<li><a href="#method-load"><span class="im">load</span>(<span class="ia">StageRef</span><span class="ia">parent</span><span class="ia">assetBaseDir</span>)</a></li>
+				<li><a href="#method-load"><span class="im">load</span>(<span class="ia">StageRef</span><span class="ia">complete</span>)</a></li>
 				
 				
 				
-				<li><a href="#method-load"><span class="im">load</span>(<span class="ia">StageRef</span><span class="ia">complete</span><span class="ia">assetBaseDir</span>)</a></li>
+				<li><a href="#method-load"><span class="im">load</span>(<span class="ia">StageRef</span><span class="ia">parent</span>)</a></li>
 				
 				
 			</ul>
@@ -194,25 +194,7 @@ update();</code></pre>
 			
 				<li class="arg">
 					
-						<code>StageRef</code>
-					
-				</li>
-			
-				<li class="arg">
-					
-						<code>parent</code>
-					
-				</li>
-			
-				<li class="arg">
-					
-						<code class="optional">complete</code>
-					
-				</li>
-			
-				<li class="arg">
-					
-						<code class="optional">assetBaseDir</code>
+						<code>options</code>
 					
 				</li>
 			
@@ -266,14 +248,14 @@ update();</code></pre>
 			
 				<li class="param">
 					
-						<code class="param-name">StageRef</code>
-						<span class="type">Function</span>
+						<code class="param-name">options</code>
+						<span class="type">Object</span>
 					
 
 					
 
 					
-					<div class="param-description"><p>Reference to the stage class</p>
+					<div class="param-description"><p>Options for loading.</p>
 </div>
 					
 
@@ -282,68 +264,56 @@ update();</code></pre>
 							
 							<li class="param">
 								
-									<code class="param-name optional">[assets]</code>
-									<span class="type">Array</span>
+									<code class="param-name">stage</code>
+									<span class="type">Function</span>
+								
+
+								<div class="param-description"><p>Reference to the stage class</p>
+</div>
+
+								
+									<ul class="params-list">
+										
+										<li class="param">
+											
+												<code class="param-name optional">[assets]</code>
+												<span class="type">Object</span>
+												<span class="flag optional" title="This parameter is optional.">optional</span>
+											
+
+											<div class="param-description">Assets used to preload</div>
+										</li>
+										
+									</ul>
+								
+							</li>
+							
+							<li class="param">
+								
+									<code class="param-name">parent</code>
+									<span class="type"><a href="../classes/PIXI.Container.html" class="crosslink">PIXI.Container</a></span>
+								
+
+								<div class="param-description"><p>The Container to auto-add the stage to.</p>
+</div>
+
+								
+							</li>
+							
+							<li class="param">
+								
+									<code class="param-name optional">[basePath]</code>
+									<span class="type">String</span>
 									<span class="flag optional" title="This parameter is optional.">optional</span>
 								
 
-								<div class="param-description"><p>Assets used to preload</p>
+								<div class="param-description"><p>Base root directory</p>
 </div>
 
 								
 							</li>
 							
 						</ul>
-					
-				</li>
-			
-				<li class="param">
-					
-						<code class="param-name">parent</code>
-						<span class="type"><a href="../classes/PIXI.Container.html" class="crosslink">PIXI.Container</a></span>
-					
-
-					
-
-					
-					<div class="param-description"><p>The Container to auto-add the stage to.</p>
-</div>
-					
-
-					
-				</li>
-			
-				<li class="param">
-					
-						<code class="param-name optional">[complete]</code>
-						<span class="type">Function</span>
-						<span class="flag optional" title="This parameter is optional.">optional</span>
-					
-
-					
-
-					
-					<div class="param-description"><p>Function to call when complete</p>
-</div>
-					
-
-					
-				</li>
-			
-				<li class="param">
-					
-						<code class="param-name optional">[assetBaseDir]</code>
-						<span class="type">String</span>
-						<span class="flag optional" title="This parameter is optional.">optional</span>
-					
-
-					
-
-					
-					<div class="param-description"><p>Base root directory</p>
-</div>
-					
-
 					
 				</li>
 			
@@ -375,13 +345,7 @@ update();</code></pre>
 			
 				<li class="arg">
 					
-						<code>parent</code>
-					
-				</li>
-			
-				<li class="arg">
-					
-						<code class="optional">assetBaseDir</code>
+						<code>complete</code>
 					
 				</li>
 			
@@ -442,7 +406,7 @@ update();</code></pre>
 					
 
 					
-					<div class="param-description"><p>Reference to the stage class</p>
+					<div class="param-description"><p>Reference to the stage class.</p>
 </div>
 					
 
@@ -452,11 +416,11 @@ update();</code></pre>
 							<li class="param">
 								
 									<code class="param-name optional">[assets]</code>
-									<span class="type">Array</span>
+									<span class="type">Object</span>
 									<span class="flag optional" title="This parameter is optional.">optional</span>
 								
 
-								<div class="param-description"><p>Assets used to preload</p>
+								<div class="param-description"><p>Assets used to preload.</p>
 </div>
 
 								
@@ -468,31 +432,14 @@ update();</code></pre>
 			
 				<li class="param">
 					
-						<code class="param-name">parent</code>
-						<span class="type"><a href="../classes/PIXI.Container.html" class="crosslink">PIXI.Container</a></span>
+						<code class="param-name">complete</code>
+						<span class="type">Function</span>
 					
 
 					
 
 					
-					<div class="param-description"><p>The Container to auto-add the stage to.</p>
-</div>
-					
-
-					
-				</li>
-			
-				<li class="param">
-					
-						<code class="param-name optional">[assetBaseDir]</code>
-						<span class="type">String</span>
-						<span class="flag optional" title="This parameter is optional.">optional</span>
-					
-
-					
-
-					
-					<div class="param-description"><p>Base root directory</p>
+					<div class="param-description"><p>The callback function when complete.</p>
 </div>
 					
 
@@ -527,13 +474,7 @@ update();</code></pre>
 			
 				<li class="arg">
 					
-						<code>complete</code>
-					
-				</li>
-			
-				<li class="arg">
-					
-						<code class="optional">assetBaseDir</code>
+						<code>parent</code>
 					
 				</li>
 			
@@ -564,7 +505,7 @@ update();</code></pre>
 			
 		
 		
-		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_load.js.html#l48"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;load.js:48</code></a>
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_load.js.html#l47"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;load.js:47</code></a>
 		
 		</p>
 
@@ -594,7 +535,7 @@ update();</code></pre>
 					
 
 					
-					<div class="param-description"><p>Reference to the stage class</p>
+					<div class="param-description"><p>Reference to the stage class.</p>
 </div>
 					
 
@@ -604,11 +545,11 @@ update();</code></pre>
 							<li class="param">
 								
 									<code class="param-name optional">[assets]</code>
-									<span class="type">Array</span>
+									<span class="type">Object</span>
 									<span class="flag optional" title="This parameter is optional.">optional</span>
 								
 
-								<div class="param-description"><p>Assets used to preload</p>
+								<div class="param-description"><p>Assets used to preload.</p>
 </div>
 
 								
@@ -620,31 +561,14 @@ update();</code></pre>
 			
 				<li class="param">
 					
-						<code class="param-name">complete</code>
-						<span class="type">Function</span>
+						<code class="param-name">parent</code>
+						<span class="type"><a href="../classes/PIXI.Container.html" class="crosslink">PIXI.Container</a></span>
 					
 
 					
 
 					
-					<div class="param-description"><p>The callback function when complete.</p>
-</div>
-					
-
-					
-				</li>
-			
-				<li class="param">
-					
-						<code class="param-name optional">[assetBaseDir]</code>
-						<span class="type">String</span>
-						<span class="flag optional" title="This parameter is optional.">optional</span>
-					
-
-					
-
-					
-					<div class="param-description"><p>Base root directory</p>
+					<div class="param-description"><p>The Container to auto-add the stage to.</p>
 </div>
 					
 
