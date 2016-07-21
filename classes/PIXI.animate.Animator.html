@@ -22,7 +22,7 @@
             <li class="divider-vertical"></li>
             <li>
                 <p class="navbar-text">
-                    API Docs for Version: <b>0.5.6</b>
+                    API Docs for Version: <b>0.6.0</b>
                 </p>
             </li>
         </div>
@@ -154,19 +154,23 @@
 				
 				
 				
-				<li><a href="#method-_refresh"><span class="im">PIXI.animate.Animator._refresh</span>()</a></li>
+				<li><a href="#method-fromTo"><span class="im">PIXI.animate.Animator.fromTo</span>(<span class="ia">instance</span><span class="ia">start</span><span class="ia">end</span><span class="ia">loop</span><span class="ia">callback</span>)</a></li>
 				
 				
 				
-				<li><a href="#method-_update"><span class="im">PIXI.animate.Animator._update</span>()</a></li>
-				
-				
-				
-				<li><a href="#method-play"><span class="im">PIXI.animate.Animator.play</span>(<span class="ia">instance</span><span class="ia">event</span><span class="ia">callback</span>)</a></li>
+				<li><a href="#method-play"><span class="im">PIXI.animate.Animator.play</span>(<span class="ia">instance</span><span class="ia">label</span><span class="ia">callback</span>)</a></li>
 				
 				
 				
 				<li><a href="#method-stop"><span class="im">PIXI.animate.Animator.stop</span>(<span class="ia">instance</span>)</a></li>
+				
+				
+				
+				<li><a href="#method-stopAll"><span class="im">PIXI.animate.Animator.stopAll</span>(<span class="ia">instance</span>)</a></li>
+				
+				
+				
+				<li><a href="#method-to"><span class="im">PIXI.animate.Animator.to</span>(<span class="ia">instance</span><span class="ia">end</span><span class="ia">callback</span>)</a></li>
 				
 				
 			</ul>
@@ -391,7 +395,7 @@
 			
 		
 		
-		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_Animator.js.html#l117"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;Animator.js:117</code></a>
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_Animator.js.html#l195"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;Animator.js:195</code></a>
 		
 		</p>
 
@@ -440,20 +444,56 @@
             
         
 			
-<div id="method-_refresh" class="method item private">
+<div id="method-fromTo" class="method item">
 	<div class="method-signature">
-	<span class="name"><code>PIXI.animate.Animator._refresh</code></span>
+	<span class="name"><code>PIXI.animate.Animator.fromTo</code></span>
 
 	
-		<span class="paren">()</span>
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code>instance</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code>start</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code>end</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code class="optional">loop=false</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code class="optional">callback</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
 	
+	
+		<span class="returns-inline">
+			<span class="type"><a href="../classes/PIXI.animate.AnimatorTimeline.html" class="crosslink">PIXI.animate.AnimatorTimeline</a></span>
+		</span>
 	
 	</div>
 
 	
 
-	
-		<span class="flag private">private</span>
 	
 
 	
@@ -473,7 +513,7 @@
 			
 		
 		
-		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_Animator.js.html#l131"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;Animator.js:131</code></a>
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_Animator.js.html#l106"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;Animator.js:106</code></a>
 		
 		</p>
 
@@ -484,70 +524,116 @@
 	</div>
 
 	
-	<div class="description"><p>Refresh if we should be updating</p>
+	<div class="description"><p>Play a MovieClip from a start to end frame.</p>
 </div>
 	
 
 	
+		<div class="params">
+			<h4>Parameters:</h4>
 
-	
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name">instance</code>
+						<span class="type"><a href="../classes/PIXI.animate.MovieClip.html" class="crosslink">PIXI.animate.MovieClip</a></span>
+					
 
-	
+					
+
+					
+					<div class="param-description"><p>Movie clip to play.</p>
 </div>
+					
 
-            
-        
+					
+				</li>
 			
-<div id="method-_update" class="method item private">
-	<div class="method-signature">
-	<span class="name"><code>PIXI.animate.Animator._update</code></span>
+				<li class="param">
+					
+						<code class="param-name">start</code>
+						<span class="type">Number  |  String</span>
+					
 
-	
-		<span class="paren">()</span>
-	
-	
-	</div>
+					
 
-	
-
-	
-		<span class="flag private">private</span>
-	
-
-	
-
-	
-
-	
-
-	<div class="meta">
-		
-			
-				
-				<p>
-				
-				Defined in
-				
-			
-		
-		
-		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_Animator.js.html#l147"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;Animator.js:147</code></a>
-		
-		</p>
-
-
-		
-
-		
-	</div>
-
-	
-	<div class="description"><p>Update the animation</p>
+					
+					<div class="param-description"><p>The starting frame index or label.</p>
 </div>
+					
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name">end</code>
+						<span class="type">Number  |  String</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The ending frame index or label.</p>
+</div>
+					
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name optional">[loop=false]</code>
+						<span class="type">Boolean</span>
+						<span class="flag optional" title="This parameter is optional.">optional</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>If the animation should loop.</p>
+</div>
+					
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name optional">[callback]</code>
+						<span class="type">Function</span>
+						<span class="flag optional" title="This parameter is optional.">optional</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>Optional callback when complete</p>
+</div>
+					
+
+					
+				</li>
+			
+			</ul>
+		</div>
 	
 
 	
+		<div class="returns">
+			<h4>Returns:</h4>
 
+			<div class="returns-description">
+				
+					
+						<span class="type"><a href="../classes/PIXI.animate.AnimatorTimeline.html" class="crosslink">PIXI.animate.AnimatorTimeline</a></span>:
+					
+					<p>Timeline object for stopping or getting progress.</p>
+
+				
+			</div>
+		</div>
 	
 
 	
@@ -572,7 +658,7 @@
 			
 				<li class="arg">
 					
-						<code>event</code>
+						<code class="optional">label</code>
 					
 				</li>
 			
@@ -624,7 +710,9 @@
 	</div>
 
 	
-	<div class="description"><p>Play an animation by</p>
+	<div class="description"><p>Play an animation by frame labels. For instance, play animation sequence from
+"idle" to "idle_stop" or "idle_loop". If no event label is provided, will
+play the entire duration of the MovieClip.</p>
 </div>
 	
 
@@ -652,14 +740,16 @@
 			
 				<li class="param">
 					
-						<code class="param-name">event</code>
-						<span class="type">String</span>
+						<code class="param-name optional">[label]</code>
+						<span class="type">String  |  Function</span>
+						<span class="flag optional" title="This parameter is optional.">optional</span>
 					
 
 					
 
 					
-					<div class="param-description"><p>The frame label event to call</p>
+					<div class="param-description"><p>The frame label event to call, if no event is provided
+       will use the entire length of the MovieClip. Can also be the callback.</p>
 </div>
 					
 
@@ -750,7 +840,7 @@
 			
 		
 		
-		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_Animator.js.html#l101"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;Animator.js:101</code></a>
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_Animator.js.html#l167"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;Animator.js:167</code></a>
 		
 		</p>
 
@@ -761,7 +851,7 @@
 	</div>
 
 	
-	<div class="description"><p>Stop the animation</p>
+	<div class="description"><p>Stop the animation by instance.</p>
 </div>
 	
 
@@ -791,6 +881,249 @@
 		</div>
 	
 
+	
+
+	
+</div>
+
+            
+        
+			
+<div id="method-stopAll" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>PIXI.animate.Animator.stopAll</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code>instance</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_Animator.js.html#l183"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;Animator.js:183</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Stop all the currently playing animations.</p>
+</div>
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name">instance</code>
+						<span class="type"><a href="../classes/PIXI.animate.MovieClip.html" class="crosslink">PIXI.animate.MovieClip</a></span>
+					
+
+					
+
+					
+					<div class="param-description"><p>Movie clip to play.</p>
+</div>
+					
+
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
+	
+
+	
+</div>
+
+            
+        
+			
+<div id="method-to" class="method item">
+	<div class="method-signature">
+	<span class="name"><code>PIXI.animate.Animator.to</code></span>
+
+	
+		<div class="args">
+			<span class="paren">(</span><ul class="args-list inline commas">
+			
+				<li class="arg">
+					
+						<code>instance</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code>end</code>
+					
+				</li>
+			
+				<li class="arg">
+					
+						<code class="optional">callback</code>
+					
+				</li>
+			
+			</ul><span class="paren">)</span>
+		</div>
+	
+	
+		<span class="returns-inline">
+			<span class="type"><a href="../classes/PIXI.animate.AnimatorTimeline.html" class="crosslink">PIXI.animate.AnimatorTimeline</a></span>
+		</span>
+	
+	</div>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	<div class="meta">
+		
+			
+				
+				<p>
+				
+				Defined in
+				
+			
+		
+		
+		<a href="../files/_Users_mattkarl_github_jiborobot_pixi-animate_src_animate_Animator.js.html#l87"><code>&#x2F;Users&#x2F;mattkarl&#x2F;github&#x2F;jiborobot&#x2F;pixi-animate&#x2F;src&#x2F;animate&#x2F;Animator.js:87</code></a>
+		
+		</p>
+
+
+		
+
+		
+	</div>
+
+	
+	<div class="description"><p>Play an animation from the current frame to an end frame or label.</p>
+</div>
+	
+
+	
+		<div class="params">
+			<h4>Parameters:</h4>
+
+			<ul class="params-list">
+			
+				<li class="param">
+					
+						<code class="param-name">instance</code>
+						<span class="type"><a href="../classes/PIXI.animate.MovieClip.html" class="crosslink">PIXI.animate.MovieClip</a></span>
+					
+
+					
+
+					
+					<div class="param-description"><p>Movie clip to play.</p>
+</div>
+					
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name">end</code>
+						<span class="type">String  |  Number</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>The end frame or label.</p>
+</div>
+					
+
+					
+				</li>
+			
+				<li class="param">
+					
+						<code class="param-name optional">[callback]</code>
+						<span class="type">Function</span>
+						<span class="flag optional" title="This parameter is optional.">optional</span>
+					
+
+					
+
+					
+					<div class="param-description"><p>Optional callback when complete</p>
+</div>
+					
+
+					
+				</li>
+			
+			</ul>
+		</div>
+	
+
+	
+		<div class="returns">
+			<h4>Returns:</h4>
+
+			<div class="returns-description">
+				
+					
+						<span class="type"><a href="../classes/PIXI.animate.AnimatorTimeline.html" class="crosslink">PIXI.animate.AnimatorTimeline</a></span>:
+					
+					<p>Timeline object for stopping or getting progress.</p>
+
+				
+			</div>
+		</div>
 	
 
 	

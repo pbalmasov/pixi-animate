@@ -22,7 +22,7 @@
             <li class="divider-vertical"></li>
             <li>
                 <p class="navbar-text">
-                    API Docs for Version: <b>0.5.6</b>
+                    API Docs for Version: <b>0.6.0</b>
                 </p>
             </li>
         </div>
@@ -330,6 +330,14 @@ class MovieClip extends Container {
          * @protected
          */
         this._actions = [];
+
+        /**
+         * Optional callback fired before timeline is updated.
+         * Can be used to clamp or update the currentFrame. 
+         * @property beforeUpdateTimeline
+         * @type {Function}
+         */
+        this.beforeUpdateTimeline = null;
 
         if (this.mode === MovieClip.INDEPENDENT) {
             this._tickListener = this._tickListener.bind(this);
@@ -753,6 +761,9 @@ class MovieClip extends Container {
         //final error checking
         if (this.currentFrame &gt;= this._totalFrames) {
             this.currentFrame = this._totalFrames - 1;
+        }
+        if (this.beforeUpdateTimeline) {
+            this.beforeUpdateTimeline(this);
         }
         //update all tweens &amp; actions in the timeline
         this._updateTimeline();
