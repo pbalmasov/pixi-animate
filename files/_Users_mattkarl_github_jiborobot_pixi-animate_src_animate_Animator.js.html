@@ -22,7 +22,7 @@
             <li class="divider-vertical"></li>
             <li>
                 <p class="navbar-text">
-                    API Docs for Version: <b>0.6.2</b>
+                    API Docs for Version: <b>0.7.0</b>
                 </p>
             </li>
         </div>
@@ -170,10 +170,10 @@ class Animator {
                 callback = label;
             }
         } else {
-            start = instance._labelDict[label];
-            end = instance._labelDict[label + this.STOP_LABEL];
+            start = instance.labelsMap[label];
+            end = instance.labelsMap[label + this.STOP_LABEL];
             if (end === undefined) {
-                end = instance._labelDict[label + this.LOOP_LABEL];
+                end = instance.labelsMap[label + this.LOOP_LABEL];
                 loop = true;
             }
             if (start === undefined) {
@@ -225,14 +225,14 @@ class Animator {
 
         if (typeof start === &quot;string&quot;) {
             const startLabel = start;
-            start = instance._labelDict[startLabel];
+            start = instance.labelsMap[startLabel];
             if (start === undefined) {
                 throw new Error(&quot;No start label matching &#x27;&quot; + startLabel + &quot;&#x27;&quot;);
             }
         }
         if (typeof end === &quot;string&quot;) {
             const endLabel = end;
-            end = instance._labelDict[endLabel];
+            end = instance.labelsMap[endLabel];
             if (end === undefined) {
                 throw new Error(&quot;No end label matching &#x27;&quot; + endLabel + &quot;&#x27;&quot;);
             }
