@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Index</title>
+    <title>Namespace: utils</title>
     
     
     
@@ -614,39 +614,758 @@
     </ul>
 </div>
     <div class="main">
-        <h1 class="page-title" data-filename="index.html">Index</h1>
+        <h1 class="page-title" data-filename="PIXI.animate.utils.html">Namespace: utils</h1>
         
 
 
+
+<section>
+    
+<header>
+    <h2>
+        <span class="ancestors"><a href="PIXI.html">PIXI</a><a href="PIXI.animate.html">.animate</a>.</span>
+    
+    utils
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><p>For keyframe conversions</p></div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    
     
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
 
-    <h3> </h3>
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Methods</h3>
+        
+        <dl>
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id=".deserializeKeyframes">
+            
+            <span class="type-signature static">static</span>PIXI.animate.utils.deserializeKeyframes<span class="signature">(keyframes, Resulting)</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="animate_utils.js.html">animate/utils.js</a>, <a href="animate_utils.js.html#line64">line 64</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Convert serialized array into keyframes<br><code>&quot;0x100y100 1x150&quot;</code> to: <code>{ &quot;0&quot;: {&quot;x&quot;:100, &quot;y&quot;: 100}, &quot;1&quot;: {&quot;x&quot;: 150} }</code></p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>keyframes</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
 
 
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                </td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>Resulting</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
 
 
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                <p>keyframes</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
 
-
+    
+    
 
     
 
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id=".deserializeShapes">
+            
+            <span class="type-signature static">static</span>PIXI.animate.utils.deserializeShapes<span class="signature">(str, Resulting)</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="animate_utils.js.html">animate/utils.js</a>, <a href="animate_utils.js.html#line124">line 124</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Convert serialized shapes into draw commands for PIXI.Graphics.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
 
 
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                </td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>Resulting</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
 
-    <section>
-        <article class="readme"><h1>PIXI Animate</h1><p>A plugin for Pixi.js which provides a runtime for content export using PixiAnimate Extension. </p>
-<p><a target="_blank" href="https://travis-ci.org/jiborobot/pixi-animate"><img src="https://travis-ci.org/jiborobot/pixi-animate.svg?branch=master" alt="Build Status"></a> <a target="_blank" href="https://david-dm.org/jiborobot/pixi-animate"><img src="https://david-dm.org/jiborobot/pixi-animate.svg" alt="Dependency Status"></a> <a target="_blank" href="https://badge.fury.io/js/pixi-animate"><img src="https://badge.fury.io/js/pixi-animate.svg" alt="npm version"></a></p>
-<h2>Running Content</h2><h3>Installing Library</h3><p>To run content exported with PixiAnimate, you must load the JavaScript library within your project. You can install using <a target="_blank" href="http://bower.io">Bower</a> or <a target="_blank" href="http://www.npmjs.org">NPM</a>:</p>
-<h4>Bower</h4><pre class="prettyprint source"><code>bower install pixi-animate</code></pre><h4>NPM</h4><pre class="prettyprint source"><code>npm install pixi-animate</code></pre><h3>Dependencies</h3><ul>
-<li><a target="_blank" href="http://pixijs.com">Pixi.js v4</a> is required</li>
-</ul>
-<h2>Documentation</h2><p>http://jiborobot.github.io/pixi-animate/</p>
-<h2>License</h2><p>Copyright (c) 2016 <a target="_blank" href="http://github.com/jiborobot">Jibo, Inc.</a></p>
-<p>Released under the MIT License.</p></article>
-    </section>
 
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                <p>shapes map</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id=".fillFrames">
+            
+            <span class="type-signature static">static</span>PIXI.animate.utils.fillFrames<span class="signature">(timeline, startFrame, duration)</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="animate_utils.js.html">animate/utils.js</a>, <a href="animate_utils.js.html#line26">line 26</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Fill frames with booleans of true (showing) and false (hidden).</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>timeline</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;Boolean></span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                </td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>startFrame</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                <p>The start frame when the timeline shows up</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>duration</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                <p>The length of showing</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id=".hexToUint">
+            
+            <span class="type-signature static">static</span>PIXI.animate.utils.hexToUint<span class="signature">()</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="animate_utils.js.html">animate/utils.js</a>, <a href="animate_utils.js.html#line10">line 10</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Convert the Hexidecimal string (e.g., &quot;#fff&quot;) to uint</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id=".upload">
+            
+            <span class="type-signature static">static</span>PIXI.animate.utils.upload<span class="signature">(renderer, clip, done)</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="animate_utils.js.html">animate/utils.js</a>, <a href="animate_utils.js.html#line189">line 189</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Upload all the textures and graphics to the GPU.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>renderer</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">PIXI.WebGLRenderer</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                <p>Render to upload to</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>clip</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="PIXI.DisplayObject.html">PIXI.DisplayObject</a></span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                <p>MovieClip to upload</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>done</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                <p>When complete</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+</article>
+
+</section>  
 
 
 

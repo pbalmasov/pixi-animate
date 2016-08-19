@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Index</title>
+    <title>Source: animate/ShapesCache.js</title>
     
     
     
@@ -26,7 +26,7 @@
     
     
     <script>
-    var config = {"monospaceLinks":false,"cleverLinks":false,"default":{"outputSourceFiles":true},"applicationName":"PixiAnimate","footer":"Made by <a target="_blank" href='http://jibo.com'>Jibo, Inc.</a>","copyright":"Copyright © 2016 Jibo, Inc.","disqus":"","googleAnalytics":"","openGraph":{"title":"","type":"website","image":"","site_name":"","url":""},"meta":{"title":"","description":"","keyword":""},"linenums":true};
+    var config = {"monospaceLinks":false,"cleverLinks":false,"default":{"outputSourceFiles":true},"applicationName":"PixiAnimate","footer":"Made by <a href='http://jibo.com'>Jibo, Inc.</a>","copyright":"Copyright © 2016 Jibo, Inc.","disqus":"","googleAnalytics":"","openGraph":{"title":"","type":"website","image":"","site_name":"","url":""},"meta":{"title":"","description":"","keyword":""},"linenums":true};
     </script>
     
 
@@ -614,37 +614,106 @@
     </ul>
 </div>
     <div class="main">
-        <h1 class="page-title" data-filename="index.html">Index</h1>
+        <h1 class="page-title" data-filename="animate_ShapesCache.js.html">Source: animate/ShapesCache.js</h1>
         
 
 
     
-
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-    
-
-
-
-
     <section>
-        <article class="readme"><h1>PIXI Animate</h1><p>A plugin for Pixi.js which provides a runtime for content export using PixiAnimate Extension. </p>
-<p><a target="_blank" href="https://travis-ci.org/jiborobot/pixi-animate"><img src="https://travis-ci.org/jiborobot/pixi-animate.svg?branch=master" alt="Build Status"></a> <a target="_blank" href="https://david-dm.org/jiborobot/pixi-animate"><img src="https://david-dm.org/jiborobot/pixi-animate.svg" alt="Dependency Status"></a> <a target="_blank" href="https://badge.fury.io/js/pixi-animate"><img src="https://badge.fury.io/js/pixi-animate.svg" alt="npm version"></a></p>
-<h2>Running Content</h2><h3>Installing Library</h3><p>To run content exported with PixiAnimate, you must load the JavaScript library within your project. You can install using <a target="_blank" href="http://bower.io">Bower</a> or <a target="_blank" href="http://www.npmjs.org">NPM</a>:</p>
-<h4>Bower</h4><pre class="prettyprint source"><code>bower install pixi-animate</code></pre><h4>NPM</h4><pre class="prettyprint source"><code>npm install pixi-animate</code></pre><h3>Dependencies</h3><ul>
-<li><a target="_blank" href="http://pixijs.com">Pixi.js v4</a> is required</li>
-</ul>
-<h2>Documentation</h2><p>http://jiborobot.github.io/pixi-animate/</p>
-<h2>License</h2><p>Copyright (c) 2016 <a target="_blank" href="http://github.com/jiborobot">Jibo, Inc.</a></p>
-<p>Released under the MIT License.</p></article>
+        <article>
+            <pre class="prettyprint source linenums"><code>import utils from './utils';
+
+/**
+ * Contains the collection of graphics data
+ * @memberof PIXI.animate
+ * @class ShapesCache
+ */
+const ShapesCache = {};
+
+/**
+ * Add an item or itesm to the cache
+ * @method PIXI.animate.ShapesCache.add
+ * @static
+ * @param {String} prop  The id of graphic or the map of graphics to add
+ * @param {String|Array&lt;Array>} items Collection of draw commands
+ */
+Object.defineProperty(ShapesCache, 'add', {
+    enumerable: false,
+    value: function(prop, items) {
+
+        // Decode string to map of files
+        if (typeof items === "string") {
+            items = utils.deserializeShapes(items);
+        }
+
+        // Convert all hex string colors (animate) to int (pixi.js)
+        for (let i = 0; i &lt; items.length; i++) {
+            let item = items[i];
+            for (let j = 0; j &lt; item.length; j++) {
+                let arg = item[j];
+                if (typeof arg === 'string' &amp;&amp; arg[0] === '#') {
+                    item[j] = utils.hexToUint(arg);
+                }
+            }
+        }
+        ShapesCache[prop] = items;
+    }
+});
+
+
+/**
+ * Get the graphic from cache
+ * @method  PIXI.animate.ShapesCache.fromCache
+ * @static
+ * @param  {String} id The cache id
+ * @return {Array} Series of graphic draw commands
+ */
+Object.defineProperty(ShapesCache, 'fromCache', {
+    enumerable: false,
+    value: function(id) {
+        return ShapesCache[id] || null;
+    }
+});
+
+/**
+ * Remove the graphic from cache
+ * @method  PIXI.animate.ShapesCache.remove
+ * @static
+ * @param  {String|Object} id The cache id or map
+ */
+Object.defineProperty(ShapesCache, 'remove', {
+    enumerable: false,
+    value: function(id) {
+        if (typeof id === "object") {
+            for (let name in id) {
+                ShapesCache.remove(name);
+            }
+            return;
+        }
+        if (ShapesCache[id]) {
+            ShapesCache[id].length = 0;
+            delete ShapesCache[id];
+        }
+    }
+});
+
+/**
+ * Remove all graphics from cache
+ * @method  PIXI.animate.ShapesCache.removeAll
+ * @static
+ */
+Object.defineProperty(ShapesCache, 'removeAll', {
+    enumerable: false,
+    value: function() {
+        for (let id in ShapesCache) {
+            ShapesCache.remove(id);
+        }
+    }
+});
+
+// Assign to namespace
+export default ShapesCache;</code></pre>
+        </article>
     </section>
 
 
@@ -655,7 +724,7 @@
         
 
         <footer>
-            Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Fri Aug 19 2016 11:06:55 GMT-0400 (EDT)
+            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Fri Aug 19 2016 11:06:55 GMT-0400 (EDT)
         </footer>
     </div>
 </div>

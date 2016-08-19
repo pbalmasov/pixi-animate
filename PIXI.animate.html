@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Index</title>
+    <title>Namespace: animate</title>
     
     
     
@@ -614,39 +614,788 @@
     </ul>
 </div>
     <div class="main">
-        <h1 class="page-title" data-filename="index.html">Index</h1>
+        <h1 class="page-title" data-filename="PIXI.animate.html">Namespace: animate</h1>
         
 
 
+
+<section>
+    
+<header>
+    <h2>
+        <span class="ancestors"><a href="PIXI.html">PIXI</a>.</span>
+    
+    animate
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    
     
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
 
-    <h3> </h3>
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Classes</h3>
+        
+        <dl>
+            <dt><a href="PIXI.animate.Animator.html">Animator</a></dt>
+            <dd></dd>
+        
+            <dt><a href="PIXI.animate.AnimatorTimeline.html">AnimatorTimeline</a></dt>
+            <dd></dd>
+        
+            <dt><a href="PIXI.animate.MovieClip.html">MovieClip</a></dt>
+            <dd></dd>
+        
+            <dt><a href="PIXI.animate.ShapesCache.html">ShapesCache</a></dt>
+            <dd></dd>
+        
+            <dt><a href="PIXI.animate.Timeline.html">Timeline</a></dt>
+            <dd></dd>
+        
+            <dt><a href="PIXI.animate.Tween.html">Tween</a></dt>
+            <dd></dd>
+        </dl>
+    
+    
+    
+        <h3 class="subsection-title">Namespaces</h3>
+        
+        <dl>
+            <dt><a href="namespaces.html#PIXI.animate.utils"><a href="PIXI.animate.utils.html">utils</a></a></dt>
+            <dd></dd>
+        </dl>
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Methods</h3>
+        
+        <dl>
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id=".load">
+            
+            <span class="type-signature static">static</span>PIXI.animate.load<span class="signature">(StageRef, parent)</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="animate_load.js.html">animate/load.js</a>, <a href="animate_load.js.html#line29">line 29</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Load the stage class and preload any assets</p>
+<pre class="prettyprint source"><code>let renderer = new PIXI.autoDetectRenderer(1280, 720);
+let stage = new PIXI.Container();
+PIXI.animate.load(lib.MyStage, stage);
+function update() {
+     renderer.render(stage);
+     update();
+}
+update();</code></pre>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>StageRef</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
 
 
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                <p>Reference to the stage class.</p>
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>assets</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
 
 
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                <p>Assets used to preload.</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+            </td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>parent</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="PIXI.Container.html">PIXI.Container</a></span>
 
 
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                <p>The Container to auto-add the stage to.</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
 
     
 
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id=".load">
+            
+            <span class="type-signature static">static</span>PIXI.animate.load<span class="signature">(StageRef, complete)</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="animate_load.js.html">animate/load.js</a>, <a href="animate_load.js.html#line10">line 10</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Load the stage class and preload any assets</p>
+<pre class="prettyprint source"><code>let renderer = new PIXI.autoDetectRenderer(1280, 720);
+let stage = new PIXI.Container();
+PIXI.animate.load(lib.MyStage, function(instance){
+    stage.addChild(instance);
+});
+function update() {
+     renderer.render(stage);
+     update();
+}
+update();</code></pre>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>StageRef</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
 
 
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                <p>Reference to the stage class.</p>
+                
 
-    <section>
-        <article class="readme"><h1>PIXI Animate</h1><p>A plugin for Pixi.js which provides a runtime for content export using PixiAnimate Extension. </p>
-<p><a target="_blank" href="https://travis-ci.org/jiborobot/pixi-animate"><img src="https://travis-ci.org/jiborobot/pixi-animate.svg?branch=master" alt="Build Status"></a> <a target="_blank" href="https://david-dm.org/jiborobot/pixi-animate"><img src="https://david-dm.org/jiborobot/pixi-animate.svg" alt="Dependency Status"></a> <a target="_blank" href="https://badge.fury.io/js/pixi-animate"><img src="https://badge.fury.io/js/pixi-animate.svg" alt="npm version"></a></p>
-<h2>Running Content</h2><h3>Installing Library</h3><p>To run content exported with PixiAnimate, you must load the JavaScript library within your project. You can install using <a target="_blank" href="http://bower.io">Bower</a> or <a target="_blank" href="http://www.npmjs.org">NPM</a>:</p>
-<h4>Bower</h4><pre class="prettyprint source"><code>bower install pixi-animate</code></pre><h4>NPM</h4><pre class="prettyprint source"><code>npm install pixi-animate</code></pre><h3>Dependencies</h3><ul>
-<li><a target="_blank" href="http://pixijs.com">Pixi.js v4</a> is required</li>
-</ul>
-<h2>Documentation</h2><p>http://jiborobot.github.io/pixi-animate/</p>
-<h2>License</h2><p>Copyright (c) 2016 <a target="_blank" href="http://github.com/jiborobot">Jibo, Inc.</a></p>
-<p>Released under the MIT License.</p></article>
-    </section>
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>assets</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
 
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                <p>Assets used to preload.</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+            </td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>complete</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                <p>The callback function when complete.</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id=".load">
+            
+            <span class="type-signature static">static</span>PIXI.animate.load<span class="signature">(options)</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="animate_load.js.html">animate/load.js</a>, <a href="animate_load.js.html#line1">line 1</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Load the stage class and preload any assets</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                <p>Options for loading.</p>
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>stage</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                <p>Reference to the stage class</p>
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>assets</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                <p>Assets used to preload</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+            </td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>parent</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="PIXI.Container.html">PIXI.Container</a></span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                <p>The Container to auto-add the stage to.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>basePath</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                <p>Base root directory</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+            </td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+</article>
+
+</section>  
 
 
 

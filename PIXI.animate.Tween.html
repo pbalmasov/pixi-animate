@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Index</title>
+    <title>Class: Tween</title>
     
     
     
@@ -614,39 +614,837 @@
     </ul>
 </div>
     <div class="main">
-        <h1 class="page-title" data-filename="index.html">Index</h1>
+        <h1 class="page-title" data-filename="PIXI.animate.Tween.html">Class: Tween</h1>
         
 
 
+
+<section>
+    
+<header>
+    <h2>
+        <span class="ancestors"><a href="PIXI.html">PIXI</a><a href="PIXI.animate.html">.animate</a>.</span>
+    
+    Tween
+    </h2>
+    
+        <div class="class-description"><p>Tween</p></div>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="Tween">
+            
+            new PIXI.animate.Tween<span class="signature">(target, startProps, endProps, duration, <span class="optional">ease</span>)</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="animate_Tween.js.html">animate/Tween.js</a>, <a href="animate_Tween.js.html#line13">line 13</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
     
 
+    
+    
+    
+    
+    
+        
 
-    <h3> </h3>
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>target</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="PIXI.animate.MovieClip.html">PIXI.animate.MovieClip</a></span>
 
 
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                <p>The target to play</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>startProps</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
 
 
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                <p>The starting properties</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>endProps</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
 
 
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                <p>The ending properties</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>duration</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
 
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                <p>Number oframes to tween</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>ease</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                <p>Ease function to use</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
 
     
 
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Members</h3>
+        
+        <dl>
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="duration">duration<span class="type-signature type int">int</span> </h4>
+    </div>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>duration of tween in frames. For a keyframe with no tweening, the duration will be 0.</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="ease">ease<span class="type-signature type function">function</span> </h4>
+    </div>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>easing function to use, if any</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="endFrame">endFrame<span class="type-signature type int">int</span> </h4>
+    </div>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>the frame that the tween ends on</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="endProps">endProps<span class="type-signature type object">Object</span> </h4>
+    </div>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>properties at the end of the tween, as well as any properties that are set<br>instead of tweened</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="isTweenlessFrame">isTweenlessFrame<span class="type-signature type boolean">Boolean</span> </h4>
+    </div>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>If we don't tween.</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="startFrame">startFrame<span class="type-signature type int">int</span> </h4>
+    </div>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The frame that the tween starts on</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="startProps">startProps<span class="type-signature type object">Object</span> </h4>
+    </div>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>properties at the start of the tween</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="target">target<span class="type-signature type object">Object</span> </h4>
+    </div>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>target display object</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+        <h3 class="subsection-title">Methods</h3>
+        
+        <dl>
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="setPosition">
+            
+            setPosition<span class="signature">(currentFrame)</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="animate_Tween.js.html">animate/Tween.js</a>, <a href="animate_Tween.js.html#line91">line 91</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Set the current frame.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>currentFrame</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">int</span>
 
 
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                </td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
 
-    <section>
-        <article class="readme"><h1>PIXI Animate</h1><p>A plugin for Pixi.js which provides a runtime for content export using PixiAnimate Extension. </p>
-<p><a target="_blank" href="https://travis-ci.org/jiborobot/pixi-animate"><img src="https://travis-ci.org/jiborobot/pixi-animate.svg?branch=master" alt="Build Status"></a> <a target="_blank" href="https://david-dm.org/jiborobot/pixi-animate"><img src="https://david-dm.org/jiborobot/pixi-animate.svg" alt="Dependency Status"></a> <a target="_blank" href="https://badge.fury.io/js/pixi-animate"><img src="https://badge.fury.io/js/pixi-animate.svg" alt="npm version"></a></p>
-<h2>Running Content</h2><h3>Installing Library</h3><p>To run content exported with PixiAnimate, you must load the JavaScript library within your project. You can install using <a target="_blank" href="http://bower.io">Bower</a> or <a target="_blank" href="http://www.npmjs.org">NPM</a>:</p>
-<h4>Bower</h4><pre class="prettyprint source"><code>bower install pixi-animate</code></pre><h4>NPM</h4><pre class="prettyprint source"><code>npm install pixi-animate</code></pre><h3>Dependencies</h3><ul>
-<li><a target="_blank" href="http://pixijs.com">Pixi.js v4</a> is required</li>
-</ul>
-<h2>Documentation</h2><p>http://jiborobot.github.io/pixi-animate/</p>
-<h2>License</h2><p>Copyright (c) 2016 <a target="_blank" href="http://github.com/jiborobot">Jibo, Inc.</a></p>
-<p>Released under the MIT License.</p></article>
-    </section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
 
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="setToEnd">
+            
+            setToEnd<span class="signature">()</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="animate_Tween.js.html">animate/Tween.js</a>, <a href="animate_Tween.js.html#line126">line 126</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Set to the end position</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+</article>
+
+</section>  
 
 
 

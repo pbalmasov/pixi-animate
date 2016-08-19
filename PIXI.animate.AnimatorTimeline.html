@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Index</title>
+    <title>Class: AnimatorTimeline</title>
     
     
     
@@ -614,39 +614,706 @@
     </ul>
 </div>
     <div class="main">
-        <h1 class="page-title" data-filename="index.html">Index</h1>
+        <h1 class="page-title" data-filename="PIXI.animate.AnimatorTimeline.html">Class: AnimatorTimeline</h1>
         
 
 
+
+<section>
+    
+<header>
+    <h2>
+        <span class="ancestors"><a href="PIXI.html">PIXI</a><a href="PIXI.animate.html">.animate</a>.</span>
+    
+    AnimatorTimeline
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="AnimatorTimeline">
+            
+            new PIXI.animate.AnimatorTimeline<span class="signature">()</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="animate_AnimatorTimeline.js.html">animate/AnimatorTimeline.js</a>, <a href="animate_AnimatorTimeline.js.html#line3">line 3</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Represents a single animation play.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Members</h3>
+        
+        <dl>
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="callback"><span class="type-signature ">readonly</span>callback<span class="type-signature type function">function</span> </h4>
+    </div>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Callback called when completed (non-looping animation).</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="end"><span class="type-signature ">readonly</span>end<span class="type-signature type int">int</span> </h4>
+    </div>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Frame number of the ending frame.</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="instance"><span class="type-signature ">readonly</span>instance<span class="type-signature type pixi.animate.movieclip"><a href="PIXI.animate.MovieClip.html">PIXI.animate.MovieClip</a></span> </h4>
+    </div>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Instance of clip to play.</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="loop"><span class="type-signature ">readonly</span>loop<span class="type-signature type boolean">Boolean</span> </h4>
+    </div>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p><code>true</code> if the timeline is suppose to loop.</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="progress"><span class="type-signature ">readonly</span>progress<span class="type-signature type number">Number</span> </h4>
+    </div>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The progress from 0 to 1 of the playback.</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="start"><span class="type-signature ">readonly</span>start<span class="type-signature type int">int</span> </h4>
+    </div>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Frame number of the starting farme.</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+        <h3 class="subsection-title">Methods</h3>
+        
+        <dl>
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id=".create">
+            
+            <span class="type-signature static">static</span>PIXI.animate.AnimatorTimeline.create<span class="signature">(instance, start, end, loop, callback)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{<a href="PIXI.animate.AnimatorTimeline.html">PIXI.animate.AnimatorTimeline</a>}</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="animate_AnimatorTimeline.js.html">animate/AnimatorTimeline.js</a>, <a href="animate_AnimatorTimeline.js.html#line142">line 142</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Create a new timeline</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>instance</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="PIXI.animate.MovieClip.html">PIXI.animate.MovieClip</a></span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                </td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>start</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                </td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>end</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                </td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>loop</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                </td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                </td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
     
 
 
-    <h3> </h3>
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Type</th>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            
+            <td class="type">
+            
+                        <a href="PIXI.animate.AnimatorTimeline.html">PIXI.animate.AnimatorTimeline</a>
+                        
+                    
+            </td>
+            <td class="description last"></td>
+        </tr>
+    
+    </tbody>
+</table>
 
+    
+    
+    
+</dd>
 
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="stop">
+            
+            stop<span class="signature">()</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="animate_AnimatorTimeline.js.html">animate/AnimatorTimeline.js</a>, <a href="animate_AnimatorTimeline.js.html#line112">line 112</a>
+        </div>
+        
+    </div>
 
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Stop the animation, cannot be reused.</p>
+    </div>
+    
 
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
 
-
+    
+    
 
     
 
+    
+    
+    
+    
+    
+    
+    
+</dd>
 
+        </dl>
+    
+    
+    
+    
+    
+</article>
 
-
-    <section>
-        <article class="readme"><h1>PIXI Animate</h1><p>A plugin for Pixi.js which provides a runtime for content export using PixiAnimate Extension. </p>
-<p><a target="_blank" href="https://travis-ci.org/jiborobot/pixi-animate"><img src="https://travis-ci.org/jiborobot/pixi-animate.svg?branch=master" alt="Build Status"></a> <a target="_blank" href="https://david-dm.org/jiborobot/pixi-animate"><img src="https://david-dm.org/jiborobot/pixi-animate.svg" alt="Dependency Status"></a> <a target="_blank" href="https://badge.fury.io/js/pixi-animate"><img src="https://badge.fury.io/js/pixi-animate.svg" alt="npm version"></a></p>
-<h2>Running Content</h2><h3>Installing Library</h3><p>To run content exported with PixiAnimate, you must load the JavaScript library within your project. You can install using <a target="_blank" href="http://bower.io">Bower</a> or <a target="_blank" href="http://www.npmjs.org">NPM</a>:</p>
-<h4>Bower</h4><pre class="prettyprint source"><code>bower install pixi-animate</code></pre><h4>NPM</h4><pre class="prettyprint source"><code>npm install pixi-animate</code></pre><h3>Dependencies</h3><ul>
-<li><a target="_blank" href="http://pixijs.com">Pixi.js v4</a> is required</li>
-</ul>
-<h2>Documentation</h2><p>http://jiborobot.github.io/pixi-animate/</p>
-<h2>License</h2><p>Copyright (c) 2016 <a target="_blank" href="http://github.com/jiborobot">Jibo, Inc.</a></p>
-<p>Released under the MIT License.</p></article>
-    </section>
-
+</section>  
 
 
 
