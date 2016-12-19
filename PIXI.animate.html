@@ -91,6 +91,8 @@
             
                 <li data-name="PIXI.animate.load"><a href="PIXI.animate.html#.load">load</a></li>
             
+                <li data-name="PIXI.animate.load"><a href="PIXI.animate.html#.load">load</a></li>
+            
             </ul>
             <ul class="events itemMembers">
             
@@ -785,12 +787,12 @@
     <div class="nameContainer">
         <h4 class="name" id=".load">
             
-            <span class="type-signature static">static</span>PIXI.animate.load<span class="signature">(StageRef, parent)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{PIXI.loaders.Loader}</span>
+            <span class="type-signature static">static</span>PIXI.animate.load<span class="signature">(StageRef, parent, <span class="optional">complete</span>, <span class="optional">basePath</span>)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{PIXI.loaders.Loader}</span>
         </h4>
     
         
         <div class="tag-source">
-            <a href="animate_load.js.html">animate/load.js</a>, <a href="animate_load.js.html#line37">line 37</a>
+            <a href="animate_load.js.html">animate/load.js</a>, <a href="animate_load.js.html#line56">line 56</a>
         </div>
         
     </div>
@@ -855,6 +857,11 @@ update();</code></pre>
             
             
             <td class="description last">
+                
+                    
+                    
+                        
+                    
                 
                 <p>Reference to the stage class.</p>
                 
@@ -931,7 +938,340 @@ update();</code></pre>
             
             <td class="description last">
                 
+                    
+                    
+                        
+                    
+                
                 <p>The Container to auto-add the stage to.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>complete</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                <p>The callback function when complete.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>basePath</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                <p>Base root directory</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Type</th>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            
+            <td class="type">
+            
+                        PIXI.loaders.Loader
+                        
+                    
+            </td>
+            <td class="description last">instance of PIXI resource loader</td>
+        </tr>
+    
+    </tbody>
+</table>
+
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id=".load">
+            
+            <span class="type-signature static">static</span>PIXI.animate.load<span class="signature">(StageRef, parent, <span class="optional">basePath</span>)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{PIXI.loaders.Loader}</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="animate_load.js.html">animate/load.js</a>, <a href="animate_load.js.html#line37">line 37</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Load the stage class and preload any assets</p>
+<pre class="prettyprint source"><code>let renderer = new PIXI.autoDetectRenderer(1280, 720);
+let stage = new PIXI.Container();
+PIXI.animate.load(lib.MyStage, stage);
+function update() {
+     renderer.render(stage);
+     update();
+}
+update();</code></pre>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>StageRef</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                <p>Reference to the stage class.</p>
+                
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>assets</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                <p>Assets used to preload.</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+            </td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>parent</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type"><a href="PIXI.Container.html">PIXI.Container</a></span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                <p>The Container to auto-add the stage to.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>basePath</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                <p>Base root directory</p></td>
         </tr>
 	
 	
@@ -1559,7 +1899,7 @@ update();</code></pre>
         
 
         <footer>
-            Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Thu Dec 01 2016 10:15:36 GMT-0500 (EST)
+            Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Mon Dec 19 2016 09:33:37 GMT-0500 (EST)
         </footer>
     </div>
 </div>
