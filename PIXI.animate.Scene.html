@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Source: mixins/Sprite.js</title>
+    <title>Class: Scene</title>
     
     
     
@@ -26,7 +26,7 @@
     
     
     <script>
-    var config = {"monospaceLinks":false,"cleverLinks":false,"default":{"outputSourceFiles":true},"applicationName":"PixiAnimate","footer":"Made by <a href='http://jibo.com'>Jibo, Inc.</a>","copyright":"Copyright © 2016 Jibo, Inc.","disqus":"","googleAnalytics":"","openGraph":{"title":"","type":"website","image":"","site_name":"","url":""},"meta":{"title":"","description":"","keyword":""},"linenums":true};
+    var config = {"monospaceLinks":false,"cleverLinks":false,"default":{"outputSourceFiles":true},"applicationName":"PixiAnimate","footer":"Made by <a target="_blank" href='http://jibo.com'>Jibo, Inc.</a>","copyright":"Copyright © 2016 Jibo, Inc.","disqus":"","googleAnalytics":"","openGraph":{"title":"","type":"website","image":"","site_name":"","url":""},"meta":{"title":"","description":"","keyword":""},"linenums":true};
     </script>
     
 
@@ -655,43 +655,727 @@
     </ul>
 </div>
     <div class="main">
-        <h1 class="page-title" data-filename="mixins_Sprite.js.html">Source: mixins/Sprite.js</h1>
+        <h1 class="page-title" data-filename="PIXI.animate.Scene.html">Class: Scene</h1>
         
 
 
+
+<section>
     
-    <section>
-        <article>
-            <pre id="source-code" class="prettyprint source linenums"><code>/**
- * Mixins for the PIXI.Sprite class.
- * @memberof PIXI
- * @class Sprite
- */
-const p = PIXI.Sprite.prototype;
+<header>
+    <h2>
+        <span class="ancestors"><a href="PIXI.html">PIXI</a><a href="PIXI.animate.html">.animate</a>.</span>
+    
+    Scene
+    </h2>
+    
+</header>  
 
-/**
- * Extend a container
- * @method PIXI.Sprite.extend
- * @static
- * @param {PIXI.Sprite} child The child function
- * @return {PIXI.Sprite} THe child
- */
-/**
- * Extend a container (shortcut for `extend`)
- * @method PIXI.Sprite.e
- * @static
- * @param {PIXI.Sprite} child The child function
- * @return {PIXI.Sprite} THe child
- */
-PIXI.Sprite.extend = PIXI.Sprite.e = function(child) {
-    child.prototype = Object.create(p);
-    child.prototype.__parent = p;
-    child.prototype.constructor = child;
-    return child;
-};</code></pre>
-        </article>
-    </section>
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="Scene">
+            
+            new PIXI.animate.Scene<span class="signature">(<span class="optional">width</span>, <span class="optional">height</span>, <span class="optional">renderOptions</span>, <span class="optional">noWebGL</span>)</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="animate_Scene.js.html">animate/Scene.js</a>, <a href="animate_Scene.js.html#line4">line 4</a>
+        </div>
+        
+    </div>
 
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Extends the PIXI.Application class to provide easy loading.</p>
+<pre class="prettyprint source"><code>const scene = new PIXI.animate.Scene();
+scene.load(lib.StageName);</code></pre>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Default</th>
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>width</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+            
+            
+                <td class="default">
+                
+                    800
+                
+                </td>
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                <p>Stage width</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>height</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+            
+            
+                <td class="default">
+                
+                    600
+                
+                </td>
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                <p>Stage height</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>renderOptions</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+            
+            
+                <td class="default">
+                
+                </td>
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                <p>See PIXI.Application for more info.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>noWebGL</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+            
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                <p>Disable WebGL</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Members</h3>
+        
+        <dl>
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="instance"><span class="type-signature ">readonly</span>instance<span class="type-signature type pixi.animate.movieclip"><a href="PIXI.animate.MovieClip.html">PIXI.animate.MovieClip</a></span> </h4>
+    </div>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>The stage object created.</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="sound"><span class="type-signature ">readonly</span>sound<span class="type-signature type pixi.animate.sound"><a href="PIXI.animate.html#.sound">PIXI.animate.sound</a></span> </h4>
+    </div>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        <p>Reference to the global sound object</p>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+        <h3 class="subsection-title">Methods</h3>
+        
+        <dl>
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="destroy">
+            
+            destroy<span class="signature">(<span class="optional">removeView</span>)</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="animate_Scene.js.html">animate/Scene.js</a>, <a href="animate_Scene.js.html#line56">line 56</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Destroy and don't use after calling.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Default</th>
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>removeView</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+            
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                <p><code>true</code> to remove canvas element.</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <div class="nameContainer">
+        <h4 class="name" id="load">
+            
+            load<span class="signature">(StageRef, <span class="optional">complete</span>, <span class="optional">basePath</span>)</span><span class="glyphicon glyphicon-circle-arrow-right"></span><span class="type-signature returnType">{PIXI.loaders.Loader}</span>
+        </h4>
+    
+        
+        <div class="tag-source">
+            <a href="animate_Scene.js.html">animate/Scene.js</a>, <a href="animate_Scene.js.html#line39">line 39</a>
+        </div>
+        
+    </div>
+
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>Load a stage scene and add it to the stage.</p>
+    </div>
+    
+
+    
+    
+    
+    
+    
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>StageRef</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                    
+                        
+                    
+                
+                <p>Reference to the stage class.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>complete</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                <p>Callback when finished loading.</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>basePath</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            <td class="description last">
+                
+                    
+                        <span class="optional">optional</span>
+                    
+                    
+                        
+                    
+                
+                <p>Optional base directory to prepend to assets.</p></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Type</th>
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            
+            <td class="type">
+            
+                        PIXI.loaders.Loader
+                        
+                    
+            </td>
+            <td class="description last">instance of PIXI resource loader</td>
+        </tr>
+    
+    </tbody>
+</table>
+
+    
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+</article>
+
+</section>  
 
 
 
@@ -700,7 +1384,7 @@ PIXI.Sprite.extend = PIXI.Sprite.e = function(child) {
         
 
         <footer>
-            Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Wed Jan 18 2017 11:47:41 GMT-0500 (EST)
+            Documentation generated by <a target="_blank" href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Wed Jan 18 2017 11:47:41 GMT-0500 (EST)
         </footer>
     </div>
 </div>

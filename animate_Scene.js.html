@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Source: mixins/Sprite.js</title>
+    <title>Source: animate/Scene.js</title>
     
     
     
@@ -655,40 +655,83 @@
     </ul>
 </div>
     <div class="main">
-        <h1 class="page-title" data-filename="mixins_Sprite.js.html">Source: mixins/Sprite.js</h1>
+        <h1 class="page-title" data-filename="animate_Scene.js.html">Source: animate/Scene.js</h1>
         
 
 
     
     <section>
         <article>
-            <pre id="source-code" class="prettyprint source linenums"><code>/**
- * Mixins for the PIXI.Sprite class.
- * @memberof PIXI
- * @class Sprite
- */
-const p = PIXI.Sprite.prototype;
+            <pre id="source-code" class="prettyprint source linenums"><code>import load from './load';
+import sound from './sound';
 
 /**
- * Extend a container
- * @method PIXI.Sprite.extend
- * @static
- * @param {PIXI.Sprite} child The child function
- * @return {PIXI.Sprite} THe child
+ * Extends the PIXI.Application class to provide easy loading.
+ * ```
+ * const scene = new PIXI.animate.Scene();
+ * scene.load(lib.StageName);
+ * ```
+ * @class Scene
+ * @memberof PIXI.animate
+ * @param {Number} [width=800] Stage width
+ * @param {Number} [height=600] Stage height
+ * @param {Object} [renderOptions] See PIXI.Application for more info.
+ * @param {Boolean} [noWebGL=false] Disable WebGL
  */
-/**
- * Extend a container (shortcut for `extend`)
- * @method PIXI.Sprite.e
- * @static
- * @param {PIXI.Sprite} child The child function
- * @return {PIXI.Sprite} THe child
- */
-PIXI.Sprite.extend = PIXI.Sprite.e = function(child) {
-    child.prototype = Object.create(p);
-    child.prototype.__parent = p;
-    child.prototype.constructor = child;
-    return child;
-};</code></pre>
+class Scene extends PIXI.Application {
+
+	constructor(width, height, renderOptions, noWebGL) {
+		super(width, height, renderOptions, noWebGL);
+
+		/**
+		 * Reference to the global sound object
+		 * @name PIXI.animate.Scene#sound
+		 * @type {PIXI.animate.sound}
+		 * @readOnly
+		 */
+		this.sound = sound;
+
+		/**
+		 * The stage object created.
+		 * @name PIXI.animate.Scene#instance
+		 * @type {PIXI.animate.MovieClip}
+		 * @readOnly
+		 */
+		this.instance = null;
+	}
+
+	/**
+	 * Load a stage scene and add it to the stage.
+	 * @method PIXI.animate.Scene#load
+	 * @param {Function} StageRef Reference to the stage class.
+	 * @param {Function} [complete] Callback when finished loading.
+	 * @param {String} [basePath] Optional base directory to prepend to assets.
+	 * @return {PIXI.loaders.Loader} instance of PIXI resource loader
+	 */
+	load(StageRef, complete, basePath) {
+		return load(StageRef, this.stage, (instance) => {
+			this.instance = instance;
+			if (complete) {
+				complete(instance);
+			}
+		}, basePath);
+	}
+
+	/**
+	 * Destroy and don't use after calling.
+	 * @method PIXI.animate.Scene#destroy
+	 * @param {Boolean} [removeView=false] `true` to remove canvas element.
+	 */
+	destroy(removeView) {
+		if (this.instance) {
+			this.instance.destroy(true);
+			this.instance = null;
+		}
+		super.destroy(removeView);
+	}
+}
+
+export default Scene;</code></pre>
         </article>
     </section>
 
