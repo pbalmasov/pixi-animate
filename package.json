@@ -55,8 +55,7 @@
     "publish:patch": "npm version patch && npm publish",
     "publish:minor": "npm version minor && npm publish",
     "publish:major": "npm version major && npm publish",
-    "postpublish": "git push && git push --tags && npm run docs-live",
-    "prepare": "npm run build"
+    "postpublish": "git push && git push --tags && npm run docs-live"
   },
   "files": [
     "dist/",
